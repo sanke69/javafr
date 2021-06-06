@@ -1,0 +1,30 @@
+
+
+.root {
+	-fx-background-color: transparent;
+}
+
+
+.splash-background {
+	-fx-background-color: transparent;
+}
+
+.splash-title {
+	-fx-font-family       : cursive;
+	-fx-font-size         : 12 pt;
+	-fx-font-style        : oblique;		/* [ normal | italic | oblique ] */
+	-fx-font-weight 	  : bold;			/* [ normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 ] */
+
+	-fx-alignment 	      : center; 		/* [ top-left | top-center | top-right | center-left | center | center-right bottom-left | bottom-center | bottom-right | baseline-left | baseline-center | baseline-right ] */
+	-fx-background-color  : transparent;
+}
+
+.splash-phase {
+	-fx-font-family       : cursive;
+	-fx-font-size         : 12 pt;
+	-fx-font-style        : oblique;		/* [ normal | italic | oblique ] */
+	-fx-font-weight 	  : bold;			/* [ normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 ] */
+
+	-fx-alignment 	      : center; 		/* [ top-left | top-center | top-right | center-left | center | center-right bottom-left | bottom-center | bottom-right | baseline-left | baseline-center | baseline-right ] */
+	-fx-background-color  : transparent;
+}
