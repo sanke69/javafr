@@ -1,0 +1,29 @@
+.galery-item {
+    -fx-fill:               lightslategray ;
+    -fx-background-color:   lightslategray ;
+    -fx-border-color:       white ;
+    -fx-border-width:       0 ; 
+    -fx-border-style:       none ;
+}
+.galery-item:hover {
+    -fx-fill:               gold;
+    -fx-background-color:   gold;
+}
+.galery-item:highlighted {;
+    -fx-border-color:   	blue ;
+    -fx-border-width:       5 ; 
+    -fx-border-style:       segments(10, 15, 15, 15)  line-cap round ;
+}
+.galery-item:focused {
+    -fx-fill:               lightgreen;
+    -fx-background-color:   lightgreen;
+}
+.galery-item:current {
+    -fx-fill:               lightgray;
+    -fx-background-color:   lightgray;
+}
+.galery-item:selected {
+    -fx-fill:               lightblue;
+    -fx-background-color:   lightblue;
+}
+

@@ -1,0 +1,74 @@
+{
+  -default-window-skin:          "fr.javafx.windows.skins.DefaultWindowSkin";
+  -default-window-icon-skin:     "fr.javafx.windows.skins.DefaultWindowIconSkin";
+  -default-window-close-icon:    "fr.javafx.windows.skins.DefaultWindowIconSkin";
+  -default-window-minimize-icon: "fr.javafx.windows.skins.DefaultWindowIconSkin";
+  -default-window-maximize-icon: "fr.javafx.windows.skins.DefaultWindowIconSkin";
+  -default-window-rotate-icon:   "fr.javafx.windows.skins.DefaultWindowIconSkin";
+  
+  -default-main-color:           rgb(20, 56, 56, 0.9)
+}
+
+.window {
+    -fx-skin: 					-default-window-skin;
+    -fx-glass-color: 			-default-main-color;
+    -fx-alignment: center;
+    -fx-background-color: 		linear-gradient(to bottom, derive(-fx-glass-color, 50%), -fx-glass-color);
+    -fx-border-color: 			derive(-fx-glass-color, -60%);
+    -fx-border-width: 			2;
+    -fx-background-insets: 		1;
+    -fx-border-radius: 			3;
+    -fx-background-radius: 		3;
+    -fx-font-size: 				18;
+    /*-fx-effect: 				dropshadow(gaussian, rgba(0, 0, 0, 0.65), 100, 0.5, 0.0, 0.0);*/
+    /*-fx-padding: 				-2;*/
+}
+
+.window-titlebar {
+    -fx-glass-color:            rgba(42, 42, 42, 0.9);
+    -fx-alignment:              center;
+    -fx-background-color:       linear-gradient(to bottom, derive(-fx-glass-color, 30%), -fx-glass-color);
+    -fx-border-color:           derive(-fx-glass-color, -60%);
+    -fx-border-width:           2;
+    -fx-background-insets:      1;
+    -fx-border-radius:          3;
+    -fx-background-radius:      3;
+    -fx-stroke:                 rgba(255,255,255,50);
+    -fx-fill:                   rgba(255,255,255,50);
+}
+
+.window-icon {
+    -fx-skin:                   -default-window-icon-skin;
+    -fx-border-color:           rgb(255,255,255);
+    -fx-border-radius:          3;
+}
+
+.window-icon-close {
+    -fx-skin:                   -default-window-close-icon;
+    -fx-border-color:           rgb(255,69,69);
+    -fx-shape-color:            rgb(255,69,69);
+    -fx-shape:                  "M 0,5 a 5,5 0 1,0 10,0 a 5,5 0 1,0 -10,0 M 3,7 L 7,3 M 3,3 L 7,7";
+    -fx-border-width:           2;
+    -fx-border-insets:          1;
+}
+.window-icon-maximize {
+    -fx-skin:                   -default-window-maximize-icon;
+    -fx-border-color:           rgb(255,255,255);
+    -fx-shape:                  "M 0,5 a 5,5 0 1,0 10,0 a 5,5 0 1,0 -10,0 M 2,5 L 8,5 M 5,8 L 5,2";
+    -fx-border-width:           2;
+    -fx-border-insets:          1;
+}
+.window-icon-minimize {
+    -fx-skin:                   -default-window-minimize-icon;
+    -fx-border-color:           rgb(255,255,255);
+    -fx-shape:                  "M 0,5 a 5,5 0 1,0 10,0 a 5,5 0 1,0 -10,0 M 3,5 L 7,5";
+    -fx-border-width:           2;
+    -fx-border-insets:          1;
+}
+.window-icon-iconize {
+    -fx-skin:                   -default-window-minimize-icon;
+    -fx-border-color:           rgb(255,255,255);
+    -fx-shape:                  "M 0,5 a 5,5 0 1,0 10,0 a 5,5 0 1,0 -10,0 M 3,7 L 7,7";
+    -fx-border-width:           2;
+    -fx-border-insets:          1;
+}
