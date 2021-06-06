@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project 
+	xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.pechberti.steve</groupId>
+		<artifactId>MyMavenConfig</artifactId>
+		<version>dev-fr</version>
+	</parent>
+
+	<artifactId>fr.java.graphs</artifactId>
+	<version>${javafr.api.version}</version>
+	<packaging>jar</packaging>
+
+	<name>${project.artifactId}</name>
+	<description>Java.fr Reflection</description>
+
+	<dependencies>
+		<dependency>
+		    <groupId>com.pechberti.steve</groupId>
+		    <artifactId>fr.java.api</artifactId>
+		    <version>${javafr.api.version}</version>
+		    <type>jar</type>
+		    <scope>provided</scope>
+		    <optional>false</optional>
+		</dependency>
+		<dependency>
+		    <groupId>com.pechberti.steve</groupId>
+		    <artifactId>fr.java.beans</artifactId>
+		    <version>${javafr.api.version}</version>
+		    <type>jar</type>
+		    <scope>provided</scope>
+		    <optional>false</optional>
+		</dependency>
+	</dependencies>
+
+</project>
