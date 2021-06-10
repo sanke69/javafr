@@ -16,13 +16,11 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
- * @file     Listenable.java
- * @version  0.0.0.1
- * @date     2015/04/27
- * 
 **/
 package fr.java.lang;
 
+// TODO:: Remove
+@Deprecated
 public interface Listenable {
 
 //	public void addListener(ChangeListener listener);

@@ -16,16 +16,12 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
- * @file     TriFunction.java
- * @version  0.0.0.1
- * @date     2015/04/27
- * 
 **/
 package fr.java.lang;
 
 /**
- * Represents a function that accepts three arguments and produces a result.
- * This is the two-arity specialization of {@link Function}.
+ * Represents a function that accepts four arguments and produces a result.
+ * This is the four-arity specialization of {@link Function}.
  *
  * <p>This is a <a href="package-summary.html">functional interface</a>
  * whose functional method is {@link #apply(Object, Object)}.
@@ -38,7 +34,7 @@ package fr.java.lang;
  * @since 1.8
  */
 @FunctionalInterface
-public interface QuadFunction<T, U, V, R> {
+public interface QuadFunction<T, U, V, W, R> {
 
     /**
      * Applies this function to the given arguments.
@@ -48,6 +44,6 @@ public interface QuadFunction<T, U, V, R> {
      * @param u the third function argument
      * @return the function result
      */
-    R apply(T t, U u, V v);
+    R apply(T t, U u, V v, W w);
 
 }
