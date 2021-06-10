@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 import fr.java.beans.reflect.utils.Primitives;
 import fr.java.lang.enums.Primitive;
-import fr.java.sdk.math.Numbers;
+import fr.java.maths.Numbers;
 import fr.javafx.scene.control.editor.skin.NumberEditorSliderSkin;
 import fr.javafx.scene.control.editor.skin.NumberEditorSpinnerSkin;
 import fr.javafx.scene.control.editor.skin.NumberEditorTextualSkin;

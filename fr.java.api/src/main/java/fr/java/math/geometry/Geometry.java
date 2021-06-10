@@ -20,5 +20,4 @@ public interface Geometry {
 		return Math.sqrt( (_b.getX() - _a.getX()) * (_b.getX() - _a.getX()) + (_b.getY() - _a.getY()) * (_b.getY() - _a.getY()));
 	}
 
-	
 }

@@ -1,15 +1,20 @@
 package fr.java.rasters.tensors;
 
 import java.text.NumberFormat;
+import java.util.function.Function;
 
 import fr.java.lang.exceptions.NotYetImplementedException;
 import fr.java.math.algebra.NumberTensor;
 import fr.java.math.geometry.BoundingBox;
 import fr.java.math.topology.Coordinate;
-import fr.java.rasters.XRaster;
+import fr.java.raster.XRaster;
 
 public class XRasterTensor implements XRaster {
 	private static final long serialVersionUID = 1L;
+
+	static {
+		XRaster.Collection.registerNewSupplier(NumberTensor.class, (Function<NumberTensor, XRaster>) XRasterTensor::new);
+	}
 
 	public static class SubCoordinate {
 		int[] coords;

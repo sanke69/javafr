@@ -2,6 +2,8 @@ package fr.java.utils;
 
 import static fr.java.utils.Strings.lenientFormat;
 
+import fr.java.utils.Strings;
+
 /**
  * Static convenience methods that help a method or constructor check whether it
  * was invoked correctly (that is, whether its <i>preconditions</i> were met).

@@ -1,7 +1,7 @@
 package fr.javafx.utils;
 
-import fr.java.sdk.math.Function1D;
-import fr.java.sdk.math.Function2D;
+import fr.java.maths.Function1D;
+import fr.java.maths.Function2D;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;

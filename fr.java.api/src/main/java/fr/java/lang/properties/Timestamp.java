@@ -24,8 +24,7 @@
 package fr.java.lang.properties;
 
 public interface Timestamp  {
-	public enum FORMAT { RtMaps, };
-
+	
 	public static final long S_IN_MS = 1000;
 	public static final long M_IN_MS = 60 * S_IN_MS;
 	public static final long H_IN_MS = 60 * M_IN_MS;

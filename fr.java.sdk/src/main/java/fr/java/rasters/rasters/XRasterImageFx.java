@@ -1,18 +1,26 @@
 package fr.java.rasters.rasters;
 
+import java.nio.IntBuffer;
+import java.text.NumberFormat;
+import java.util.function.Function;
+
+import fr.java.lang.exceptions.NotYetImplementedException;
+import fr.java.math.geometry.BoundingBox;
+import fr.java.math.topology.Coordinate;
+import fr.java.raster.XRaster;
 import javafx.scene.image.Image;
 import javafx.scene.image.PixelFormat;
 import javafx.scene.image.PixelReader;
 import javafx.scene.image.WritablePixelFormat;
 
-import java.text.NumberFormat;
-
-import fr.java.lang.exceptions.NotYetImplementedException;
-import fr.java.math.geometry.BoundingBox;
-import fr.java.math.topology.Coordinate;
-import fr.java.rasters.XRaster;
-
 public class XRasterImageFx implements XRaster {
+	private static final long serialVersionUID = 999L;
+
+	static {
+		XRaster.Collection.registerNewSupplier(javafx.scene.image.Image.class, 			(Function<javafx.scene.image.Image, XRaster>) 			XRasterImageFx::new);
+		XRaster.Collection.registerNewSupplier(javafx.scene.image.WritableImage.class, 	(Function<javafx.scene.image.WritableImage, XRaster>) 	XRasterImageFx::new);
+	}
+
 	Image image;
 	int[] buffer;
 
@@ -26,9 +34,7 @@ public class XRasterImageFx implements XRaster {
 	@Override 
 	public void refresh() {
 		PixelReader pr = image.getPixelReader();
-		PixelFormat pf = pr.getPixelFormat();
-
-		WritablePixelFormat wf = pf.getIntArgbInstance();
+		WritablePixelFormat<IntBuffer> wf = PixelFormat.getIntArgbInstance();
 
 		pr.getPixels(0, 0, (int) image.getWidth(), (int) image.getHeight(), wf, buffer, 0, (int) image.getWidth());
 	}

@@ -46,7 +46,6 @@ public interface NumberVector extends NumberTensor {
 		public void 				set(final NumberVector _vector);
 
 		public void 				setNumber(final Number _value, final int _i);
-		public Number 				getNumber(final int _i);
 
 		public NumberVector 		plusEquals(final Number _value);
 		public NumberVector 		plusEquals(final Number[] _values);
@@ -68,6 +67,8 @@ public interface NumberVector extends NumberTensor {
 
 	// VECTOR METHODS
 	public default int 				size() { return getCapacity(); }
+
+	public Number 					getNumber(final int _i);
 
 	public double 					norm(Norm _norm);
 	@Deprecated // See with norm
@@ -135,7 +136,7 @@ public interface NumberVector extends NumberTensor {
 
 	// JAVA METHODS
 	@Override
-	public NumberVector				clone() throws NotSupportedException;
+	public NumberVector				clone() throws NotSupportedException, CloneNotSupportedException;
 //	public NumberVector.Editable	cloneEditable() throws NotSupportedException;
 
 	public String 					toString(final NumberFormat _nf);
@@ -159,14 +160,5 @@ public interface NumberVector extends NumberTensor {
 		return sb.toString();
 	}
 */
-	
-/*
-Toute la journée, j'ai pensé que ton message pouvait avoir un sens, et j'ai attendu...
-Tu ne fais que confirmer qu'il n'avait de but que de te dédouaner
- 
- 
-*/
-	
-	
 	
 }

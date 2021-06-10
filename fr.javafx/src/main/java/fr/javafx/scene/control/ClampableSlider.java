@@ -2,7 +2,7 @@ package fr.javafx.scene.control;
 
 import java.util.function.Function;
 
-import fr.java.sdk.math.Numbers;
+import fr.java.maths.Numbers;
 import fr.javafx.behavior.AdvancedSkin;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;

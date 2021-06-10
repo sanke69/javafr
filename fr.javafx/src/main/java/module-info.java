@@ -8,6 +8,7 @@ module javafr.graphics {
 
 	requires transitive javafr;
 	requires transitive javafr.beans;
+	requires transitive javafr.maths;
 	requires transitive javafr.graphs;
 	requires transitive javafr.sdk;
 

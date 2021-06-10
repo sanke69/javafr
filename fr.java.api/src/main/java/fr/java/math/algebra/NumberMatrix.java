@@ -36,17 +36,17 @@ public interface NumberMatrix extends NumberTensor {
 		public void 			setMatrix(final int _i0, final int _i1, final int[] _columns, final NumberMatrix _X);
 		public void 			setMatrix(final int[] _rows, final int _j0, final int _j1, final NumberMatrix _X);
 
-		public NumberMatrix 			plusEquals(final Number  t);
-		public NumberMatrix 			plusEquals(final NumberMatrix B);
+		public NumberMatrix 	plusEquals(final Number  t);
+		public NumberMatrix 	plusEquals(final NumberMatrix B);
 
-		public NumberMatrix 			minusEquals(final Number  t);
-		public NumberMatrix 			minusEquals(final NumberMatrix B);
+		public NumberMatrix 	minusEquals(final Number  t);
+		public NumberMatrix 	minusEquals(final NumberMatrix B);
 
-		public NumberMatrix 			timesEquals(final Number s);
+		public NumberMatrix 	timesEquals(final Number s);
 
-		public NumberMatrix 			arrayTimesEquals(final NumberMatrix B);
-		public NumberMatrix 			arrayRightDivideEquals(final NumberMatrix B);
-		public NumberMatrix 			arrayLeftDivideEquals(final NumberMatrix B);
+		public NumberMatrix 	arrayTimesEquals(final NumberMatrix B);
+		public NumberMatrix 	arrayRightDivideEquals(final NumberMatrix B);
+		public NumberMatrix 	arrayLeftDivideEquals(final NumberMatrix B);
 	}
 
 	// TENSOR METHODS

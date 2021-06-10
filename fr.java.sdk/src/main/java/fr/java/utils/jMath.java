@@ -6,7 +6,7 @@ import java.util.List;
 
 import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.geometry.plane.Vector2D;
-import fr.java.sdk.math.Points;
+import fr.java.maths.Points;
 
 public class jMath {
 

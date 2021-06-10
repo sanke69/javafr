@@ -1,5 +1,8 @@
 package fr.javafx.stage;
 
+import fr.java.math.geometry.plane.Point2D;
+import fr.java.maths.geometry.plane.shapes.SimpleRectangle2D;
+import fr.javafx.lang.enums.StageAnchor;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.Scene;
@@ -9,10 +12,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import fr.java.math.geometry.plane.Point2D;
-import fr.java.sdk.math.geometry.plane.shapes.SimpleRectangle2D;
-
-import fr.javafx.lang.enums.StageAnchor;
 
 public class StageExt extends Stage {
 

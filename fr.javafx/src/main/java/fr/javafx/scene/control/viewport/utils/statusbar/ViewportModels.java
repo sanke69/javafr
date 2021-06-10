@@ -3,12 +3,11 @@ package fr.javafx.scene.control.viewport.utils.statusbar;
 import java.text.DecimalFormat;
 
 import fr.java.math.geometry.plane.Point2D;
+import fr.java.maths.Points;
 import fr.java.patterns.tileable.TileCoordinate;
 import fr.java.patterns.tileable.TileProvider;
 import fr.java.patterns.tileable.TileViewport;
-import fr.java.rasters.XRaster;
-import fr.java.sdk.math.Points;
-
+import fr.java.raster.XRaster;
 import fr.javafx.scene.control.raster.RasterViewportControl;
 import fr.javafx.scene.control.viewport.ViewportControl;
 import fr.javafx.scene.control.viewport.planar.implementations.tiles.TileViewportControl;

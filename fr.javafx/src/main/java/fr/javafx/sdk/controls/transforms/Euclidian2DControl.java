@@ -1,5 +1,8 @@
 package fr.javafx.sdk.controls.transforms;
 
+import fr.java.maths.geometry.plane.transformations.special.Euclidian2D;
+import fr.javafx.scene.control.actionner.FxDPad;
+import fr.javafx.scene.control.indicator.FxPotentiometer;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.ObjectProperty;
@@ -10,10 +13,6 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.control.Control;
 import javafx.scene.control.Skin;
-import fr.java.sdk.math.geometry.plane.transformations.special.Euclidian2D;
-
-import fr.javafx.scene.control.actionner.FxDPad;
-import fr.javafx.scene.control.indicator.FxPotentiometer;
 
 public class Euclidian2DControl extends Control {
 	private Euclidian2DControlBehavior behavior;

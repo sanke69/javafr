@@ -9,11 +9,11 @@ import fr.java.math.algebra.NumberTensor;
 import fr.java.math.algebra.tensor.ByteTensor;
 import fr.java.math.algebra.tensor.DoubleTensor;
 import fr.java.math.algebra.tensor.IntTensor;
+import fr.java.maths.algebra.tensors.ByteArrayTensor;
+import fr.java.maths.algebra.tensors.DoubleArrayTensor;
+import fr.java.maths.algebra.tensors.IntArrayTensor;
 import fr.java.media.image.Image;
 import fr.java.media.image.ImageFormat;
-import fr.java.sdk.math.algebra.tensors.ByteArrayTensor;
-import fr.java.sdk.math.algebra.tensors.DoubleArrayTensor;
-import fr.java.sdk.math.algebra.tensors.IntArrayTensor;
 import fr.java.utils.primitives.Arrays;
 
 public interface Awt2Tensor {

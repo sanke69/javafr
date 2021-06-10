@@ -23,17 +23,18 @@
 **/
 package fr.java.math.algebra;
 
+import fr.java.lang.exceptions.NotSupportedException;
 import fr.java.tensor.Tensor;
 
 public interface NumberTensor extends Tensor {
 
 	// DATA Access
-	public Number     			getNumber(final long _index);
+	public Number     			getNumber(final int _index);
 	public Number     			getNumber(final int... _coords);
 
 	public NumberTensor     	getSliceView(final int... _slice);
 	public NumberTensor     	getSliceCopy(final int... _slice);
 
-	public NumberTensor			clone();
+	public NumberTensor			clone() throws NotSupportedException, CloneNotSupportedException;
 
 }

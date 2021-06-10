@@ -7,8 +7,8 @@ import fr.java.draw.tools.Colors;
 import fr.java.math.Interval;
 import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.topology.Coordinate;
-import fr.java.sdk.math.BoundingBoxes;
-import fr.java.sdk.math.Points;
+import fr.java.maths.BoundingBoxes;
+import fr.java.maths.Points;
 
 public class RadarDesignAdapter extends GraphDesignAdapter {
 

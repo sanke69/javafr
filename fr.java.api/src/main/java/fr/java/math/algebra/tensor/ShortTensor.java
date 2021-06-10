@@ -40,7 +40,7 @@ public interface ShortTensor extends NumberTensor {
 	@Override
 	public ShortBuffer			getBuffer();
 
-	public short				getValue(final long _index);
+	public short				getValue(final int _index);
 	public short				getValue(final int... _coords);
 
 	@Override
@@ -48,7 +48,7 @@ public interface ShortTensor extends NumberTensor {
 	@Override
 	public ShortTensor  		getSliceCopy(final int... _slice);
 
-	public void     			setValue(final short _value, final long _index);
+	public void     			setValue(final short _value, final int _index);
 	public void					setValue(final short _value, final int... _coords);
 
 	public void					setSlice(final ShortTensor _tensor, final int... _slice);

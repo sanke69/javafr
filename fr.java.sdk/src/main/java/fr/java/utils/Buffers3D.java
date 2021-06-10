@@ -15,11 +15,12 @@ import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.geometry.plane.Vector2D;
 import fr.java.math.geometry.space.Point3D;
 import fr.java.math.geometry.space.Vector3D;
-import fr.java.sdk.math.algebra.vectors.DoubleVector2D;
-import fr.java.sdk.math.algebra.vectors.DoubleVector3D;
-import fr.java.sdk.math.algebra.vectors.DoubleVector4D;
+import fr.java.maths.algebra.vectors.DoubleVector2D;
+import fr.java.maths.algebra.vectors.DoubleVector3D;
+import fr.java.maths.algebra.vectors.DoubleVector4D;
 import fr.java.utils.primitives.Buffers;
 
+// TODO:: Mainly used by ThreeDjinns, move it! 
 public class Buffers3D extends Buffers {
 
 	public static DoubleBuffer getDoubleBuffer(Point2D... _pts) {

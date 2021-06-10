@@ -33,7 +33,7 @@ public interface BitTensor extends NumberTensor {
 
 	public interface Editable extends BitTensor {
 
-		public void     			setValue(final boolean _value, final long _index);
+		public void     			setValue(final boolean _value, final int _index);
 		public void     			setValue(final boolean _value, final int... _coords);
 
 		public void					setSlice(final BitTensor _tensor, final int... _slice);
@@ -50,13 +50,13 @@ public interface BitTensor extends NumberTensor {
 	@Override
 	public ByteBuffer			getBuffer()		throws NotSupportedException;;
 
-	public boolean     			isTrue(final long _index);
+	public boolean     			isTrue(final int _index);
 	public boolean     			isTrue(final int... _coords);
 
-	public boolean     			isFalse(final long _index);
+	public boolean     			isFalse(final int _index);
 	public boolean     			isFalse(final int... _coords);
 
-	public boolean     			getValue(final long _index);
+	public boolean     			getValue(final int _index);
 	public boolean     			getValue(final int... _coords);
 
 	@Override

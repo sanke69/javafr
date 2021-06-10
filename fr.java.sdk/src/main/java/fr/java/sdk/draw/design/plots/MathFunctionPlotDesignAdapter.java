@@ -10,8 +10,8 @@ import fr.java.draw.tools.Brush;
 import fr.java.draw.tools.Colors;
 import fr.java.math.Interval;
 import fr.java.math.functions.MathFunction;
+import fr.java.maths.BoundingBoxes;
 import fr.java.sdk.draw.design.GraphDesignAdapter;
-import fr.java.sdk.math.BoundingBoxes;
 
 public class MathFunctionPlotDesignAdapter extends GraphDesignAdapter {
 

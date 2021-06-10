@@ -7,6 +7,8 @@ import java.awt.image.DataBufferInt;
 import fr.java.rasters.rasters.XRasterBufferedImage;
 
 public class XRasterBufferedImageIntRGB extends XRasterBufferedImage {
+	private static final long serialVersionUID = 12347L;
+
 	int[] buffer;
 
 	public XRasterBufferedImageIntRGB(BufferedImage _bi) {

@@ -7,6 +7,8 @@ import java.awt.image.DataBufferByte;
 import fr.java.rasters.rasters.XRasterBufferedImage;
 
 public class XRasterBufferedImageByteIndexed extends XRasterBufferedImage {
+	private static final long serialVersionUID = 12345L;
+
 	private final byte[] buffer;
 
 	public XRasterBufferedImageByteIndexed(BufferedImage _bi) {

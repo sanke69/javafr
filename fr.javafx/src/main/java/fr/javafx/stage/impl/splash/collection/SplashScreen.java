@@ -1,8 +1,5 @@
 package fr.javafx.stage.impl.splash.collection;
 
-import java.net.URL;
-
-import fr.java.utils.LocalFiles;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;

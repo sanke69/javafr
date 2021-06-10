@@ -8,7 +8,6 @@ import java.util.Arrays;
 
 import fr.drawer.awt.Drawer4Awt;
 import fr.java.draw.Drawer;
-import fr.java.draw.Drawer.ArcMode;
 import fr.java.draw.styles.LineStyle;
 import fr.java.draw.styles.PointSkin;
 import fr.java.draw.tools.Color;
@@ -17,8 +16,7 @@ import fr.java.draw.tools.Font;
 import fr.java.math.geometry.BoundingBox;
 import fr.java.math.geometry.Dimension.TwoDims;
 import fr.java.math.geometry.plane.Point2D;
-import fr.java.sdk.math.Points;
-import javafx.scene.image.Image;
+import fr.java.maths.Points;
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.ArcTo;
 import javafx.scene.shape.Circle;

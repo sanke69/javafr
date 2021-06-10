@@ -70,6 +70,6 @@ public interface Tensor extends Comparable<Object>, Serializable {
 	public BaseStream<?,?> 		getStream()		throws NotSupportedException;
 
 	// JAVA METHODS
-	public Tensor				clone();
+	public Tensor				clone() throws NotSupportedException, CloneNotSupportedException;
 
 }

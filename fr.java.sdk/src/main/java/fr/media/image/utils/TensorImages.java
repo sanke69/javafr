@@ -24,10 +24,10 @@ import fr.java.math.algebra.tensor.FloatTensor;
 import fr.java.math.algebra.tensor.IntTensor;
 import fr.java.math.algebra.tensor.LongTensor;
 import fr.java.math.algebra.tensor.ShortTensor;
+import fr.java.maths.algebra.Tensors;
+import fr.java.maths.algebra.tensors.ByteArrayTensor;
 import fr.java.media.image.Image;
 import fr.java.media.image.ImageFormat;
-import fr.java.sdk.math.algebra.Tensors;
-import fr.java.sdk.math.algebra.tensors.ByteArrayTensor;
 import fr.java.utils.primitives.Arrays;
 
 public class TensorImages {

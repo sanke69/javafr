@@ -10,11 +10,11 @@ import fr.java.draw.tools.Fonts;
 import fr.java.math.geometry.BoundingBox;
 import fr.java.math.geometry.Dimension;
 import fr.java.math.geometry.plane.Point2D;
+import fr.java.maths.BoundingBoxes;
+import fr.java.maths.Numbers;
+import fr.java.maths.Points;
 import fr.java.sdk.draw.tools.DrawUtils;
 import fr.java.sdk.lang.Asserts;
-import fr.java.sdk.math.BoundingBoxes;
-import fr.java.sdk.math.Numbers;
-import fr.java.sdk.math.Points;
 import fr.java.utils.Strings;
 
 public class GraphDesignAdapter extends BoxDesignAdapter {

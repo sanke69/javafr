@@ -11,9 +11,10 @@ import fr.java.lang.exceptions.NotYetImplementedException;
 import fr.java.math.geometry.BoundingBox;
 import fr.java.math.topology.Coordinate;
 import fr.java.media.image.Image;
-import fr.java.rasters.XRaster;
+import fr.java.raster.XRaster;
 
 public class XRasterImageT implements XRaster {
+	private static final long serialVersionUID = 1L;
 
 	Image<BufferedImage> 	image;
 	PixelBuffer  			buffer;

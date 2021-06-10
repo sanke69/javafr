@@ -5,10 +5,10 @@ import java.text.NumberFormat;
 
 import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.topology.Coordinate;
+import fr.java.maths.Points;
 import fr.java.patterns.tileable.TileCoordinate;
 import fr.java.patterns.tileable.TileProvider;
 import fr.java.patterns.tileable.TileViewport;
-import fr.java.sdk.math.Points;
 import fr.javafx.scene.control.viewport.planar.utils.info.PlaneViewportInfoVisual;
 import javafx.application.Platform;
 import javafx.scene.control.Label;

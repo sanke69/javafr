@@ -40,7 +40,7 @@ public interface FloatTensor extends NumberTensor {
 	@Override
 	public FloatBuffer			getBuffer();
 
-	public float     			getValue(final long _index);
+	public float     			getValue(final int _index);
 	public float     			getValue(final int... _coords);
 
 	@Override
@@ -48,7 +48,7 @@ public interface FloatTensor extends NumberTensor {
 	@Override
 	public FloatTensor  		getSliceCopy(final int... _slice);
 
-	public void     			setValue(final float _value, final long _index);
+	public void     			setValue(final float _value, final int _index);
 	public void     			setValue(final float _value, final int... _coords);
 
 	public void					setSlice(final FloatTensor _tensor, final int... _slice);

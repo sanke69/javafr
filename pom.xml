@@ -11,13 +11,13 @@
 	<modules>
 		<module>fr.java.api</module>
 		<module>fr.java.beans</module>
+		<module>fr.java.maths</module>
 		<module>fr.java.graphs</module>
 
 		<module>fr.java.sdk</module>
 
 		<module>fr.java.plugins</module>
 		<module>fr.java.session</module>
-		<module>fr.java.spell</module>
 
 		<module>fr.javafx</module>
 	</modules>

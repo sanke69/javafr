@@ -13,6 +13,7 @@ module javafr {
 	exports fr.java.lang.properties;
 	exports fr.java.lang.tuples;
 
+	exports fr.java.raster;
 	exports fr.java.draw;
 	exports fr.java.draw.tools;
 
@@ -67,6 +68,7 @@ module javafr {
 	exports fr.java.math.algebra.matrix.specials;
 
 	exports fr.java.math.geometry;
+	exports fr.java.math.geometry.linear;
 	exports fr.java.math.geometry.plane;
 	exports fr.java.math.geometry.space;
 	exports fr.java.math.geometry.space.shapes;

@@ -7,7 +7,7 @@ import java.io.IOException;
 import fr.java.jvm.properties.id.IDs;
 import fr.java.lang.functionals.Constructor;
 import fr.java.lang.properties.ID;
-import fr.java.sdk.math.stats.randoms.MT19937;
+import fr.java.maths.stats.randoms.MT19937;
 
 public class GenUUID implements Constructor.NoArg<ID> {
 	private final int     size  = 32;				// bytes, min=4

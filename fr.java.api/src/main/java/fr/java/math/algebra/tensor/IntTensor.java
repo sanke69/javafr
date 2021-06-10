@@ -43,7 +43,7 @@ public interface IntTensor extends NumberTensor {
 	@Override
 	public IntStream 			getStream();
 
-	public int     				getValue(final long _index);
+	public int     				getValue(final int _index);
 	public int     				getValue(final int... _coords);
 
 	@Override
@@ -51,7 +51,7 @@ public interface IntTensor extends NumberTensor {
 	@Override
 	public IntTensor  			getSliceCopy(final int... _slice);
 
-	public void     			setValue(final int _value, final long _index);
+	public void     			setValue(final int _value, final int _index);
 	public void     			setValue(final int _value, final int... _coords);
 
 	public void					setSlice(final IntTensor _tensor, final int... _slice);

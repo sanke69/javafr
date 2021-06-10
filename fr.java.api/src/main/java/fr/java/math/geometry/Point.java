@@ -28,9 +28,10 @@ import java.text.NumberFormat;
 
 import fr.java.math.topology.Coordinate;
 
-public interface Point extends Coordinate, Cloneable, Comparable<Object>, Serializable {
+public interface Point extends Coordinate, Comparable<Object>, Serializable/*, Cloneable */{
+	public static final double EPSILON = 1e-6;
 
-	public Point clone();
+//	public Point clone();
 
 	public String toString(NumberFormat _nf);
 //	public String toString(DecimalFormat _df);

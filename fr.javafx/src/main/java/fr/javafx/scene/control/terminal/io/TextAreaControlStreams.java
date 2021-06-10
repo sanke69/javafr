@@ -18,11 +18,12 @@ import fr.java.nio.stream.OutputStreamX;
 import fr.java.nio.stream.StreamX;
 import fr.java.nio.stream.std.UserStdStreamX;
 import fr.java.nio.stream.utils.PrintStreamX;
-import fr.java.utils.strings.StringBuffers;
 import javafx.application.Platform;
 import javafx.scene.control.TextInputControl;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+
+import fr.java.utils.strings.StringBuffers;
 
 public class TextAreaControlStreams implements UserStdStreamX {
 	private static final String returnCarrier = "\n";

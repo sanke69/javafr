@@ -24,8 +24,8 @@ import fr.java.lang.exceptions.NotYetImplementedException;
 import fr.java.lang.properties.ID;
 import fr.java.lang.tuples.Pair;
 import fr.java.patterns.valueable.ValueObject;
-import fr.java.utils.graphs.IDs;
-import fr.java.utils.graphs.Tuples;
+import fr.utils.graphs.IDs;
+import fr.utils.graphs.Tuples;
 
 public class GTGraphDirectedC implements GTGraph.Directed {
 	final ID									id;

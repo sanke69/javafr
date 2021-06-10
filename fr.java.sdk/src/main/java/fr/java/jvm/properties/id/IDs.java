@@ -29,7 +29,7 @@ import java.util.Collection;
 import java.util.Random;
 
 import fr.java.lang.properties.ID;
-import fr.java.sdk.math.stats.randoms.MT19937;
+import fr.java.maths.stats.randoms.MT19937;
 import fr.java.utils.Bytes;
 import fr.java.utils.strings.RandomString;
 

@@ -15,6 +15,12 @@ import static javafx.scene.input.KeyCode.UP;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.java.maths.Numbers;
+import fr.javafx.behavior.Visual;
+import fr.javafx.behavior.extended.BehaviorBase;
+import fr.javafx.behavior.extended.bindings.KeyBinding;
+import fr.javafx.behavior.extended.bindings.impl.OrientedKeyBinding;
+import fr.javafx.behavior.extended.bindings.impl.SimpleKeyBinding;
 import javafx.event.EventType;
 import javafx.geometry.NodeOrientation;
 import javafx.geometry.Orientation;
@@ -25,14 +31,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Region;
-
-import fr.java.sdk.math.Numbers;
-
-import fr.javafx.behavior.Visual;
-import fr.javafx.behavior.extended.BehaviorBase;
-import fr.javafx.behavior.extended.bindings.KeyBinding;
-import fr.javafx.behavior.extended.bindings.impl.OrientedKeyBinding;
-import fr.javafx.behavior.extended.bindings.impl.SimpleKeyBinding;
 
 public class ClampableSliderBehavior extends BehaviorBase<ClampableSlider, ClampableSliderVisual, ClampableSliderBehavior> {
 	

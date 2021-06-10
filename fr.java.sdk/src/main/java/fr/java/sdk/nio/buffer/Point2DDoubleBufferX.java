@@ -5,8 +5,8 @@ import java.nio.DoubleBuffer;
 import java.nio.ReadOnlyBufferException;
 
 import fr.java.math.geometry.plane.Point2D;
+import fr.java.maths.Points;
 import fr.java.nio.buffer.Point2DBufferX;
-import fr.java.sdk.math.Points;
 
 public class Point2DDoubleBufferX implements Point2DBufferX {
 	DoubleBuffer buffer;

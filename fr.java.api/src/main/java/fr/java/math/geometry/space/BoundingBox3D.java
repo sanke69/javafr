@@ -28,7 +28,6 @@ import java.util.Set;
 import fr.java.lang.exceptions.NotYetImplementedException;
 import fr.java.math.geometry.BoundingBox;
 
-@Deprecated
 public interface BoundingBox3D extends BoundingBox.ThreeDims {
 
 	public static interface Editable extends BoundingBox3D, BoundingBox.ThreeDims.Editable {

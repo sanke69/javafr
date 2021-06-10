@@ -36,8 +36,8 @@ import fr.java.lang.properties.ID;
 import fr.java.lang.tuples.Pair;
 import fr.java.patterns.valueable.ValueObject;
 import fr.java.patterns.valueable.ValueType;
-import fr.java.utils.graphs.Tuples;
-import fr.java.utils.graphs.IDs;
+import fr.utils.graphs.IDs;
+import fr.utils.graphs.Tuples;
 
 public class GTGraphGatedC implements GTGraph.Gated {
 

@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import fr.java.utils.strings.Ansi;
+
 public final class Ansi {
 	public static final String	SANE				= "\u001B[0m";
 

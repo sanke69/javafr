@@ -245,7 +245,7 @@ public class BinaryVector implements NumberVector.Editable {
 	}
 
 	@Override
-	public Number getNumber(long _index) {
+	public Number getNumber(int _index) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -314,12 +314,6 @@ public class BinaryVector implements NumberVector.Editable {
 	public void set(NumberVector _vector) {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public Number getNumber(int _i) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override

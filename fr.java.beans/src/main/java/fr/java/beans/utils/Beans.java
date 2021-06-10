@@ -56,7 +56,7 @@ import fr.java.beans.reflect.utils.Fields;
 import fr.java.beans.reflect.utils.Methods;
 import fr.java.beans.reflect.utils.Types;
 import fr.java.lang.exceptions.MalformedBeanException;
-import fr.java.utils.beans.Strings;
+import fr.utils.beans.Strings;
 
 public class Beans {
 	// Setter

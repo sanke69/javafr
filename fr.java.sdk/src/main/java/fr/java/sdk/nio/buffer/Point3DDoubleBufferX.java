@@ -7,8 +7,8 @@ import java.nio.ReadOnlyBufferException;
 
 import fr.java.lang.exceptions.NotYetImplementedException;
 import fr.java.math.geometry.space.Point3D;
+import fr.java.maths.Points;
 import fr.java.nio.buffer.Point3DBufferX;
-import fr.java.sdk.math.Points;
 
 public class Point3DDoubleBufferX implements Point3DBufferX {
 	DoubleBuffer buffer;

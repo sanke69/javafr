@@ -2,7 +2,7 @@ package fr.javafx.scene.control.viewport.plugins;
 
 import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.topology.Coordinate;
-import fr.java.sdk.math.Points;
+import fr.java.maths.Points;
 import fr.javafx.scene.control.viewport.planar.PlaneViewportControl;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;

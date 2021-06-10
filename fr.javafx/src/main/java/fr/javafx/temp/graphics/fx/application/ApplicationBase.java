@@ -20,9 +20,9 @@ import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Region;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.scene.layout.Region;
 
 public class ApplicationBase extends Application implements ApplicationInterface {
 	static String windowTitle      = "SP-Web Heavy Client \u03B1";

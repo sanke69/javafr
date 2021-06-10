@@ -1,6 +1,6 @@
 package fr.javafx.graph.behaviors;
 
-import fr.java.sdk.math.Numbers;
+import fr.java.maths.Numbers;
 import fr.javafx.io.mouse.DragContext;
 import fr.javafx.scene.layout.ScalablePane;
 import javafx.beans.property.DoubleProperty;

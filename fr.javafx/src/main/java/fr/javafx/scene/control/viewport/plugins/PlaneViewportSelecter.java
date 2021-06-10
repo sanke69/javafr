@@ -1,14 +1,12 @@
 package fr.javafx.scene.control.viewport.plugins;
 
-import fr.java.math.geometry.Viewport.TwoDims.Editable;
 import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.topology.Coordinate;
-import fr.java.sdk.math.Points;
+import fr.java.maths.Points;
 import fr.javafx.scene.control.viewport.planar.PlaneViewportControl;
 import javafx.beans.binding.ObjectBinding;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -132,7 +130,7 @@ public class PlaneViewportSelecter<MODEL, COORD extends Coordinate.TwoDims> impl
 				Point2D pt      = Points.of(e.getX(), e.getY());
 				Point2D inModel = getInModel(e);
 
-				if(inModel == Point2D.NaN)
+				if(inModel == Points.NaN2)
 					return ;
 
 				if(initialized.get() && finalized.get()) {
@@ -210,7 +208,7 @@ public class PlaneViewportSelecter<MODEL, COORD extends Coordinate.TwoDims> impl
 	}
 	protected Point2D getInModel(double _x, double _y) {
 		if(_x == Double.NaN || _y == Double.NaN)
-			return Point2D.NaN;
+			return Points.NaN2;
 
 		Coordinate.TwoDims cInWindow  = Points.of(_x, _y);
 		Coordinate.TwoDims cInModel   = control.getViewport().windowInModel(cInWindow);
@@ -220,7 +218,7 @@ public class PlaneViewportSelecter<MODEL, COORD extends Coordinate.TwoDims> impl
 				   && cInModel.getSecond() > control.getViewport().getModelBounds().getMinY()
 				   && cInModel.getSecond() < control.getViewport().getModelBounds().getMaxY();
 
-		return OK ? Points.of(cInModel) : Point2D.NaN;
+		return OK ? Points.of(cInModel) : Points.NaN2;
 	}
 
 	protected Point2D getInWindow(Coordinate.TwoDims _pt) {
@@ -231,7 +229,7 @@ public class PlaneViewportSelecter<MODEL, COORD extends Coordinate.TwoDims> impl
 	}
 	protected Point2D getInWindow(double _x, double _y) {
 		if(_x == Double.NaN || _y == Double.NaN)
-			return Point2D.NaN;
+			return Points.NaN2;
 
 		Coordinate.TwoDims cInModel   = Points.of(_x, _y);
 		Coordinate.TwoDims cInWindow  = control.getViewport().modelInWindow((COORD) cInModel);

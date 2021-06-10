@@ -17,7 +17,7 @@ import fr.java.beans.properties.BeanProperty;
 import fr.java.beans.properties.ReadOnlyBeanProperty;
 import fr.java.beans.properties.listeners.BeanPropertyChangeListener;
 import fr.java.lang.tuples.Pair;
-import fr.java.utils.beans.Tuples;
+import fr.utils.beans.Tuples;
 
 public class BeanProperties {
 

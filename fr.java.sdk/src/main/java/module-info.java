@@ -5,10 +5,11 @@ module javafr.sdk {
 
 	requires transitive javafr;
 	requires transitive javafr.beans;
+	requires transitive javafr.maths;
 
-	requires javafx.graphics;
-	requires javafx.controls;
-	requires java.desktop;
+	requires transitive javafx.graphics;
+	requires transitive javafx.controls;
+	requires transitive java.desktop;
 
 	exports fr.drawer.awt;
 
@@ -39,44 +40,6 @@ module javafr.sdk {
 	exports fr.java.sdk.lang.tuples;
 
 	exports fr.java.sdk.log;
-
-	exports fr.java.sdk.math;
-	exports fr.java.sdk.math.numbers.complex;
-	exports fr.java.sdk.math.numbers.ranged;
-	exports fr.java.sdk.math.algebra;
-	exports fr.java.sdk.math.algebra.tensors;
-	exports fr.java.sdk.math.algebra.vectors;
-	exports fr.java.sdk.math.algebra.matrices;
-	exports fr.java.sdk.math.algebra.matrices.doubles;
-	exports fr.java.sdk.math.algebra.matrices.doubles.decompositions;
-	exports fr.java.sdk.math.geometry;
-	exports fr.java.sdk.math.geometry.line;
-	exports fr.java.sdk.math.geometry.plane;
-	exports fr.java.sdk.math.geometry.plane.projectors;
-	exports fr.java.sdk.math.geometry.plane.types;
-	exports fr.java.sdk.math.geometry.plane.shapes;
-	exports fr.java.sdk.math.geometry.plane.transformations;
-	exports fr.java.sdk.math.geometry.plane.transformations.special;
-	exports fr.java.sdk.math.geometry.space.types;
-	exports fr.java.sdk.math.geometry.space.shapes;
-	exports fr.java.sdk.math.geometry.space.shapes.quadrics;
-	exports fr.java.sdk.math.geometry.space.shapes.quadrics.surfaces;
-	exports fr.java.sdk.math.geometry.space.shapes.quadrics.shapes;
-	exports fr.java.sdk.math.geometry.space.transformations;
-	exports fr.java.sdk.math.geometry.space.transformations.specials;
-	exports fr.java.sdk.math.geometry.space.camera;
-	exports fr.java.sdk.math.geometry.space.camera.models;
-	exports fr.java.sdk.math.geometry.space.camera.projections;
-	exports fr.java.sdk.math.geometry.space.camera.behaviors;
-	exports fr.java.sdk.math.geometry.space.utils;
-	exports fr.java.sdk.math.geometry.utils;
-	exports fr.java.sdk.math.topology;
-	exports fr.java.sdk.math.stats;
-	exports fr.java.sdk.math.stats.randoms;
-	exports fr.java.sdk.math.stats.laws.continuous;
-	exports fr.java.sdk.math.stats.laws.discrete;
-	exports fr.java.sdk.math.utils.graph;
-	exports fr.java.sdk.math.window;
 
 	exports fr.java.sdk.nio;
 	exports fr.java.sdk.nio.buffer;
@@ -116,8 +79,9 @@ module javafr.sdk {
 
 	exports fr.java.sdk.network.protocol.rtcp;
 	exports fr.java.sdk.network.sockets;
-	
+
 	exports fr.java.sdk.security;
+	exports fr.java.sdk.security.encryption;
 	exports fr.java.sdk.security.files;
 	exports fr.java.sdk.security.files.pem;
 	exports fr.java.sdk.security.rsa;
@@ -131,23 +95,12 @@ module javafr.sdk {
 	exports fr.java.hosts;
 	exports fr.java.jvm;
 
-	exports fr.java.utils;
-	exports fr.java.utils.primitives;
-	exports fr.java.utils.collection;
-	exports fr.java.utils.strings;
-
 	exports fr.java.sdk.file.archive.multi.tar;
 
 //	exports fr.java.ui.layouts.cells;
 
-	exports fr.java.sdk.math.interpolation;
-	exports fr.java.sdk.math.interpolation.functions;
-	exports fr.java.sdk.math.interpolation.functions.splines.cubic;
-	exports fr.java.sdk.math.interpolation.coordinates;
 	exports fr.java.sdk.draw.design;
 	exports fr.java.sdk.draw.design.plots;
-
-	exports fr.java.sdk.math.series;
 
 	exports fr.java.sdk.file.text.xml;
 
@@ -155,7 +108,6 @@ module javafr.sdk {
 	exports fr.java.sdk.data.async.caches;
 	exports fr.java.sdk.data.async.caches.cleaners;
 
-	exports fr.java.rasters;
 	exports fr.java.rasters.rasters;
 	exports fr.java.rasters.tensors;
 
@@ -164,7 +116,9 @@ module javafr.sdk {
 
 	exports fr.java.util.collections;
 
-	exports fr.java.sdk.security.encryption;
+	exports fr.java.utils;
+	exports fr.java.utils.strings;
+	exports fr.java.utils.primitives;
 
 	exports fr.media.image;
 	exports fr.media.image.utils;
@@ -173,5 +127,5 @@ module javafr.sdk {
 	exports fr.media.sound.utils;
 
 	exports fr.media.video;
-
+	
 }

@@ -127,7 +127,7 @@ public class BinaryMatrix implements NumberMatrix.Editable {
 	}
 
 	@Override
-	public Number getNumber(long _index) {
+	public Number getNumber(int _index) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -8,7 +8,7 @@ import fr.java.graph.impl.layouts.base.GTEdgeLayoutBase;
 import fr.java.graph.layouts.GTEdgeLayout2D;
 import fr.java.graph.layouts.GTNodeLayout2D;
 import fr.java.math.geometry.plane.Point2D;
-import fr.java.utils.graphs.Points;
+import fr.utils.graphs.Points;
 
 public class GTEdgeLayout2DAdapter extends GTEdgeLayoutBase implements GTEdgeLayout2D {
 

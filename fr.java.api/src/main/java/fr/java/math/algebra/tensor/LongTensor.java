@@ -43,7 +43,7 @@ public interface LongTensor extends NumberTensor {
 	@Override
 	public LongStream 			getStream();
 
-	public long     			getValue(final long _index);
+	public long     			getValue(final int _index);
 	public long     			getValue(final int... _coords);
 
 	@Override
@@ -51,7 +51,7 @@ public interface LongTensor extends NumberTensor {
 	@Override
 	public LongTensor  			getSliceCopy(final int... _slice);
 
-	public void     			setValue(final long _value, final long _index);
+	public void     			setValue(final long _value, final int _index);
 	public void     			setValue(final long _value, final int... _coords);
 
 	public void					setSlice(final LongTensor _tensor, final int... _slice);

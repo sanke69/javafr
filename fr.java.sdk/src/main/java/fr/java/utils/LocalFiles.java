@@ -77,6 +77,8 @@ import fr.java.sdk.nio.file.DirectoryObject;
 import fr.java.sdk.nio.file.filters.samples.DirectoryFileFilter;
 import fr.java.sdk.nio.file.filters.samples.ops.AndFileFilter;
 import fr.java.sdk.nio.file.filters.samples.ops.NotFileFilter;
+import fr.java.utils.Preconditions;
+import fr.java.utils.Streams;
 
 public class LocalFiles {
 

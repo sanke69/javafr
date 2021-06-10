@@ -2,7 +2,7 @@ package fr.javafx.scene.control.viewport.plugins;
 
 import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.topology.Coordinate;
-import fr.java.sdk.math.Points;
+import fr.java.maths.Points;
 import fr.javafx.scene.control.viewport.planar.PlaneViewportControl;
 import javafx.beans.binding.ObjectBinding;
 import javafx.beans.property.DoubleProperty;
@@ -36,7 +36,7 @@ public class PlaneViewportCrossHair<MODEL, COORD extends Coordinate.TwoDims> imp
 			@Override
 			protected Point2D computeValue() {
 				if(x.get() == Double.NaN || y.get() == Double.NaN)
-					return Point2D.NaN;
+					return Points.NaN2;
 
 				Coordinate.TwoDims cInWindow  = Points.of(x.get(), y.get());
 				Coordinate.TwoDims cInModel   = control.getViewport().windowInModel(cInWindow);
@@ -46,7 +46,7 @@ public class PlaneViewportCrossHair<MODEL, COORD extends Coordinate.TwoDims> imp
 						   && cInModel.getSecond() > control.getViewport().getModelBounds().getMinY()
 						   && cInModel.getSecond() < control.getViewport().getModelBounds().getMaxY();
 
-				return OK ? Points.of(cInModel) : Point2D.NaN;
+				return OK ? Points.of(cInModel) : Points.NaN2;
 			}
 		};
 

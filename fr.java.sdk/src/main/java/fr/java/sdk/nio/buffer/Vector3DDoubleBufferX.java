@@ -7,8 +7,8 @@ import java.nio.ReadOnlyBufferException;
 
 import fr.java.lang.exceptions.NotYetImplementedException;
 import fr.java.math.geometry.space.Vector3D;
+import fr.java.maths.algebra.Vectors;
 import fr.java.nio.buffer.Vector3DBufferX;
-import fr.java.sdk.math.algebra.Vectors;
 
 public class Vector3DDoubleBufferX implements Vector3DBufferX {
 	DoubleBuffer buffer;

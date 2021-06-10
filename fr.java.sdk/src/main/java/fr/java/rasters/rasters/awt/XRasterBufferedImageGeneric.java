@@ -4,15 +4,13 @@ import java.awt.image.BufferedImage;
 import java.awt.image.DataBuffer;
 import java.awt.image.DataBufferByte;
 import java.awt.image.DataBufferInt;
-import java.text.NumberFormat;
 import java.util.function.BiFunction;
 
 import fr.java.lang.exceptions.NotYetImplementedException;
-import fr.java.math.geometry.BoundingBox;
-import fr.java.math.topology.Coordinate;
 import fr.java.rasters.rasters.XRasterBufferedImage;
 
 public class XRasterBufferedImageGeneric extends XRasterBufferedImage {
+	private static final long serialVersionUID = 12345L;
 
 	PixelBuffer   buffer;
 

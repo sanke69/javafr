@@ -40,7 +40,7 @@ public interface ByteTensor extends NumberTensor {
 	@Override
 	public ByteBuffer			getBuffer();
 
-	public byte     			getValue(final long _index);
+	public byte     			getValue(final int _index);
 	public byte     			getValue(final int... _coords);
 
 	@Override
@@ -48,7 +48,7 @@ public interface ByteTensor extends NumberTensor {
 	@Override
 	public ByteTensor  			getSliceCopy(final int... _slice);
 
-	public void     			setValue(final byte _value, final long _index);
+	public void     			setValue(final byte _value, final int _index);
 	public void     			setValue(final byte _value, final int... _coords);
 
 	public void					setSlice(final ByteTensor _tensor, final int... _slice);

@@ -1,11 +1,12 @@
 package fr.java.rasters.rasters;
 
 import java.awt.image.BufferedImage;
+import java.util.function.Function;
 
 import fr.java.lang.exceptions.NotYetImplementedException;
 import fr.java.math.geometry.BoundingBox;
 import fr.java.math.topology.Coordinate;
-import fr.java.rasters.XRaster;
+import fr.java.raster.XRaster;
 import fr.java.rasters.rasters.awt.XRasterBufferedImageGeneric;
 import fr.java.rasters.rasters.awt.bytes.XRasterBufferedImageByteABGR;
 import fr.java.rasters.rasters.awt.bytes.XRasterBufferedImageByteABGRPreCalc;
@@ -20,6 +21,10 @@ import fr.java.rasters.rasters.awt.ints.XRasterBufferedImageIntRGB;
 
 public abstract class XRasterBufferedImage implements XRaster {
 	private static final long serialVersionUID = 1L;
+
+	static {
+		XRaster.Collection.registerNewSupplier(BufferedImage.class, (Function<BufferedImage, XRaster>) XRasterBufferedImage.Factory::of);
+	}
 
 	public static final class Factory {
 	

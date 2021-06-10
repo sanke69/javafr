@@ -33,7 +33,7 @@ public interface DoubleTensor extends NumberTensor {
 
 	public interface Editable extends DoubleTensor {
 
-		public void     		setValue(final double _value, final long _index);
+		public void     		setValue(final double _value, final int _index);
 		public void     		setValue(final double _value, final int... _coords);
 
 		public void				setSlice(final DoubleTensor _tensor, final int... _slice);
@@ -52,7 +52,7 @@ public interface DoubleTensor extends NumberTensor {
 	@Override
 	public DoubleStream 		getStream();
 
-	public double     			getValue(final long _index);
+	public double     			getValue(final int _index);
 	public double     			getValue(final int... _coords);
 
 	@Override

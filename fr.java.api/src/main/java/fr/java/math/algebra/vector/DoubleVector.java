@@ -24,6 +24,7 @@
 package fr.java.math.algebra.vector;
 
 import fr.java.lang.enums.Primitive;
+import fr.java.lang.exceptions.NotSupportedException;
 import fr.java.math.algebra.NumberVector;
 import fr.java.math.algebra.tensor.DoubleTensor;
 
@@ -52,6 +53,8 @@ public interface DoubleVector extends NumberVector, DoubleTensor {
 		public DoubleVector 	dividesEquals(final double _value);
 		public DoubleVector 	dividesEquals(final double[] _values);
 		public DoubleVector 	dividesEquals(final DoubleVector _vector);
+
+		public DoubleVector.Editable 	clone() throws NotSupportedException, CloneNotSupportedException;
 
 	}
 	
@@ -91,6 +94,7 @@ public interface DoubleVector extends NumberVector, DoubleTensor {
 	public boolean 				isOrthogonal(final DoubleVector _vector);
 
 	@Override
-	public DoubleVector.Editable clone();
+	public DoubleVector 			clone() throws NotSupportedException, CloneNotSupportedException;
+	public DoubleVector.Editable 	cloneEditable() throws NotSupportedException, CloneNotSupportedException;
 
 }

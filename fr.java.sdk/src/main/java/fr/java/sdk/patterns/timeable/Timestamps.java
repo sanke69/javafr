@@ -8,7 +8,6 @@ import java.time.format.DateTimeFormatter;
 
 import fr.java.lang.exceptions.NotYetImplementedException;
 import fr.java.lang.properties.Timestamp;
-import fr.java.lang.properties.Timestamp.FORMAT;
 
 public final class Timestamps {
 
@@ -17,9 +16,6 @@ public final class Timestamps {
 	}
 	public static final Timestamp of(long _epoch_ms) {
 		return new TimestampImpl(_epoch_ms);
-	}
-	public static final Timestamp of(String _timestamp, FORMAT _fmt) {
-		return new TimestampImpl(_timestamp, _fmt);
 	}
 	public static final Timestamp of(Instant _instant) {
 		return new TimestampImpl(_instant.toEpochMilli());
@@ -63,25 +59,6 @@ public final class Timestamps {
 		}
 		public TimestampImpl(double _t_s) {
 			epoch_ms = (long) (_t_s * S_IN_MS);
-		}
-		public TimestampImpl(double _t, FORMAT _f) {
-			epoch_ms = (long) (_t * S_IN_MS);
-		}
-		public TimestampImpl(String _s, FORMAT _f) {
-	    	String[] timetokens = _s.split(":");
-	    	if(timetokens.length == 2) {
-	    		double m_in_ms = Long.valueOf(timetokens[0])   * M_IN_MS;
-	    		double s_in_ms = Double.valueOf(timetokens[1]) * S_IN_MS;
-	
-	    		epoch_ms = (long) (m_in_ms + s_in_ms);
-	    	}
-	    	if(timetokens.length == 3) {
-	    		double h_in_ms = Long.valueOf(timetokens[0])   * H_IN_MS;
-	    		double m_in_ms = Long.valueOf(timetokens[1])   * M_IN_MS;
-	    		double s_in_ms = Double.valueOf(timetokens[2]) * S_IN_MS;
-	
-	    		epoch_ms = (long) (h_in_ms + m_in_ms + s_in_ms);
-	    	}
 		}
 	
 		public Long delta(Timestamp _timestamp) {

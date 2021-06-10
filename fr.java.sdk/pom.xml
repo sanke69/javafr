@@ -37,6 +37,12 @@
 		    <version>${javafr.api.version}</version>
 		    <type>jar</type>
 		</dependency>
+		<dependency>
+		    <groupId>com.pechberti.steve</groupId>
+		    <artifactId>fr.java.maths</artifactId>
+		    <version>${javafr.api.version}</version>
+		    <type>jar</type>
+		</dependency>
 	</dependencies>
 
 </project>

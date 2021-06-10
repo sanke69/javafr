@@ -1,12 +1,12 @@
 package fr.javafx.temp.windows.skins;
 
+import fr.java.maths.geometry.plane.shapes.SimpleRectangle2D;
+import fr.javafx.temp.windows.MutableWindow;
+import fr.javafx.temp.windows.MutableWindowSkin;
 import javafx.geometry.Bounds;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
-import fr.java.sdk.math.geometry.plane.shapes.SimpleRectangle2D;
-import fr.javafx.temp.windows.MutableWindow;
-import fr.javafx.temp.windows.MutableWindowSkin;
 
 public class FloatingWindowSkin extends Region implements MutableWindowSkin.Floating {
 //	private static final int borderMagnet = 5;
