@@ -6,7 +6,7 @@ import java.util.List;
 import fr.drawer.fx.DrawableAreaFx;
 import fr.drawer.fx.Drawer4Fx;
 import fr.drawer.fx.DrawerFx;
-import fr.java.patterns.drawable.Drawable;
+import fr.java.draw.Drawable;
 import fr.javafx.lang.FxRefreshable;
 import fr.javafx.lang.FxRefresher;
 import javafx.beans.InvalidationListener;

@@ -4,11 +4,11 @@ import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.StringJoiner;
 
+import fr.java.math.interpolation.CoordinateInterpolator;
+import fr.java.math.interpolation.FunctionInterpolator;
 import fr.java.math.polynoms.Polynom;
 import fr.java.math.topology.Coordinate;
 import fr.java.math.topology.CoordinateSystem;
-import fr.java.maths.interpolation.CoordinateInterpolator;
-import fr.java.maths.interpolation.FunctionInterpolator;
 
 public class PolynomialInterpolatorND implements CoordinateInterpolator.MultiDims {
 

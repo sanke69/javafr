@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import fr.java.draw.Drawer;
-import fr.java.draw.ViewportDrawer;
+import fr.java.draw.special.ViewportDrawer;
 import fr.java.draw.styles.LineStyle;
 import fr.java.draw.styles.PointSkin;
 import fr.java.draw.tools.Color;
@@ -21,14 +21,8 @@ import fr.java.math.geometry.plane.Rectangle2D;
 import fr.java.math.geometry.plane.Segment2D;
 import fr.java.math.geometry.plane.Triangle2D;
 import fr.java.math.topology.Coordinate;
-import fr.java.maths.Ellipses;
-import fr.java.maths.Lines;
-import fr.java.maths.Points;
-import fr.java.maths.Polygons;
-import fr.java.maths.Polylines;
-import fr.java.maths.Rectangles;
-import fr.java.maths.Segments;
-import fr.java.maths.Triangles;
+import fr.java.maths.geometry.Plane;
+import fr.java.maths.geometry.types.Points;
 import fr.java.utils.primitives.Arrays;
 import fr.javafx.scene.canvas.ResizableCanvas;
 import javafx.scene.canvas.Canvas;
@@ -102,35 +96,35 @@ public class ViewportDrawerFx extends DrawerFx implements ViewportDrawer {
 	public Segment2D 			mod2win(Segment2D _seg) {
 		Coordinate.TwoDims beg = viewport().boundsInWindow(_seg.getBegin());
 		Coordinate.TwoDims end = viewport().boundsInWindow(_seg.getEnd());
-		return Segments.of(beg, end);
+		return Plane.newSegment(beg, end);
 	}
 	public Triangle2D 			mod2win(Triangle2D _tri) {
 		Coordinate.TwoDims A = viewport().boundsInWindow(_tri.getA());
 		Coordinate.TwoDims B = viewport().boundsInWindow(_tri.getB());
 		Coordinate.TwoDims C = viewport().boundsInWindow(_tri.getC());
-		return Triangles.of(A, B, C);
+		return Plane.newTriangle(A, B, C);
 	}
 	public Rectangle2D 			mod2win(Rectangle2D _rec) {
 		Set<Coordinate.TwoDims> tops = _rec.getTops().stream().map(viewport()::boundsInWindow).collect(Collectors.toSet());
-		return Rectangles.of(tops);
+		return Plane.newRectangle(tops);
 	}
 	public Ellipse2D 			mod2win(Ellipse2D _ell) {
 		Coordinate.TwoDims A = viewport().boundsInWindow(Points.of(_ell.getX(), _ell.getY()));
 		Coordinate.TwoDims B = viewport().boundsInWindow(Points.of(_ell.getX() + _ell.getWidth(), _ell.getY() + _ell.getHeight()));
 
-		return Ellipses.of(A.getFirst(), A.getSecond(), B.getFirst() - A.getFirst(), B.getSecond() - A.getSecond());
+		return Plane.newEllipse(A.getFirst(), A.getSecond(), B.getFirst() - A.getFirst(), B.getSecond() - A.getSecond());
 	}
 	public Polygon2D 			mod2win(Polygon2D _poly) {
 		Set<Coordinate.TwoDims> tops = _poly.getTops().stream().map(viewport()::boundsInWindow).collect(Collectors.toSet());
-		return Polygons.of(tops);
+		return Plane.newPolygon(tops);
 	}
 	public Line2D 				mod2win(Line2D _l) {
-		Point2D beg = Points.of( viewport().boundsInWindow(_l.getPoint()) );
-		return Lines.of(beg, _l.getDirection());
+		Point2D beg = Points.of( viewport().boundsInWindow(_l.getPoint(0)) );
+		return Plane.newLine(beg, _l.getDirection());
 	}
 	public Polyline2D 			mod2win(Polyline2D _pl) {
 		Set<Coordinate.TwoDims> tops = _pl.getPoints().stream().map(viewport()::boundsInWindow).collect(Collectors.toSet());
-		return Polylines.of(tops);
+		return Plane.newPolyline(tops);
 	}
 
 	@Override

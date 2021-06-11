@@ -4,7 +4,7 @@ import fr.java.math.geometry.BoundingBox;
 import fr.java.math.geometry.Dimension;
 import fr.java.math.geometry.Viewport;
 import fr.java.math.topology.Coordinate;
-import fr.java.math.window.Edges2D;
+import fr.java.ui.Edges2D;
 import fr.javafx.behavior.Visual;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;

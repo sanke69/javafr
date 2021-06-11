@@ -23,8 +23,8 @@
 **/
 package fr.java.maths.interpolation.functions.splines.cubic;
 
+import fr.java.math.interpolation.FunctionInterpolator;
 import fr.java.maths.Numbers;
-import fr.java.maths.interpolation.FunctionInterpolator;
 
 public abstract class BiCubicSpline implements FunctionInterpolator.TwoVars {
 

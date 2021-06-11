@@ -21,20 +21,16 @@ package fr.java.math.geometry.linear;
 
 import java.io.Serializable;
 
+import fr.java.math.algebra.vector.generic.Vector1D;
 import fr.java.math.geometry.Dimension;
 
 public interface Dimension1D extends Dimension.OneDim, Serializable {
 
-	public static interface Editable extends Dimension1D, Dimension.TwoDims.Editable {
-
-	    public void 	set(double _w, double _h);
-
-	    public void 	setWidth(double _w);
-	    public void 	setHeight(double _h);
+	public static interface Editable extends Dimension1D, Dimension.OneDim.Editable {
 
 	}
 
-	public double 		getWidth();
-	public double 		getHeight();
+    public double[] asArray();
+    public Vector1D asVector();
 
 }

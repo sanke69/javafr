@@ -22,9 +22,9 @@ package fr.java.patterns.service;
 import javax.naming.OperationNotSupportedException;
 
 import fr.java.lang.enums.state.ServiceState;
-import fr.java.patterns.identifiable.Identifiable;
-import fr.java.patterns.identifiable.Nameable;
-import fr.java.patterns.stateable.Stateable;
+import fr.java.patterns.capabilities.Identifiable;
+import fr.java.patterns.capabilities.Nameable;
+import fr.java.patterns.capabilities.Stateable;
 
 public interface Service extends Identifiable, Nameable, Stateable {
 

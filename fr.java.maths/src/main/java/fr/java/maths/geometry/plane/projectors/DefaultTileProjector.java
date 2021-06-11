@@ -1,9 +1,9 @@
 package fr.java.maths.geometry.plane.projectors;
 
 import fr.java.math.topology.Coordinate;
-import fr.java.patterns.tileable.TileCoordinate;
-import fr.java.patterns.tileable.TileProjector;
-import fr.java.patterns.tileable.TileSystem;
+import fr.java.patterns.tiled.TileCoordinate;
+import fr.java.patterns.tiled.TileProjector;
+import fr.java.patterns.tiled.TileSystem;
 
 abstract class DefaultTileProjector<COORD extends Coordinate.TwoDims, T_COORD extends TileCoordinate> implements TileProjector<COORD, T_COORD> {
 	private final TileSystem tileSystem;

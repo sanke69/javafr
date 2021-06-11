@@ -4,8 +4,8 @@ import fr.drawer.fx.DrawerFx;
 import fr.java.math.geometry.Viewport;
 import fr.java.math.topology.Coordinate;
 import fr.java.maths.geometry.plane.PlaneViewportAdapter;
+import fr.java.maths.geometry.types.BoundingBoxes;
 import fr.java.maths.window.SimpleEdges2D;
-import fr.java.sdk.patterns.geometry.Boundables;
 import fr.javafx.scene.canvas.ResizableCanvas;
 import fr.javafx.scene.control.viewport.planar.PlaneViewportControl;
 import javafx.scene.canvas.Canvas;
@@ -39,7 +39,7 @@ public class CanvasControl<MODEL, COORD extends Coordinate.TwoDims> extends Plan
 		canvas . heightProperty() . bind(heightProperty());
 
 		getViewport().setEdges	(new SimpleEdges2D());
-		getViewport().setWindow	(Boundables.of(this));
+		getViewport().setWindow	(BoundingBoxes.of(this));
 	}
 
 	public Canvas 			canvas() {

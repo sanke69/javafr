@@ -22,13 +22,14 @@ package fr.java.math.geometry.plane;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
+import fr.java.math.algebra.vector.generic.Vector2D;
 import fr.java.math.geometry.Dimension;
 import fr.java.math.geometry.Point;
 import fr.java.math.geometry.linear.Point1D;
 import fr.java.math.topology.Coordinate;
 import fr.java.math.topology.CoordinateSystem;
 
-public interface Point2D extends Point, Coordinate.Cartesian2D {
+public interface Point2D extends Point, Coordinate.Cartesian2D, Shape2D {
 	public static interface Editable extends Point2D, Coordinate.Cartesian2D.Editable {
 
 		public void   				set(final double _t);

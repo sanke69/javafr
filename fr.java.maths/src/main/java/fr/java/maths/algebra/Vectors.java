@@ -6,14 +6,16 @@ import java.util.function.Supplier;
 
 import fr.java.math.algebra.NumberVector;
 import fr.java.math.algebra.vector.DoubleVector;
+import fr.java.math.algebra.vector.generic.Vector1D;
+import fr.java.math.algebra.vector.generic.Vector2D;
+import fr.java.math.algebra.vector.generic.Vector3D;
+import fr.java.math.algebra.vector.generic.Vector4D;
 import fr.java.math.geometry.plane.Point2D;
-import fr.java.math.geometry.plane.Vector2D;
 import fr.java.math.geometry.space.Point3D;
-import fr.java.math.geometry.space.Vector3D;
-import fr.java.math.geometry.space.Vector4D;
 import fr.java.math.topology.Coordinate;
 import fr.java.maths.Angles;
-import fr.java.maths.algebra.vectors.DoubleArrayVector;
+import fr.java.maths.algebra.vectors.DoubleVectorND;
+import fr.java.maths.algebra.vectors.DoubleVector1D;
 import fr.java.maths.algebra.vectors.DoubleVector2D;
 import fr.java.maths.algebra.vectors.DoubleVector3D;
 import fr.java.maths.algebra.vectors.DoubleVector4D;
@@ -27,6 +29,7 @@ public class Vectors {
 	public static Vector3D.Editable zero3() 										{ return new DoubleVector3D(); }
 	public static Vector4D.Editable zero4() 										{ return new DoubleVector4D(); }
 
+	public static Vector1D.Editable of(double _x) 									{ return new DoubleVector1D(_x); }
 	public static Vector2D.Editable of(double _x, double _y) 						{ return new DoubleVector2D(_x, _y); }
 	public static Vector3D.Editable of(double _x, double _y, double _z) 			{ return new DoubleVector3D(_x, _y, _z); }
 	public static Vector4D.Editable of(double _x, double _y, double _z, double _w) 	{ return new DoubleVector4D(_x, _y, _z, _w); }
@@ -140,7 +143,7 @@ public class Vectors {
 
 		return min;
 	}
-	public static double 		min(final DoubleArrayVector _v) {
+	public static double 		min(final DoubleVectorND _v) {
 		double min = _v.data[0];
 
 		for(int i = 1; i < _v.data.length; ++i)
@@ -168,7 +171,7 @@ public class Vectors {
 
 		return max;
 	}
-	public static double 		max(final DoubleArrayVector _v) {
+	public static double 		max(final DoubleVectorND _v) {
 		double max = _v.data[0];
 
 		for(int i = 1; i < _v.data.length; ++i)
@@ -194,7 +197,7 @@ public class Vectors {
 
 		return sum;
 	}
-	public static double 		sum(final DoubleArrayVector _v) {
+	public static double 		sum(final DoubleVectorND _v) {
 		double sum = 0;
 
 		for(int i = 0; i < _v.data.length; ++i)
@@ -209,7 +212,7 @@ public class Vectors {
 	public static double 		mean(final DoubleVector _v) {
 		return sum(_v) / _v.size();
 	}
-	public static double 		mean(final DoubleArrayVector _v) {
+	public static double 		mean(final DoubleVectorND _v) {
 		return sum(_v) / _v.size();
 	}
 
@@ -235,7 +238,7 @@ public class Vectors {
 
 		return var / (_v.size() - 1);
 	}
-	public static double 		var(final DoubleArrayVector _v) {
+	public static double 		var(final DoubleVectorND _v) {
         double mean = mean(_v);
 		double var  = 0;
 
@@ -253,13 +256,13 @@ public class Vectors {
 	public static double 		std(final DoubleVector _v) {
 		return Math.sqrt(var(_v));
 	}
-	public static double 		std(final DoubleArrayVector _v) {
+	public static double 		std(final DoubleVectorND _v) {
 		return Math.sqrt(var(_v));
 	}
 
 	// TRANSFORMATION
 	public static NumberVector 		sign(final NumberVector _v) {
-		DoubleArrayVector s = new DoubleArrayVector( _v.size() );
+		DoubleVectorND s = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			s.data[i] = _v.getNumber(i).doubleValue() > 0 ? 1 : _v.getNumber(i).doubleValue() < 0 ? -1 : 0;
@@ -267,15 +270,15 @@ public class Vectors {
 		return s;
 	}
 	public static DoubleVector 	sign(final DoubleVector _v) {
-		DoubleArrayVector s = new DoubleArrayVector( _v.size() );
+		DoubleVectorND s = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			s.data[i] = _v.get(i) > 0 ? 1 : _v.get(i) < 0 ? -1 : 0;
 
 		return s;
 	}
-	public static DoubleArrayVector 		sign(final DoubleArrayVector _v) {
-		DoubleArrayVector s = new DoubleArrayVector( _v.data.length );
+	public static DoubleVectorND 		sign(final DoubleVectorND _v) {
+		DoubleVectorND s = new DoubleVectorND( _v.data.length );
 
 		for(int i = 0; i < _v.data.length; ++i)
 			s.data[i] = _v.data[i] > 0 ? 1 : _v.data[i] < 0 ? -1 : 0;
@@ -289,11 +292,11 @@ public class Vectors {
 	public static DoubleVector 	derive(final DoubleVector _v) {
 		return derive(_v, 1.0);
 	}
-	public static DoubleArrayVector 		derive(final DoubleArrayVector _v) {
+	public static DoubleVectorND 		derive(final DoubleVectorND _v) {
 		return derive(_v, 1.0);
 	}
 	public static NumberVector 		derive(final NumberVector _v, final double _dt) {
-		DoubleArrayVector d = new DoubleArrayVector( _v.size() - 1 );
+		DoubleVectorND d = new DoubleVectorND( _v.size() - 1 );
 
 		for(int i = 0; i < _v.size(); ++i)
 			d.data[i] = (_v.getNumber(i + 1).doubleValue() - _v.getNumber(i).doubleValue()) / _dt;
@@ -301,15 +304,15 @@ public class Vectors {
 		return d;
 	}
 	public static DoubleVector 	derive(final DoubleVector _v, final double _dt) {
-		DoubleArrayVector d = new DoubleArrayVector( _v.size() - 1 );
+		DoubleVectorND d = new DoubleVectorND( _v.size() - 1 );
 
 		for(int i = 0; i < _v.size(); ++i)
 			d.data[i] = (_v.get(i + 1) - _v.get(i)) / _dt;
 
 		return d;
 	}
-	public static DoubleArrayVector 		derive(final DoubleArrayVector _v, final double _dt) {
-		DoubleArrayVector d = new DoubleArrayVector( _v.data.length - 1 );
+	public static DoubleVectorND 		derive(final DoubleVectorND _v, final double _dt) {
+		DoubleVectorND d = new DoubleVectorND( _v.data.length - 1 );
 
 		for(int i = 0; i < _v.data.length; ++i)
 			d.data[i] = (_v.data[i + 1] - _v.data[i]) / _dt;
@@ -318,7 +321,7 @@ public class Vectors {
 	}
 
 	public static DoubleVector	cos(final NumberVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.cos(_v.getNumber(i).doubleValue());
@@ -326,15 +329,15 @@ public class Vectors {
 		return tmp;
 	}
 	public static DoubleVector 	cos(final DoubleVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.cos(_v.get(i));
 
 		return tmp;
 	}
-	public static DoubleArrayVector 		cos(final DoubleArrayVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.data.length );
+	public static DoubleVectorND 		cos(final DoubleVectorND _v) {
+		DoubleVectorND tmp = new DoubleVectorND( _v.data.length );
 
 		for(int i = 0; i < _v.data.length; ++i)
 			tmp.data[i] = Math.cos(_v.data[i]);
@@ -343,7 +346,7 @@ public class Vectors {
 	}
 
 	public static DoubleVector 	sin(final NumberVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.sin(_v.getNumber(i).doubleValue());
@@ -351,15 +354,15 @@ public class Vectors {
 		return tmp;
 	}
 	public static DoubleVector 	sin(final DoubleVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.sin(_v.get(i));
 
 		return tmp;
 	}
-	public static DoubleArrayVector 		sin(final DoubleArrayVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.data.length );
+	public static DoubleVectorND 		sin(final DoubleVectorND _v) {
+		DoubleVectorND tmp = new DoubleVectorND( _v.data.length );
 
 		for(int i = 0; i < _v.data.length; ++i)
 			tmp.data[i] = Math.sin(_v.data[i]);
@@ -368,7 +371,7 @@ public class Vectors {
 	}
 
 	public static DoubleVector 	tan(final NumberVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.tan(_v.getNumber(i).doubleValue());
@@ -376,15 +379,15 @@ public class Vectors {
 		return tmp;
 	}
 	public static DoubleVector 	tan(final DoubleVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.tan(_v.get(i));
 
 		return tmp;
 	}
-	public static DoubleArrayVector 		tan(final DoubleArrayVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.data.length );
+	public static DoubleVectorND 		tan(final DoubleVectorND _v) {
+		DoubleVectorND tmp = new DoubleVectorND( _v.data.length );
 
 		for(int i = 0; i < _v.data.length; ++i)
 			tmp.data[i] = Math.tan(_v.data[i]);
@@ -393,7 +396,7 @@ public class Vectors {
 	}
 
 	public static DoubleVector	acos(final NumberVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.acos(_v.getNumber(i).doubleValue());
@@ -401,15 +404,15 @@ public class Vectors {
 		return tmp;
 	}
 	public static DoubleVector 	acos(final DoubleVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.acos(_v.get(i));
 
 		return tmp;
 	}
-	public static DoubleArrayVector 		acos(final DoubleArrayVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.data.length );
+	public static DoubleVectorND 		acos(final DoubleVectorND _v) {
+		DoubleVectorND tmp = new DoubleVectorND( _v.data.length );
 
 		for(int i = 0; i < _v.data.length; ++i)
 			tmp.data[i] = Math.acos(_v.data[i]);
@@ -418,7 +421,7 @@ public class Vectors {
 	}
 
 	public static DoubleVector	asin(final NumberVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.asin(_v.getNumber(i).doubleValue());
@@ -426,15 +429,15 @@ public class Vectors {
 		return tmp;
 	}
 	public static DoubleVector	asin(final DoubleVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.asin(_v.get(i));
 
 		return tmp;
 	}
-	public static DoubleArrayVector 		asin(final DoubleArrayVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.data.length );
+	public static DoubleVectorND 		asin(final DoubleVectorND _v) {
+		DoubleVectorND tmp = new DoubleVectorND( _v.data.length );
 
 		for(int i = 0; i < _v.data.length; ++i)
 			tmp.data[i] = Math.asin(_v.data[i]);
@@ -443,7 +446,7 @@ public class Vectors {
 	}
 
 	public static DoubleVector 	atan(final NumberVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.atan(_v.getNumber(i).doubleValue());
@@ -451,15 +454,15 @@ public class Vectors {
 		return tmp;
 	}
 	public static DoubleVector 	atan(final DoubleVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.atan(_v.get(i));
 
 		return tmp;
 	}
-	public static DoubleArrayVector 		atan(final DoubleArrayVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.data.length );
+	public static DoubleVectorND 		atan(final DoubleVectorND _v) {
+		DoubleVectorND tmp = new DoubleVectorND( _v.data.length );
 
 		for(int i = 0; i < _v.data.length; ++i)
 			tmp.data[i] = Math.atan(_v.data[i]);
@@ -468,7 +471,7 @@ public class Vectors {
 	}
 
 	public static DoubleVector 	exp(final NumberVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.exp(_v.getNumber(i).doubleValue());
@@ -476,15 +479,15 @@ public class Vectors {
 		return tmp;
 	}
 	public static DoubleVector 	exp(final DoubleVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.exp(_v.get(i));
 
 		return tmp;
 	}
-	public static DoubleArrayVector 		exp(final DoubleArrayVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.data.length );
+	public static DoubleVectorND 		exp(final DoubleVectorND _v) {
+		DoubleVectorND tmp = new DoubleVectorND( _v.data.length );
 
 		for(int i = 0; i < _v.data.length; ++i)
 			tmp.data[i] = Math.exp(_v.data[i]);
@@ -493,7 +496,7 @@ public class Vectors {
 	}
 
 	public static DoubleVector	log(final NumberVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.log(_v.getNumber(i).doubleValue());
@@ -501,15 +504,15 @@ public class Vectors {
 		return tmp;
 	}
 	public static DoubleVector	log(final DoubleVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.log(_v.get(i));
 
 		return tmp;
 	}
-	public static DoubleArrayVector 		log(final DoubleArrayVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.data.length );
+	public static DoubleVectorND 		log(final DoubleVectorND _v) {
+		DoubleVectorND tmp = new DoubleVectorND( _v.data.length );
 
 		for(int i = 0; i < _v.data.length; ++i)
 			tmp.data[i] = Math.log(_v.data[i]);
@@ -518,7 +521,7 @@ public class Vectors {
 	}
 
 	public static DoubleVector 	log10(final NumberVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.log10(_v.getNumber(i).doubleValue());
@@ -526,15 +529,15 @@ public class Vectors {
 		return tmp;
 	}
 	public static DoubleVector 	log10(final DoubleVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.log10(_v.get(i));
 
 		return tmp;
 	}
-	public static DoubleArrayVector 		log10(final DoubleArrayVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.data.length );
+	public static DoubleVectorND 		log10(final DoubleVectorND _v) {
+		DoubleVectorND tmp = new DoubleVectorND( _v.data.length );
 
 		for(int i = 0; i < _v.data.length; ++i)
 			tmp.data[i] = Math.log10(_v.data[i]);
@@ -543,7 +546,7 @@ public class Vectors {
 	}
 
 	public static DoubleVector 	sqrt(final NumberVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.sqrt(_v.getNumber(i).doubleValue());
@@ -551,15 +554,15 @@ public class Vectors {
 		return tmp;
 	}
 	public static DoubleVector 	sqrt(final DoubleVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.sqrt(_v.get(i));
 
 		return tmp;
 	}
-	public static DoubleArrayVector 		sqrt(final DoubleArrayVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.data.length );
+	public static DoubleVectorND 		sqrt(final DoubleVectorND _v) {
+		DoubleVectorND tmp = new DoubleVectorND( _v.data.length );
 
 		for(int i = 0; i < _v.data.length; ++i)
 			tmp.data[i] = Math.sqrt(_v.data[i]);
@@ -568,7 +571,7 @@ public class Vectors {
 	}
 
 	public static NumberVector		abs(final NumberVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.abs(_v.getNumber(i).doubleValue());
@@ -576,15 +579,15 @@ public class Vectors {
 		return tmp;
 	}
 	public static DoubleVector	abs(final DoubleVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.abs(_v.get(i));
 
 		return tmp;
 	}
-	public static DoubleArrayVector 		abs(final DoubleArrayVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.data.length );
+	public static DoubleVectorND 		abs(final DoubleVectorND _v) {
+		DoubleVectorND tmp = new DoubleVectorND( _v.data.length );
 
 		for(int i = 0; i < _v.data.length; ++i)
 			tmp.data[i] = Math.abs(_v.data[i]);
@@ -593,15 +596,15 @@ public class Vectors {
 	}
 
 	public static NumberVector		arg(final NumberVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = -1; // TODO:: Math.arg(_v.data[i]);
 
 		return tmp;
 	}
-	public static DoubleArrayVector 		arg(final DoubleArrayVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.data.length );
+	public static DoubleVectorND 		arg(final DoubleVectorND _v) {
+		DoubleVectorND tmp = new DoubleVectorND( _v.data.length );
 
 		for(int i = 0; i < _v.data.length; ++i)
 			tmp.data[i] = -1; // TODO:: Math.arg(_v.data[i]);
@@ -610,7 +613,7 @@ public class Vectors {
 	}
 
 	public static DoubleVector	pow(final NumberVector _v, final double _pow) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.pow(_v.getNumber(i).doubleValue(), _pow);
@@ -618,15 +621,15 @@ public class Vectors {
 		return tmp;
 	}
 	public static DoubleVector 	pow(final DoubleVector _v, final double _pow) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.pow(_v.get(i), _pow);
 
 		return tmp;
 	}
-	public static DoubleArrayVector 		pow(final DoubleArrayVector _v, final double _pow) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.data.length );
+	public static DoubleVectorND 		pow(final DoubleVectorND _v, final double _pow) {
+		DoubleVectorND tmp = new DoubleVectorND( _v.data.length );
 
 		for(int i = 0; i < _v.data.length; ++i)
 			tmp.data[i] = Math.pow(_v.data[i], _pow);
@@ -636,7 +639,7 @@ public class Vectors {
 
 	public static NumberVector 		pow(final NumberVector _v, final NumberVector _pow) {
 		assert(_v.size() == _pow.size());
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.pow(_v.getNumber(i).doubleValue(), _pow.getNumber(i).doubleValue());
@@ -645,16 +648,16 @@ public class Vectors {
 	}
 	public static DoubleVector 	pow(final DoubleVector _v, final DoubleVector _pow) {
 		assert(_v.size() == _pow.size());
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _v.size() );
 
 		for(int i = 0; i < _v.size(); ++i)
 			tmp.data[i] = Math.pow(_v.get(i), _pow.get(i));
 
 		return tmp;
 	}
-	public static DoubleArrayVector 		pow(final DoubleArrayVector _v, final DoubleArrayVector _pow) {
+	public static DoubleVectorND 		pow(final DoubleVectorND _v, final DoubleVectorND _pow) {
 		assert(_v.data.length == _pow.data.length);
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.data.length );
+		DoubleVectorND tmp = new DoubleVectorND( _v.data.length );
 
 		for(int i = 0; i < _v.data.length; ++i)
 			tmp.data[i] = Math.pow(_v.data[i], _pow.data[i]);
@@ -663,7 +666,7 @@ public class Vectors {
 	}
 
 	public static NumberVector 		pow(final double _v, final NumberVector _pow) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _pow.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _pow.size() );
 
 		for(int i = 0; i < _pow.size(); ++i)
 			tmp.data[i] = Math.pow(_v, _pow.getNumber(i).doubleValue());
@@ -671,15 +674,15 @@ public class Vectors {
 		return tmp;
 	}
 	public static DoubleVector 	pow(final double _v, final DoubleVector _pow) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _pow.size() );
+		DoubleVectorND tmp = new DoubleVectorND( _pow.size() );
 
 		for(int i = 0; i < _pow.size(); ++i)
 			tmp.data[i] = Math.pow(_v, _pow.get(i));
 
 		return tmp;
 	}
-	public static DoubleArrayVector 		pow(final double _v, final DoubleArrayVector _pow) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _pow.data.length );
+	public static DoubleVectorND 		pow(final double _v, final DoubleVectorND _pow) {
+		DoubleVectorND tmp = new DoubleVectorND( _pow.data.length );
 
 		for(int i = 0; i < _pow.data.length; ++i)
 			tmp.data[i] = Math.pow(_v, _pow.data[i]);
@@ -746,11 +749,11 @@ public class Vectors {
 	
 	
 	
-	public final static DoubleArrayVector clamp(final DoubleArrayVector a, final DoubleArrayVector low, final DoubleArrayVector high) {
+	public final static DoubleVectorND clamp(final DoubleVectorND a, final DoubleVectorND low, final DoubleVectorND high) {
 		assert(a.size() == low.size());
 		assert(a.size() == high.size());
 		
-		final DoubleArrayVector clamped = new DoubleArrayVector(a.size());
+		final DoubleVectorND clamped = new DoubleVectorND(a.size());
 		
 		for(int i = 0; i < a.size(); ++i)
 			clamped.set(a.get(i) > high.get(i) ? high.get(i) : a.get(i) < low.get(i) ? low.get(i) : a.get(i), i);
@@ -761,23 +764,23 @@ public class Vectors {
 	public static NumberVector gauss(final double _u, final double _r, final int _n) {
 		double two_r_r = - 2 *_r *_r,
 			   sq_2piR = Math.sqrt(2*Angles.pi) * _r;
-		DoubleArrayVector T    = new DoubleArrayVector( _n );
-		DoubleArrayVector TmU  = T.minusEquals(_u),
+		DoubleVectorND T    = new DoubleVectorND( _n );
+		DoubleVectorND TmU  = T.minusEquals(_u),
 				   tmp = TmU.timesEquals(TmU).dividesEquals(two_r_r),
 				   exp = exp(tmp).dividesEquals(sq_2piR);
 
 		return exp;
 	}
 
-	public static DoubleArrayVector linspace(double _a, double _b, int _size) {
+	public static DoubleVectorND linspace(double _a, double _b, int _size) {
 		if( _size < 1 )
-			return new DoubleArrayVector(0.0);
+			return new DoubleVectorND(0.0);
 		else if( _size == 1 )
-			return new DoubleArrayVector(1, _a);
+			return new DoubleVectorND(1, _a);
 		else {
 			double dx = (_b-_a) / (_size-1);
 
-			DoubleArrayVector tmp = new DoubleArrayVector(_size);
+			DoubleVectorND tmp = new DoubleVectorND(_size);
 			for(int i=0; i<_size; ++i)
 				tmp.data[i] = _a + i*dx;
 
@@ -785,36 +788,36 @@ public class Vectors {
 		}
 	}
 
-	public static DoubleArrayVector rand(int _size, Supplier<Double> _f) {
+	public static DoubleVectorND rand(int _size, Supplier<Double> _f) {
 		if( _size < 1 )
-			return new DoubleArrayVector(0.0);
+			return new DoubleVectorND(0.0);
 		else if( _size == 1 )
-			return new DoubleArrayVector(1, _f.get());
+			return new DoubleVectorND(1, _f.get());
 		else {
-			DoubleArrayVector tmp = new DoubleArrayVector(_size);
+			DoubleVectorND tmp = new DoubleVectorND(_size);
 			for(int i = 0; i < _size; ++i)
 				tmp.data[i] = _f.get();
 			return tmp;
 		}
 	}
-	public static DoubleArrayVector randUniform(int _size, double _a, double _b) {
+	public static DoubleVectorND randUniform(int _size, double _a, double _b) {
 		return rand(_size, () -> _a + (_b - _a) * Math.random());
 	}
 
-	public static DoubleArrayVector reverse(final DoubleArrayVector _v) {
-		DoubleArrayVector tmp = new DoubleArrayVector( _v.data.length );
+	public static DoubleVectorND reverse(final DoubleVectorND _v) {
+		DoubleVectorND tmp = new DoubleVectorND( _v.data.length );
 		
 		for(int i = 0; i < _v.data.length; ++i)
 			tmp.data[i] = _v.data[_v.data.length - 1 - i];
 
 		return tmp;
 	}
-	public static DoubleArrayVector flip(final DoubleArrayVector _v) {
+	public static DoubleVectorND flip(final DoubleVectorND _v) {
 		return reverse(_v);
 	}
 
-	public static DoubleArrayVector shift(final DoubleArrayVector _v, int _shiftSize) {
-		DoubleArrayVector tmp = new DoubleArrayVector(_v.data.length);
+	public static DoubleVectorND shift(final DoubleVectorND _v, int _shiftSize) {
+		DoubleVectorND tmp = new DoubleVectorND(_v.data.length);
 
 		if( _shiftSize >= 0 ) {
 			for(int i = 0; i < _v.data.length - _shiftSize; ++i)
@@ -826,8 +829,8 @@ public class Vectors {
 
 		return tmp;
 	}
-	public static DoubleArrayVector circShift(final DoubleArrayVector _v, int _shiftSize) {
-		DoubleArrayVector tmp = new DoubleArrayVector(_v.data.length);
+	public static DoubleVectorND circShift(final DoubleVectorND _v, int _shiftSize) {
+		DoubleVectorND tmp = new DoubleVectorND(_v.data.length);
 
 		if( _shiftSize >= 0 ) {
 			for(int i = 0; i < _v.data.length - _shiftSize; ++i)
@@ -843,7 +846,7 @@ public class Vectors {
 
 		return tmp;
 	}
-	public static DoubleArrayVector fftShift(final DoubleArrayVector _v) {
+	public static DoubleVectorND fftShift(final DoubleVectorND _v) {
 		int shiftsize = _v.data.length - _v.data.length/2 - 1;
 		return circShift( _v, shiftsize );
 	}
@@ -882,19 +885,19 @@ public class Vectors {
 		return ifft(Xk);
 	}
 */
-	public static DoubleArrayVector dyadUp(final DoubleArrayVector _v, final int evenodd) {
+	public static DoubleVectorND dyadUp(final DoubleVectorND _v, final int evenodd) {
 		int    length = _v.data.length;
-		DoubleArrayVector tmp;
+		DoubleVectorND tmp;
 
 		if(evenodd%2 == 0 ){
-			tmp = new DoubleArrayVector(2*length+1);
+			tmp = new DoubleVectorND(2*length+1);
 			for(int i = 0; i < length; ++i) {
 				tmp.data[2*i] = 0;
 				tmp.data[2*i+1] = _v.data[i];
 			}
 			tmp.data[2*length] = 0;
 		} else {
-			tmp = new DoubleArrayVector(2*length-1);
+			tmp = new DoubleVectorND(2*length-1);
 			for(int i = 0; i < length-1; ++i) {
 				tmp.data[2*i] = _v.data[i];
 				tmp.data[2*i+1] = 0;
@@ -905,16 +908,16 @@ public class Vectors {
 		return tmp;
 	}
 
-	public static DoubleArrayVector dyadDown(final DoubleArrayVector _v, final int _evenodd) {
+	public static DoubleVectorND dyadDown(final DoubleVectorND _v, final int _evenodd) {
 		int length = _v.data.length;
-		DoubleArrayVector tmp;
+		DoubleVectorND tmp;
 
 		if( _evenodd%2 == 0 ) {
-			tmp = new DoubleArrayVector( (length+1)/2 );
+			tmp = new DoubleVectorND( (length+1)/2 );
 			for(int i = 0; i < tmp.data.length; ++i)
 				tmp.data[i] = _v.data[2*i];
 		} else {
-			tmp = new DoubleArrayVector( length/2 );
+			tmp = new DoubleVectorND( length/2 );
 			for(int i = 0; i < tmp.data.length; ++i)
 				tmp.data[i] = _v.data[2*i+1];
 		}
@@ -922,8 +925,8 @@ public class Vectors {
 		return tmp;
 	}
 
-	public static DoubleArrayVector wkeep(final DoubleArrayVector _v, final int length, final int first) {
-		DoubleArrayVector tmp = new DoubleArrayVector(length);
+	public static DoubleVectorND wkeep(final DoubleVectorND _v, final int length, final int first) {
+		DoubleVectorND tmp = new DoubleVectorND(length);
 
 		if( ( 0 < length ) && ( length <= _v.data.length-first ) )
 		{
@@ -938,9 +941,9 @@ public class Vectors {
 		}
 	}
 
-	public static DoubleArrayVector wkeep(final DoubleArrayVector _v, final int _length, final LinearDirection _direction) {
+	public static DoubleVectorND wkeep(final DoubleVectorND _v, final int _length, final LinearDirection _direction) {
 		int lv = _v.data.length;
-		DoubleArrayVector tmp = new DoubleArrayVector(_length);
+		DoubleVectorND tmp = new DoubleVectorND(_length);
 
 		if( ( 0 <= _length ) && ( _length <= lv ) ) {
 			switch(_direction) {
@@ -963,13 +966,13 @@ public class Vectors {
 		}
 	}
 
-	public static DoubleArrayVector wextend(final DoubleArrayVector _v, final int _extLength, final LinearDirection _direction, final PaddingMode _mode) {
+	public static DoubleVectorND wextend(final DoubleVectorND _v, final int _extLength, final LinearDirection _direction, final PaddingMode _mode) {
 		if( _extLength >= 0 ) {
-			DoubleArrayVector tmp = null;
+			DoubleVectorND tmp = null;
 			int lv = _v.data.length;
 
 			switch(_direction) {
-			case RIGHT :	tmp = new DoubleArrayVector( lv + _extLength );
+			case RIGHT :	tmp = new DoubleVectorND( lv + _extLength );
 							for(int i = 0; i < lv; ++i)
 								tmp.data[i] = _v.data[i];
 
@@ -986,7 +989,7 @@ public class Vectors {
 							};
 							break ;
 
-			case LEFT :		tmp = new DoubleArrayVector( lv+_extLength );
+			case LEFT :		tmp = new DoubleVectorND( lv+_extLength );
 
 							switch(_mode) {
 							case SYM :	for(int i = 0; i < _extLength; ++i)
@@ -1004,7 +1007,7 @@ public class Vectors {
 								tmp.data[i + _extLength] = _v.data[i];
 							break ;
 
-			case BOTH :		tmp = new DoubleArrayVector( lv + 2 * _extLength );
+			case BOTH :		tmp = new DoubleVectorND( lv + 2 * _extLength );
 							for(int i = 0; i < lv; ++i)
 								tmp.data[i + _extLength] = _v.data[i];
 
@@ -1034,8 +1037,8 @@ public class Vectors {
 		}
 	}
 
-	public static DoubleArrayVector smooth(final DoubleArrayVector _v, final SmoothingMethod _method, final int _degree) {
-		DoubleArrayVector smoothed = new DoubleArrayVector( _v.data.length );
+	public static DoubleVectorND smooth(final DoubleVectorND _v, final SmoothingMethod _method, final int _degree) {
+		DoubleVectorND smoothed = new DoubleVectorND( _v.data.length );
 
 		// pour GAUSSIAN method
 		double G = 0.0, sumG = 0.0;
@@ -1138,10 +1141,10 @@ public class Vectors {
 	}
 */
 	
-	public static Set<Integer>	listExtrema(final DoubleArrayVector _v) {
+	public static Set<Integer>	listExtrema(final DoubleVectorND _v) {
 		Set<Integer> extrema = new HashSet<Integer>();
 
-		DoubleArrayVector s = sign(derive(_v, 1.0));
+		DoubleVectorND s = sign(derive(_v, 1.0));
 
 		for(int i = 1; i < s.data.length; ++i)
 			if( (s.data[i] - s.data[i - 1] == -2) /* ruptures franches */ ||  ( s.data[i - 1] > 0 && s.data[i] == 0 && _v.data[i + 1] <= _v.data[i] ) /* "plateau" */ ) {
@@ -1152,10 +1155,10 @@ public class Vectors {
 
 		return extrema;
 	}
-	public static Set<Integer>	listMaxima(final DoubleArrayVector _v) {
+	public static Set<Integer>	listMaxima(final DoubleVectorND _v) {
 		Set<Integer> maxima = new HashSet<Integer>();
 
-		DoubleArrayVector s = sign(derive(_v, 1.0));
+		DoubleVectorND s = sign(derive(_v, 1.0));
 
 		for(int i = 1; i < s.data.length - 1; ++i)
 			if( (s.data[i] - s.data[i - 1] == -2) /* ruptures franches */ ||  ( s.data[i - 1] > 0 && s.data[i] == 0 && _v.data[i + 1] <= _v.data[i] ) /* "plateau" */ )
@@ -1163,10 +1166,10 @@ public class Vectors {
 
 		return maxima;
 	}
-	public static Set<Integer>	listMinima(final DoubleArrayVector _v) {
+	public static Set<Integer>	listMinima(final DoubleVectorND _v) {
 		Set<Integer> minima = new HashSet<Integer>();
 
-		DoubleArrayVector s = sign(derive(_v, 1.0));
+		DoubleVectorND s = sign(derive(_v, 1.0));
 
 		for(int i = 1; i < s.data.length - 1; ++i)
 			if( (s.data[i] - s.data[i - 1] == 2) /* ruptures franches */ ||  ( s.data[i - 1] < 0 && s.data[i] == 0 && _v.data[i + 1] >= _v.data[i] ) /* "plateau" */ )
@@ -1175,12 +1178,12 @@ public class Vectors {
 		return minima;
 	}
 
-	public static int 			firstAbove(final DoubleArrayVector _v, final double _threshold, final int _offset) {
+	public static int 			firstAbove(final DoubleVectorND _v, final double _threshold, final int _offset) {
 		for(int i = _offset; i < _v.data.length - 1; ++i)
 			if(_v.data[i] >= _threshold) return i;
 		return -1;
 	}
-	public static int 			lastAbove(final DoubleArrayVector _v, final double _threshold, final int _offset) {
+	public static int 			lastAbove(final DoubleVectorND _v, final double _threshold, final int _offset) {
 		int offset = (_offset == -1) ? _v.data.length - 1 : _offset;
 
 		for(int i = offset; i > 0; --i)
@@ -1188,10 +1191,10 @@ public class Vectors {
 				return i;
 		return -1;
 	}
-	public static Set<Integer>	listMaximaAbove(final DoubleArrayVector _v, final double _threshold, final int _jump) {
+	public static Set<Integer>	listMaximaAbove(final DoubleVectorND _v, final double _threshold, final int _jump) {
 		Set<Integer> above = new HashSet<Integer>();
 
-		DoubleArrayVector s = sign(derive(_v, 1.0));
+		DoubleVectorND s = sign(derive(_v, 1.0));
 
 		for(int i = 1; i < s.data.length - 1; ++i)
 			if( ( ( s.data[i] - s.data[i - 1] == -2 ) /* ruptures franches */ ||  ( s.data[i - 1] > 0 && s.data[i] == 0 && _v.data[i + 1] <= _v.data[i] ) /* "plateau" */ )
@@ -1203,22 +1206,22 @@ public class Vectors {
 		return above;
 	}
 
-	public static int 			firstBelow(final DoubleArrayVector _v, final double _threshold, final int _offset) {
+	public static int 			firstBelow(final DoubleVectorND _v, final double _threshold, final int _offset) {
 		for(int i = _offset; i < _v.data.length - 1; ++i)
 			if(_v.data[i] <= _threshold) return i;
 		return -1;
 	}
-	public static int 			lastBelow(final DoubleArrayVector _v, final double _threshold, final int _offset) {
+	public static int 			lastBelow(final DoubleVectorND _v, final double _threshold, final int _offset) {
 		int offset = (_offset == -1) ? _v.data.length - 1 : _offset;
 
 		for(int i = offset; i > 0; --i)
 			if(_v.data[i] <= _threshold) return i;
 		return -1;
 	}
-	public static Set<Integer>	listMinimaBelow(final DoubleArrayVector _v, final double _threshold, final int _jump) {
+	public static Set<Integer>	listMinimaBelow(final DoubleVectorND _v, final double _threshold, final int _jump) {
 		Set<Integer> below = new HashSet<Integer>();
 
-		DoubleArrayVector s = sign(derive(_v, 1.0));
+		DoubleVectorND s = sign(derive(_v, 1.0));
 
 		for(int i = 1; i < s.data.length - 1; ++i)
 			if( (s.data[i] - s.data[i - 1] == 2) /* ruptures franches */ ||  ( s.data[i - 1] < 0 && s.data[i] == 0 && _v.data[i + 1] >= _v.data[i] ) /* "plateau" */

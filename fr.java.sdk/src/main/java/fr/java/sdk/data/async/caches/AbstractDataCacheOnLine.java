@@ -13,7 +13,7 @@ import fr.java.data.DataLoadException;
 import fr.java.data.DataNotFoundException;
 import fr.java.data.provider.caches.DataCacheOnLine;
 import fr.java.lang.enums.AccessMode;
-import fr.java.patterns.priority.Priority;
+import fr.java.lang.properties.Priority;
 
 public abstract class AbstractDataCacheOnLine<COORD, TYPE> extends AbstractDataCache<COORD, TYPE> implements DataCacheOnLine<COORD, TYPE> {
 	private static final String user_agent =

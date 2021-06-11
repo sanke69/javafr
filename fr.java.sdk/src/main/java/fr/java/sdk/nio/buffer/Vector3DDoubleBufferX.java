@@ -6,7 +6,7 @@ import java.nio.DoubleBuffer;
 import java.nio.ReadOnlyBufferException;
 
 import fr.java.lang.exceptions.NotYetImplementedException;
-import fr.java.math.geometry.space.Vector3D;
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.maths.algebra.Vectors;
 import fr.java.nio.buffer.Vector3DBufferX;
 

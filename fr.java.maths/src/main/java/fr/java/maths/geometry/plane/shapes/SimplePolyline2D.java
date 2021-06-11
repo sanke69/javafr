@@ -6,12 +6,12 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import fr.java.math.algebra.vector.generic.Vector2D;
 import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.geometry.plane.Polyline2D;
 import fr.java.math.geometry.plane.Segment2D;
-import fr.java.math.geometry.plane.Vector2D;
-import fr.java.maths.Segments;
 import fr.java.maths.algebra.Vectors;
+import fr.java.maths.geometry.Plane;
 
 public class SimplePolyline2D implements Polyline2D {
 	private static final long serialVersionUID = -8761855227580448615L;
@@ -52,12 +52,12 @@ public class SimplePolyline2D implements Polyline2D {
 
 	@Override
 	public Segment2D 		getSegment(int _index) {
-		return Segments.of(tops.get(_index), tops.get(_index+1));
+		return Plane.newSegment(tops.get(_index), tops.get(_index+1));
 	}
 
 	@Override
 	public Set<Segment2D> 	getSegments() {
-		return IntStream.range(0,  tops.size()-1).mapToObj(i -> Segments.of(tops.get(i), tops.get(i+1))).collect(Collectors.toSet());
+		return IntStream.range(0,  tops.size()-1).mapToObj(i -> Plane.newSegment(tops.get(i), tops.get(i+1))).collect(Collectors.toSet());
 	}
 
 	@Override

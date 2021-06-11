@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import fr.java.math.algebra.NumberMatrix;
-import fr.java.math.algebra.matrix.specials.Matrix33D;
-import fr.java.maths.algebra.matrices.Matrix33d;
+import fr.java.math.algebra.matrix.generic.Matrix33D;
+import fr.java.maths.algebra.matrices.DoubleMatrix33;
 
 public class Matrices {
 
@@ -157,13 +157,13 @@ public class Matrices {
 	}
 
 	public final static Matrix33D zero() {
-		return new Matrix33d(0,0,0,0,0,0,0,0,0);
+		return new DoubleMatrix33(0,0,0,0,0,0,0,0,0);
 	}
 	public final static Matrix33D identity() {
-		return new Matrix33d(1,0,0,0,1,0,0,0,1);
+		return new DoubleMatrix33(1,0,0,0,1,0,0,0,1);
 	}
 	public final static Matrix33D unitary() {
-		return new Matrix33d(1,1,1,1,1,1,1,1,1);
+		return new DoubleMatrix33(1,1,1,1,1,1,1,1,1);
 	}
 
 }

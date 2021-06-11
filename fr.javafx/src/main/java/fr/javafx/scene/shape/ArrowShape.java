@@ -6,9 +6,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Shape;
 import fr.drawer.fx.DrawerFx;
+import fr.java.draw.Drawable;
 import fr.java.draw.Drawer;
 import fr.java.math.geometry.plane.Point2D;
-import fr.java.patterns.drawable.Drawable;
 
 public class ArrowShape extends Shape implements Drawable {
 

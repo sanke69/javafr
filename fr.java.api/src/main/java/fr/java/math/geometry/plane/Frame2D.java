@@ -19,7 +19,8 @@
 **/
 package fr.java.math.geometry.plane;
 
-import fr.java.math.algebra.matrix.specials.Matrix44D;
+import fr.java.math.algebra.matrix.generic.Matrix44D;
+import fr.java.math.algebra.vector.generic.Vector2D;
 import fr.java.math.geometry.Frame;
 
 public interface Frame2D extends Frame<Point2D, Vector2D> {

@@ -4,7 +4,7 @@ import java.util.function.BiFunction;
 
 import fr.java.math.geometry.BoundingBox;
 import fr.java.math.topology.Coordinate;
-import fr.java.maths.Coordinates;
+import fr.java.maths.geometry.types.Coordinates;
 
 abstract class TranslatePlaneProjector<COORD extends Coordinate.TwoDims> extends AbstractPlaneProjector<COORD> {
 

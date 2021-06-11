@@ -1,6 +1,6 @@
 package fr.java.maths.interpolation.functions;
 
-import fr.java.maths.interpolation.FunctionInterpolator;
+import fr.java.math.interpolation.FunctionInterpolator;
 
 public class LagrangeInterpolator implements FunctionInterpolator.OneVar {
 	private double[] x, y;

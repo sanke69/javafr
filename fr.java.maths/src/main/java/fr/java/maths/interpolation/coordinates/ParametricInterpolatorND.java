@@ -5,10 +5,10 @@ import java.util.Arrays;
 import java.util.StringJoiner;
 import java.util.stream.IntStream;
 
+import fr.java.math.interpolation.CoordinateInterpolator;
+import fr.java.math.interpolation.FunctionInterpolator;
 import fr.java.math.topology.Coordinate;
 import fr.java.math.topology.CoordinateSystem;
-import fr.java.maths.interpolation.CoordinateInterpolator;
-import fr.java.maths.interpolation.FunctionInterpolator;
 import fr.java.maths.interpolation.functions.splines.cubic.CubicSpline;
 import fr.java.maths.interpolation.functions.splines.cubic.CubicSplineMonotone;
 import fr.java.maths.interpolation.functions.splines.cubic.CubicSplineWithWeight;

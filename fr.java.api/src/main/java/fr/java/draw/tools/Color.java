@@ -20,6 +20,7 @@
 package fr.java.draw.tools;
 
 public interface Color {
+
 	public static interface RGB extends Color {
 	    public double getRed();
 	    public double getGreen();
@@ -47,8 +48,8 @@ public interface Color {
 	    public Color 	opacity(double opacityFactor);
 	}
 
-	public RGB 		toRGB();
-	public HSB 		toHSB();
+	public RGB 				toRGB();
+	public HSB 				toHSB();
 	
     public default boolean 	isOpaque()   		{ return getOpacity() == 1d; }
 

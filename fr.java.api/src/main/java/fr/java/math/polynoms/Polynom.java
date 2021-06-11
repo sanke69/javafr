@@ -57,16 +57,16 @@ public interface Polynom {
 	
 		public fr.java.math.numbers.Complex 	evaluate(fr.java.math.numbers.Complex _x);
 
-		public Polynom.Complex 				plus(Polynom.Real b);
-		public Polynom.Complex 				plus(Polynom.Complex b);
+		public Polynom.Complex 					plus(Polynom.Real b);
+		public Polynom.Complex 					plus(Polynom.Complex b);
 //		public Polynomial.Complex 				plusEquals(Polynomial.Complex b);
 
-		public Polynom.Complex 				minus(Polynom.Real b);
-		public Polynom.Complex 				minus(Polynom.Complex b);
+		public Polynom.Complex 					minus(Polynom.Real b);
+		public Polynom.Complex 					minus(Polynom.Complex b);
 //		public Polynomial.Complex 				minusEquals(Polynomial.Complex b);
 
-		public Polynom.Complex 				times(Polynom.Real b);
-		public Polynom.Complex 				times(Polynom.Complex b);
+		public Polynom.Complex 					times(Polynom.Real b);
+		public Polynom.Complex 					times(Polynom.Complex b);
 //		public Polynomial.Complex 				timesEquals(Polynomial.Complex b);
 
 	}

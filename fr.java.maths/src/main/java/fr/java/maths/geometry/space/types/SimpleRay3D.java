@@ -1,10 +1,10 @@
 package fr.java.maths.geometry.space.types;
 
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.geometry.space.Point3D;
 import fr.java.math.geometry.space.Ray3D;
-import fr.java.math.geometry.space.Vector3D;
-import fr.java.maths.Points;
 import fr.java.maths.algebra.Vectors;
+import fr.java.maths.geometry.types.Points;
 
 public class SimpleRay3D implements Ray3D.Editable {
 

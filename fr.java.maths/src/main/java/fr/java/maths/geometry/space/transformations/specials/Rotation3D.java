@@ -1,12 +1,12 @@
 package fr.java.maths.geometry.space.transformations.specials;
 
 import fr.java.lang.exceptions.NotYetImplementedException;
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.geometry.space.Point3D;
-import fr.java.math.geometry.space.Vector3D;
-import fr.java.maths.Points;
-import fr.java.maths.algebra.matrices.Matrix44d;
-import fr.java.maths.geometry.Geometry;
+import fr.java.maths.algebra.matrices.DoubleMatrix44;
+import fr.java.maths.geometry.Space;
 import fr.java.maths.geometry.space.transformations.Transformation3D;
+import fr.java.maths.geometry.types.Points;
 
 public final class Rotation3D extends Transformation3D {
 
@@ -17,7 +17,7 @@ public final class Rotation3D extends Transformation3D {
 		return aroundX(_angle, null);
 	}
 	public static final Rotation3D aroundX(double _angle, Point3D _pivot) {
-		Rotation3D rot = new Rotation3D(_angle, Geometry.Space.WorldXAxis);
+		Rotation3D rot = new Rotation3D(_angle, Space.WorldXAxis);
 
 		double Cos = Math.cos(_angle);
 		double Sin = Math.sin(_angle);
@@ -36,7 +36,7 @@ public final class Rotation3D extends Transformation3D {
 		return aroundY(_angle, null);
 	}
 	public static final Rotation3D aroundY(double _angle, Point3D _pivot) {
-		Rotation3D rot = new Rotation3D(_angle, Geometry.Space.WorldYAxis);
+		Rotation3D rot = new Rotation3D(_angle, Space.WorldYAxis);
 
 		double Cos = Math.cos(_angle);
 		double Sin = Math.sin(_angle);
@@ -55,7 +55,7 @@ public final class Rotation3D extends Transformation3D {
 		return aroundZ(_angle, null);
 	}
 	public static final Rotation3D aroundZ(double _angle, Point3D _pivot) {
-		Rotation3D rot = new Rotation3D(_angle, Geometry.Space.WorldZAxis);
+		Rotation3D rot = new Rotation3D(_angle, Space.WorldZAxis);
 
 		double Cos = Math.cos(_angle);
 		double Sin = Math.sin(_angle);
@@ -86,23 +86,23 @@ public final class Rotation3D extends Transformation3D {
 		double Cos = Math.cos(_angle);
 		double Sin = Math.sin(_angle);
 
-		if(_axis.equals(Geometry.Space.WorldXAxis)) {
+		if(_axis.equals(Space.WorldXAxis)) {
 			m.m00 = 1.0f; m.m01 = 0.0f; m.m02 = 0.0f; m.m03 = 0.0f;
 			m.m10 = 0.0f; m.m11 =  Cos; m.m12 = -Sin; m.m13 = 0.0f;
 			m.m20 = 0.0f; m.m21 =  Sin; m.m22 =  Cos; m.m23 = 0.0f;
 			m.m30 = 0.0f; m.m31 = 0.0f; m.m32 = 0.0f; m.m33 = 1.0f;
-		} else if(_axis.equals(Geometry.Space.WorldYAxis)) {
+		} else if(_axis.equals(Space.WorldYAxis)) {
 			m.m00 =  Cos; m.m01 = 0.0f; m.m02 = -Sin; m.m03 = 0.0f;
 			m.m10 = 0.0f; m.m11 = 1.0f; m.m12 = 0.0f; m.m13 = 0.0f;
 			m.m20 =  Sin; m.m21 = 0.0f; m.m22 =  Cos; m.m23 = 0.0f;
 			m.m30 = 0.0f; m.m31 = 0.0f; m.m32 = 0.0f; m.m33 = 1.0f;
-		} else if(_axis.equals(Geometry.Space.WorldZAxis)) {
+		} else if(_axis.equals(Space.WorldZAxis)) {
 			m.m00 =  Cos; m.m01 = -Sin; m.m02 = 0.0f; m.m03 = 0.0f;
 			m.m10 =  Sin; m.m11 =  Cos; m.m12 = 0.0f; m.m13 = 0.0f;
 			m.m20 = 0.0f; m.m21 = 0.0f; m.m22 = 1.0f; m.m23 = 0.0f;
 			m.m30 = 0.0f; m.m31 = 0.0f; m.m32 = 0.0f; m.m33 = 1.0f;
 		} else {
-			m = Matrix44d.identity();
+			m = DoubleMatrix44.identity();
 			throw new NotYetImplementedException("Must use Quaternion !!!");
 		}
 	}
@@ -116,17 +116,17 @@ public final class Rotation3D extends Transformation3D {
 		double Cos = Math.cos(_angle);
 		double Sin = Math.sin(_angle);
 
-		if(axis.equals(Geometry.Space.WorldXAxis)) {
+		if(axis.equals(Space.WorldXAxis)) {
 			m.m11 =  Cos; m.m12 = -Sin;
 			m.m21 =  Sin; m.m22 =  Cos;
-		} else if(axis.equals(Geometry.Space.WorldYAxis)) {
+		} else if(axis.equals(Space.WorldYAxis)) {
 			m.m00 =  Cos; m.m02 = -Sin;
 			m.m20 =  Sin; m.m22 =  Cos;
-		} else if(axis.equals(Geometry.Space.WorldZAxis)) {
+		} else if(axis.equals(Space.WorldZAxis)) {
 			m.m00 =  Cos; m.m01 = -Sin;
 			m.m10 =  Sin; m.m11 =  Cos;
 		} else {
-			m = Matrix44d.identity();
+			m = DoubleMatrix44.identity();
 			throw new NotYetImplementedException("Must use Quaternion !!!");
 		}
 	}
@@ -139,12 +139,12 @@ public final class Rotation3D extends Transformation3D {
 	}
 
 	@Override
-	public Matrix44d asUniformMatrix() {
+	public DoubleMatrix44 asUniformMatrix() {
 		if(pivot != null && pivot != Points.zero3()) {
 			Translation3D 	Tr1 = new Translation3D(pivot.getX(), pivot.getY(), pivot.getZ()),
 							Tr2 = new Translation3D(-pivot.getX(), -pivot.getY(), -pivot.getZ());
 
-			Matrix44d mWithPivot = Tr1.asUniformMatrix().times(m.times(Tr2.asUniformMatrix()));
+			DoubleMatrix44 mWithPivot = Tr1.asUniformMatrix().times(m.times(Tr2.asUniformMatrix()));
 
 //			System.out.println("A= " + angle + ", P=" + pivot + ", m=");
 //			System.out.println(m);

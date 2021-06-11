@@ -28,9 +28,9 @@ import java.util.EventListener;
 import fr.java.events.EventListenerList;
 import fr.java.lang.enums.State;
 import fr.java.lang.enums.state.ServiceState;
-import fr.java.patterns.stateable.StateListener;
-import fr.java.patterns.stateable.Stateable;
+import fr.java.patterns.capabilities.Stateable;
 import fr.java.sdk.events.Events;
+import fr.java.state.StateListener;
 
 public abstract class StateableAdapter implements Stateable {
 	private final EventListenerList listeners;

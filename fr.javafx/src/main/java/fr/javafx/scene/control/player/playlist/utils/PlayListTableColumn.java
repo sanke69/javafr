@@ -3,7 +3,7 @@ package fr.javafx.scene.control.player.playlist.utils;
 import java.lang.reflect.Method;
 import java.util.function.Function;
 
-import fr.java.patterns.identifiable.Nameable;
+import fr.java.patterns.capabilities.Nameable;
 import javafx.beans.InvalidationListener;
 import javafx.beans.property.ReadOnlyIntegerWrapper;
 import javafx.beans.property.ReadOnlyLongWrapper;

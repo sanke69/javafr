@@ -7,8 +7,7 @@ import java.util.function.Consumer;
 import fr.java.beans.impl.AbstractBean;
 import fr.java.data.Data;
 import fr.java.data.provider.DataProvider;
-import fr.java.patterns.priority.DefaultPriority;
-import fr.java.patterns.priority.Priority;
+import fr.java.lang.properties.Priority;
 
 public class AsyncData<COORD, TYPE> extends AbstractBean implements Data.Async<COORD, TYPE> {
 	private static final long serialVersionUID = 717166845252371135L;
@@ -21,7 +20,7 @@ public class AsyncData<COORD, TYPE> extends AbstractBean implements Data.Async<C
 	protected final COORD								coords;
 	protected       SoftReference<TYPE>					data     	   = new SoftReference<TYPE>(null);
 
-	protected Priority									priority 	   = DefaultPriority.High;
+	protected Priority									priority 	   = Priority.High;
 
 	private boolean										isLoading	   = false;
 	private boolean										isLoaded	   = false;
@@ -69,7 +68,7 @@ public class AsyncData<COORD, TYPE> extends AbstractBean implements Data.Async<C
 		return error != null;
 	}
 
-	public void 				setPriority(DefaultPriority _priority) {
+	public void 				setPriority(Priority _priority) {
 		priority = _priority;
 	}
 	@Override

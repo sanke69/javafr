@@ -27,43 +27,62 @@ module javafr {
 	exports fr.java.lang;
 	exports fr.java.lang.collections;
 	exports fr.java.lang.enums;
+	exports fr.java.lang.enums.state;
 	exports fr.java.lang.exceptions;
 	exports fr.java.lang.functionals;
 	exports fr.java.lang.properties;
 	exports fr.java.lang.tuples;
 
-	exports fr.java.raster;
-	exports fr.java.draw;
-	exports fr.java.draw.tools;
-
-	exports fr.java.lang.enums.state;
-
-	exports fr.java.patterns.adapter;
-	exports fr.java.patterns.composite;
-	exports fr.java.patterns.displayable;
-	exports fr.java.patterns.drawable;
-	exports fr.java.patterns.facilities;
-	exports fr.java.patterns.identifiable;
-	exports fr.java.patterns.measurable;
-	exports fr.java.patterns.mvc;
-	exports fr.java.player;
-	exports fr.java.patterns.serializable;
-	exports fr.java.patterns.service;
-	exports fr.java.patterns.stateable;
-
-	exports fr.java.patterns.valueable;
-	
-	exports fr.java.patterns.tileable;
-	exports fr.java.patterns.timeable;
-	exports fr.java.patterns.triggerable;
-	exports fr.java.patterns.visitable;
-	exports fr.java.patterns.priority;
-	exports fr.java.patterns.geometry;
+	exports fr.java.log;
 
 	exports fr.java.events;
-	
+
 	exports fr.java.io.binary;
 	exports fr.java.io.binary.collection;
+
+	exports fr.java.data;
+	exports fr.java.data.provider;
+	exports fr.java.data.provider.caches;
+
+	exports fr.java.math.numbers;
+	exports fr.java.math.tensor;
+
+	exports fr.java.math.algebra;
+	exports fr.java.math.algebra.tensor;
+	exports fr.java.math.algebra.vector;
+	exports fr.java.math.algebra.vector.generic;
+	exports fr.java.math.algebra.matrix;
+	exports fr.java.math.algebra.matrix.generic;
+	exports fr.java.math.algebra.matrix.special;
+
+	exports fr.java.math.geometry;
+	exports fr.java.math.geometry.linear;
+	exports fr.java.math.geometry.plane;
+	exports fr.java.math.geometry.space;
+	exports fr.java.math.geometry.space.shapes;
+
+	exports fr.java.math.topology;
+	exports fr.java.math.interpolation;
+	exports fr.java.math.polynoms;
+
+	exports fr.java.math.functions;
+	exports fr.java.math.stats;
+	
+
+	exports fr.java.measure;
+	exports fr.java.measure.named;
+
+	exports fr.java.ui;
+
+	exports fr.java.raster;
+	exports fr.java.draw;
+	exports fr.java.draw.special;
+	exports fr.java.draw.tools;
+	exports fr.java.draw.styles;
+
+	exports fr.java.file.archive;
+	exports fr.java.file.text;
+	exports fr.java.file.text.config;
 
 	exports fr.java.nio;
 	exports fr.java.nio.buffer;
@@ -77,25 +96,7 @@ module javafr {
 	exports fr.java.nio.stream.pipes;
 	exports fr.java.nio.stream.utils;
 
-	exports fr.java.math;
-	exports fr.java.math.numbers;
-
-	exports fr.java.math.algebra;
-	exports fr.java.math.algebra.tensor;
-	exports fr.java.math.algebra.vector;
-	exports fr.java.math.algebra.matrix;
-	exports fr.java.math.algebra.matrix.specials;
-
-	exports fr.java.math.geometry;
-	exports fr.java.math.geometry.linear;
-	exports fr.java.math.geometry.plane;
-	exports fr.java.math.geometry.space;
-	exports fr.java.math.geometry.space.shapes;
-
-	exports fr.java.math.topology;
-	exports fr.java.math.window;
-	exports fr.java.math.polynoms;
-	
+	exports fr.java.player;
 
 	exports fr.java.media;
 	exports fr.java.media.image;
@@ -105,16 +106,9 @@ module javafr {
 	exports fr.java.media.sound.buffer;
 	exports fr.java.media.video.buffer;
 
-	exports fr.java.log;
-
-	exports fr.java.file.archive;
-	exports fr.java.file.text;
-	exports fr.java.file.text.config;
-
 	exports fr.java.cli;
 
 	exports fr.java.time;
-	exports fr.java.time.api;
 	exports fr.java.time.tools;
 
 	exports fr.java.timeline;
@@ -128,25 +122,33 @@ module javafr {
 	exports fr.java.security.exceptions;
 	exports fr.java.security.encryption;
 
-	exports fr.java.data;
-	exports fr.java.data.provider;
-	exports fr.java.data.provider.caches;
+
+	exports fr.java.patterns.adapter;
+	exports fr.java.patterns.composite;
+
+	exports fr.java.patterns.facilities;
+
+	exports fr.java.patterns.capabilities;
+	exports fr.java.patterns.connection;
+	exports fr.java.mvc;
+	exports fr.java.patterns.serializable;
+	exports fr.java.patterns.service;
+	exports fr.java.state;
+
+	exports fr.java.patterns.valueable;
 	
-	exports fr.java.math.functions;
+	exports fr.java.patterns.tiled;
+	exports fr.java.patterns.visitable;
 
-	exports fr.java.draw.styles;
 	
-	exports fr.java.math.stats;
 	
-
-	exports fr.java.patterns.compatible;
-
-	exports fr.java.tensor;
-
+	
+	
 //	exports fr.java.user;
 	exports fr.java.user.data;
 	exports fr.java.user.data.properties;
 	exports fr.java.user.session;
 	exports fr.java.user.session.exceptions;
 	exports fr.java.user.patterns; // TODO:: Remove or change
+	
 }

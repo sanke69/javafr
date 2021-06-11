@@ -3,10 +3,10 @@ package fr.java.maths.interpolation.coordinates;
 import java.util.Arrays;
 
 import fr.java.math.geometry.space.Point3D;
+import fr.java.math.interpolation.CoordinateInterpolator;
+import fr.java.math.interpolation.FunctionInterpolator;
 import fr.java.math.polynoms.Polynom;
-import fr.java.maths.Points;
-import fr.java.maths.interpolation.CoordinateInterpolator;
-import fr.java.maths.interpolation.FunctionInterpolator;
+import fr.java.maths.geometry.types.Points;
 
 public class PolynomialInterpolator3D implements CoordinateInterpolator.ThreeDims {
 

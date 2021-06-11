@@ -26,8 +26,8 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import fr.java.patterns.capabilities.Nameable;
 import fr.java.patterns.composite.Composite;
-import fr.java.patterns.identifiable.Nameable;
 
 public interface Treeable<T, BRANCH extends Treeable<T, BRANCH>> extends Composite, Nameable, Visitable<T>, Collection<BRANCH> {
 

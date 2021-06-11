@@ -6,6 +6,7 @@ module javafr.graphs {
 
 	requires transitive javafr;
 	requires transitive javafr.beans;
+	requires java.base;
 
 	exports fr.java.graph;
 

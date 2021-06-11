@@ -9,7 +9,7 @@ import fr.java.math.geometry.BoundingBox;
 import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.geometry.plane.Viewport2D;
 import fr.java.math.topology.Coordinate;
-import fr.java.maths.Points;
+import fr.java.maths.geometry.types.Points;
 import fr.java.rasters.rasters.XRasterBufferedImage;
 import javafx.geometry.VPos;
 import javafx.scene.canvas.Canvas;

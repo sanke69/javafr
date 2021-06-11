@@ -19,9 +19,11 @@
 **/
 package fr.java.math.geometry.plane;
 
+import java.io.Serializable;
+
 import fr.java.math.geometry.BoundingBox;
 
-public interface Ellipse2D extends Shape2D, BoundingBox.TwoDims {
+public interface Ellipse2D extends BoundingBox.TwoDims, Shape2D, Comparable<Object>, Cloneable, Serializable {
 
 //	@Override
 //	public Ellipse2D clone();

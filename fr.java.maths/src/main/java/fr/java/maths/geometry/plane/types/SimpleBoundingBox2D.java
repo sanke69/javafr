@@ -8,17 +8,17 @@ import fr.java.lang.exceptions.NotYetImplementedException;
 import fr.java.math.geometry.BoundingBox;
 import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.topology.Coordinate;
-import fr.java.maths.Points;
+import fr.java.maths.geometry.types.Points;
 
 public class SimpleBoundingBox2D implements BoundingBox.TwoDims.Editable {
 	private static final long serialVersionUID = -404792374302736610L;
 	
 	double x, y, width, height;
 
-	@Override public double 	getX()             	{ return 0; }
-	@Override public double 	getY()             	{ return 0; }
-	@Override public double 	getWidth() 			{ return 0; }
-	@Override public double 	getHeight() 		{ return 0; }
+	@Override public double 	getX()             	{ return x; }
+	@Override public double 	getY()             	{ return y; }
+	@Override public double 	getWidth() 			{ return width; }
+	@Override public double 	getHeight() 		{ return height; }
 
 //	@Override 
 	public Point2D 				getPosition() 		{ return Points.of(getMinX(), 				getMinY()); }

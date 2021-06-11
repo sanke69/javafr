@@ -5,7 +5,7 @@ import java.util.function.BiFunction;
 import fr.java.math.geometry.BoundingBox;
 import fr.java.math.geometry.Projector;
 import fr.java.math.topology.Coordinate;
-import fr.java.maths.BoundingBoxes;
+import fr.java.maths.geometry.types.BoundingBoxes;
 
 abstract class AbstractPlaneProjector<COORD extends Coordinate.TwoDims> 
 			implements Projector.TwoDims<COORD, Coordinate.TwoDims> {

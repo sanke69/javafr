@@ -1,6 +1,6 @@
 package fr.javafx.scene.control.viewport.planar.implementations.tiles.minimap;
 
-import fr.java.patterns.tileable.TileViewport;
+import fr.java.patterns.tiled.TileViewport;
 import fr.javafx.behavior.AdvancedSkin;
 import fr.javafx.scene.control.viewport.planar.implementations.tiles.TileViewportControl;
 import fr.javafx.scene.control.viewport.planar.utils.minimap.PlaneViewportMinimapControl;

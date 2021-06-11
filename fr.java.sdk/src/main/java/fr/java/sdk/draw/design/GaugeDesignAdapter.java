@@ -3,10 +3,10 @@ package fr.java.sdk.draw.design;
 import fr.java.draw.Drawer;
 import fr.java.draw.tools.Brush;
 import fr.java.draw.tools.Colors;
-import fr.java.math.Interval;
 import fr.java.math.geometry.plane.Point2D;
+import fr.java.math.numbers.Interval;
 import fr.java.maths.Angles;
-import fr.java.maths.BoundingBoxes;
+import fr.java.maths.geometry.types.BoundingBoxes;
 
 public class GaugeDesignAdapter extends GraphDesignAdapter {
 	public static final Brush BACKGROUND_BRUSH  = Brush.of(1.0, Colors.BLACK, Colors.of(0.2f, 0.2f, 0.2f, 0.2f));

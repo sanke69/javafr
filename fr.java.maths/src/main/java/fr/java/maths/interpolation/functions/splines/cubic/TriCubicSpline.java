@@ -23,7 +23,7 @@
 **/
 package fr.java.maths.interpolation.functions.splines.cubic;
 
-import fr.java.maths.interpolation.FunctionInterpolator;
+import fr.java.math.interpolation.FunctionInterpolator;
 
 public class TriCubicSpline implements FunctionInterpolator.ThreeVars {
 

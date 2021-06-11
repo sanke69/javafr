@@ -7,6 +7,7 @@ import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.nio.ShortBuffer;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -21,6 +22,7 @@ import fr.java.math.algebra.tensor.FloatTensor;
 import fr.java.math.algebra.tensor.IntTensor;
 import fr.java.math.algebra.tensor.LongTensor;
 import fr.java.math.algebra.tensor.ShortTensor;
+import fr.java.math.tensor.Tensor;
 import fr.java.maths.algebra.tensors.ByteArrayTensor;
 import fr.java.maths.algebra.tensors.DoubleArrayTensor;
 import fr.java.maths.algebra.tensors.FloatArrayTensor;
@@ -615,16 +617,16 @@ public class Tensors {
 		return null;
 	}
 	public static NumberTensor  stack(NumberTensor... _tensors) {
-		/*
 		assert Tensors.assertIdenticalShapes(_tensors) : "Tensor shapes are not identical";
 
-		int subTensorSize = _tensors[0].getDimensionCapacity(1); //Arrays.asList(_tensors[0].getShape()).stream().reduce(1, (a, b) -> a * b);
+		int subTensorSize = _tensors[0].getSliceCapacity(1); //Arrays.asList(_tensors[0].getShape()).stream().reduce(1, (a, b) -> a * b);
 		int nbSlices      = 0;
 
 		for(Tensor tensor : _tensors)
-			nbSlices += tensor.getDimensionSize(0);
+			nbSlices += tensor.getSliceDimension(0);
 
-		ArrayList<Integer> stackShape = new ArrayList<Integer>(_tensors[0].getShape());
+		List<Integer> shape = Arrays.stream(_tensors[0].getShape()).boxed().collect(Collectors.toList());
+		ArrayList<Integer> stackShape = new ArrayList<Integer>(shape);
 		stackShape.set(0, nbSlices);
 
 		Buffer stackData;
@@ -655,18 +657,16 @@ public class Tensors {
 						return Double.allocate(((DoubleBuffer) stackData).array(), stackShape.toArray(new Integer[0]));
 		default:		throw new IllegalAccessError("Generic must be a Number");		
 		}
-		*/
-		return null;
 	}
 
 	public static NumberTensor  repeat(NumberTensor _tensor, int _repeat) {
-		/*
 		int tensorSize  = _tensor.getCapacity();
 		int nbSlices    = _repeat;
 
+		List<Integer> shape = Arrays.stream(_tensor.getShape()).boxed().collect(Collectors.toList());
 		ArrayList<Integer> repeatShape = new ArrayList<Integer>();
 		repeatShape.add(_repeat);
-		repeatShape.addAll(_tensor.getShape());
+		repeatShape.addAll(shape);
 
 		Buffer repeatedData;
 		switch(_tensor.getPrimitive()) {
@@ -696,8 +696,6 @@ public class Tensors {
 						return Double.allocate(((DoubleBuffer) repeatedData).array(), repeatShape.toArray(new Integer[0]));
 		default:		throw new IllegalAccessError("Generic must be a Number");		
 		}
-		*/
-		return null;
 	}
 
 }

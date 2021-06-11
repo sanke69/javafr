@@ -1,11 +1,11 @@
 package fr.java.maths.geometry.space.shapes.quadrics.surfaces;
 
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.geometry.space.Point3D;
-import fr.java.math.geometry.space.Vector3D;
-import fr.java.maths.Points;
 import fr.java.maths.algebra.Vectors;
 import fr.java.maths.geometry.space.shapes.quadrics.Quadric3DBase;
 import fr.java.maths.geometry.space.shapes.quadrics.QuadricSurface3D;
+import fr.java.maths.geometry.types.Points;
 
 //General Equation: F(x, y, z) = Ax2 + By2 + Cz2 + Dxy+ Exz + Fyz + Gx + Hy + Iz + J = 0
 public class Plane3D extends Quadric3DBase implements QuadricSurface3D {

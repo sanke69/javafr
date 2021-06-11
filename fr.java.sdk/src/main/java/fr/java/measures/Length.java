@@ -1,10 +1,10 @@
 package fr.java.measures;
 
-import fr.java.patterns.measurable.Measure;
-import fr.java.patterns.measurable.Measurement;
-import fr.java.patterns.measurable.Modifier;
-import fr.java.patterns.measurable.Unit;
-import fr.java.patterns.measurable.Value;
+import fr.java.measure.Measure;
+import fr.java.measure.Measurement;
+import fr.java.measure.Modifier;
+import fr.java.measure.Unit;
+import fr.java.measure.Value;
 
 @Deprecated
 public class Length implements Measurement {

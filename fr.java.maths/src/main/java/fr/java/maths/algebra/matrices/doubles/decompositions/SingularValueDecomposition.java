@@ -2,7 +2,7 @@ package fr.java.maths.algebra.matrices.doubles.decompositions;
 
 import fr.java.math.algebra.NumberMatrix;
 import fr.java.maths.Numbers;
-import fr.java.maths.algebra.matrices.Matrixmnd;
+import fr.java.maths.algebra.matrices.DoubleMatrixMN;
 
 /** Singular Value Decomposition.
    <P>
@@ -54,7 +54,7 @@ public class SingularValueDecomposition implements java.io.Serializable {
 
       // Derived from LINPACK code.
       // Initialize.
-      double[][] A = ((Matrixmnd) Arg).getStorageCopy();
+      double[][] A = ((DoubleMatrixMN) Arg).getStorageCopy();
       m = Arg.rows();
       n = Arg.columns();
 
@@ -480,16 +480,16 @@ public class SingularValueDecomposition implements java.io.Serializable {
    @return     U
    */
 
-   public Matrixmnd getU () {
-      return Matrixmnd.wrap(U,m,Math.min(m+1,n));
+   public DoubleMatrixMN getU () {
+      return DoubleMatrixMN.wrap(U,m,Math.min(m+1,n));
    }
 
    /** Return the right singular vectors
    @return     V
    */
 
-   public Matrixmnd getV () {
-      return Matrixmnd.wrap(V,n,n);
+   public DoubleMatrixMN getV () {
+      return DoubleMatrixMN.wrap(V,n,n);
    }
 
    /** Return the one-dimensional array of singular values
@@ -504,8 +504,8 @@ public class SingularValueDecomposition implements java.io.Serializable {
    @return     S
    */
 
-   public Matrixmnd getS () {
-      Matrixmnd X = new Matrixmnd(n,n);
+   public DoubleMatrixMN getS () {
+      DoubleMatrixMN X = new DoubleMatrixMN(n,n);
       double[][] S = X.getStorage();
       for (int i = 0; i < n; i++) {
          for (int j = 0; j < n; j++) {

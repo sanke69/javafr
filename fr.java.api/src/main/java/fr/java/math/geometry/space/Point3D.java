@@ -21,9 +21,10 @@ package fr.java.math.geometry.space;
 
 import java.text.NumberFormat;
 
+import fr.java.math.algebra.vector.generic.Vector2D;
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.geometry.Dimension;
 import fr.java.math.geometry.Point;
-import fr.java.math.geometry.plane.Vector2D;
 import fr.java.math.topology.Coordinate;
 import fr.java.math.topology.CoordinateSystem;
 

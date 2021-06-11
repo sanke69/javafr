@@ -5,8 +5,8 @@ import java.util.Optional;
 
 import fr.java.beans.properties.BeanPropertyStorage;
 import fr.java.beans.properties.listeners.BeanPropertyMapChangeListener;
+import fr.java.mvc.ViewRequest;
 import fr.java.patterns.ViewRequestBean;
-import fr.java.patterns.mvc.ViewRequest;
 import fr.java.utils.PropertyStorages;
 
 public class SimpleViewRequestBean implements ViewRequestBean {

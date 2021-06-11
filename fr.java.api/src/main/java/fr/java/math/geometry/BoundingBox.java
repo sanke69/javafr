@@ -33,18 +33,22 @@ import fr.java.math.topology.CoordinateSystem;
 
 public interface BoundingBox extends Dimension, /*Duplicable, Comparable<Object>,*/ Serializable {
 
+	public static enum Anchor {
+		CENTER,
+		NORTH, SOUTH, EAST, WEST,
+		NORTH_WEST, NORTH_EAST,
+		SOUTH_WEST, SOUTH_EAST,
+	}
+
 	public static interface Editable extends BoundingBox {
 
 		public void set(BoundingBox _source);
 
 	}
 
-	public static interface OneDim extends BoundingBox, 
-										   Dimension.OneDim {
+	public static interface OneDim extends BoundingBox, Dimension.OneDim {
 
-		public static interface Editable extends BoundingBox.Editable, 
-												 Dimension.OneDim.Editable, 
-												 BoundingBox.OneDim {
+		public static interface Editable extends BoundingBox.Editable, Dimension.OneDim.Editable, BoundingBox.OneDim {
 
 			@Override
 			public default void 	set(BoundingBox _source) {
@@ -73,6 +77,23 @@ public interface BoundingBox extends Dimension, /*Duplicable, Comparable<Object>
 
 		@Override
 		public default boolean 	isEmpty()        { return getWidth() == 0; }
+
+		public default double 	getX(Anchor _anchor) {
+			switch(_anchor) {
+			default:			
+			case CENTER:		return getCenterX();
+
+			case NORTH:
+			case WEST:
+			case NORTH_WEST:
+			case SOUTH_WEST:	return getMinX();
+
+			case SOUTH:
+			case EAST:
+			case NORTH_EAST:
+			case SOUTH_EAST:	return getMaxX();
+			}
+		}
 
 		public double  			getX();
 		public double  			getWidth();
@@ -197,6 +218,23 @@ public interface BoundingBox extends Dimension, /*Duplicable, Comparable<Object>
 
 		@Override
 		public default boolean 	isEmpty()        { return getWidth() == 0 || getHeight() == 0; }
+
+		public default double 	getY(Anchor _anchor) {
+			switch(_anchor) {
+			default:	
+			case EAST:
+			case WEST:
+			case CENTER:		return getCenterY();
+
+			case NORTH:
+			case NORTH_WEST:
+			case NORTH_EAST:	return getMinY();
+
+			case SOUTH:
+			case SOUTH_WEST:
+			case SOUTH_EAST:	return getMaxY();
+			}
+		}
 
 		public double  			getY();
 		public double  			getHeight();
@@ -333,6 +371,21 @@ public interface BoundingBox extends Dimension, /*Duplicable, Comparable<Object>
 
 		@Override
 		public default boolean 	isEmpty()        { return getWidth() == 0 || getHeight() == 0 || getDepth() == 0; }
+
+		public default double 		getZ(Anchor _anchor) {
+			switch(_anchor) {
+			default:	
+			case NORTH:
+			case SOUTH:
+			case EAST:
+			case WEST:
+			case CENTER:
+			case NORTH_EAST:
+			case NORTH_WEST:
+			case SOUTH_EAST:
+			case SOUTH_WEST:	return getMaxZ();
+			}
+		}
 
 		public double  			getZ();
 		public double  			getDepth();
@@ -568,7 +621,7 @@ public interface BoundingBox extends Dimension, /*Duplicable, Comparable<Object>
 	}
 	public boolean 				contains(BoundingBox _bb);
 
-	public default boolean 		intersects(List<Coordinate> _pts) {
+	public default boolean 		intersects(List<Coordinate> _pts) { // TODO:: Too simple test -> not complete
 		boolean inside = false, outside = false;
 		for(Coordinate pt : _pts)
 			if(contains(pt)) inside = true; else outside = true;

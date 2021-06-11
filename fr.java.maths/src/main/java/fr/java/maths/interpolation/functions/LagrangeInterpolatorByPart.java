@@ -1,6 +1,6 @@
 package fr.java.maths.interpolation.functions;
 
-import fr.java.maths.interpolation.FunctionInterpolator;
+import fr.java.math.interpolation.FunctionInterpolator;
 
 // TODO:: Must be implemented
 // Requiered to limit the degree of Lagrange polynom

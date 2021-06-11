@@ -1,8 +1,7 @@
 package fr.javafx.lang;
 
+import fr.java.patterns.capabilities.Selectable;
 import javafx.beans.property.BooleanProperty;
-
-import fr.java.patterns.displayable.Selectable;
 
 public interface FxSelectable extends Selectable {
 

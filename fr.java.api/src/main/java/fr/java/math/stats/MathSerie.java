@@ -22,8 +22,8 @@ package fr.java.math.stats;
 public interface MathSerie {
 
 	public interface OneDim extends MathSerie {
-		public double[] getY();
-		public double   getY(int _idx);
+		public double[]   getY();
+		public double     getY(int _idx);
 	}
 	public interface TwoDims extends MathSerie {
 		public double[][] getY();

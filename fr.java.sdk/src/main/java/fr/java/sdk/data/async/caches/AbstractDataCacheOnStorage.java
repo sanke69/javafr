@@ -6,8 +6,7 @@ import java.nio.file.Paths;
 import fr.java.data.DataNotFoundException;
 import fr.java.data.provider.caches.DataCacheOnStorage;
 import fr.java.lang.enums.AccessMode;
-import fr.java.patterns.priority.DefaultPriority;
-import fr.java.patterns.priority.Priority;
+import fr.java.lang.properties.Priority;
 import fr.java.sdk.nio.file.FileObject;
 
 public abstract class AbstractDataCacheOnStorage<COORD, TYPE> extends AbstractDataCache<COORD, TYPE> implements DataCacheOnStorage<COORD, TYPE> {
@@ -16,7 +15,7 @@ public abstract class AbstractDataCacheOnStorage<COORD, TYPE> extends AbstractDa
 	private Path cacheFolder;
 
 	protected AbstractDataCacheOnStorage() {
-		this(defaultCacheFolder, AccessMode.ReadOnly, DefaultPriority.Highest);
+		this(defaultCacheFolder, AccessMode.ReadOnly, Priority.Highest);
 	}
 	protected AbstractDataCacheOnStorage(AccessMode _accessMode) {
 		this(defaultCacheFolder, _accessMode);
@@ -25,10 +24,10 @@ public abstract class AbstractDataCacheOnStorage<COORD, TYPE> extends AbstractDa
 		this(defaultCacheFolder, _accessMode, _priority);
 	}
 	protected AbstractDataCacheOnStorage(Path _cacheFolder) {
-		this(_cacheFolder, AccessMode.ReadOnly, DefaultPriority.Highest);
+		this(_cacheFolder, AccessMode.ReadOnly, Priority.Highest);
 	}
 	protected AbstractDataCacheOnStorage(Path _cacheFolder, AccessMode _accessMode) {
-		this(_cacheFolder, _accessMode, DefaultPriority.Highest);
+		this(_cacheFolder, _accessMode, Priority.Highest);
 	}
 	protected AbstractDataCacheOnStorage(Path _cacheFolder, AccessMode _accessMode, Priority _priority) {
 		super(CacheType.STORAGE, _accessMode, _priority);

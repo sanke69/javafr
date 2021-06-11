@@ -15,14 +15,16 @@ module javafr.maths {
 	exports fr.java.maths.algebra.matrices.doubles;
 	exports fr.java.maths.algebra.matrices.doubles.decompositions;
 
-	exports fr.java.maths.bounds;
 	exports fr.java.maths.geometry;
+	exports fr.java.maths.geometry.types;
+
 	exports fr.java.maths.geometry.plane;
 	exports fr.java.maths.geometry.plane.projectors;
 	exports fr.java.maths.geometry.plane.types;
 	exports fr.java.maths.geometry.plane.shapes;
 	exports fr.java.maths.geometry.plane.transformations;
-	exports fr.java.maths.geometry.plane.transformations.special;
+	exports fr.java.maths.geometry.plane.transformations.generic;
+
 	exports fr.java.maths.geometry.space.types;
 	exports fr.java.maths.geometry.space.shapes;
 	exports fr.java.maths.geometry.space.shapes.quadrics;
@@ -35,7 +37,7 @@ module javafr.maths {
 	exports fr.java.maths.geometry.space.camera.projections;
 	exports fr.java.maths.geometry.space.camera.behaviors;
 	exports fr.java.maths.geometry.space.utils;
-	exports fr.java.maths.geometry.utils;
+
 	exports fr.java.maths.topology;
 	exports fr.java.maths.stats;
 	exports fr.java.maths.stats.randoms;
@@ -44,11 +46,10 @@ module javafr.maths {
 	exports fr.java.maths.utils.graph;
 	exports fr.java.maths.window;
 
-	exports fr.java.maths.interpolation;
 	exports fr.java.maths.interpolation.functions;
 	exports fr.java.maths.interpolation.functions.splines.cubic;
 	exports fr.java.maths.interpolation.coordinates;
 
-	exports fr.java.maths.series;
+	exports fr.java.maths.stats.series;
 
 }

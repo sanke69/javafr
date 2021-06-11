@@ -13,9 +13,9 @@ import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.geometry.plane.Polygon2D;
 import fr.java.math.geometry.plane.Shape2D;
 import fr.java.math.topology.Coordinate;
-import fr.java.maths.Points;
+import fr.java.maths.geometry.plane.PlaneTests;
 import fr.java.maths.geometry.plane.types.SimpleBoundingBox2D;
-import fr.java.maths.geometry.utils.PlaneTests;
+import fr.java.maths.geometry.types.Points;
 
 public class SimplePolygon2D extends SimpleBoundingBox2D implements BoundingBox.TwoDims.Editable, Cloneable, Comparable<Object>, Serializable, Shape2D, Polygon2D {
 	private static final long serialVersionUID = -8761855227580448615L;

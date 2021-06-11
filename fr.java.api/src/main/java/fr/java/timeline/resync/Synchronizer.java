@@ -19,10 +19,9 @@
 **/
 package fr.java.timeline.resync;
 
-import fr.java.patterns.timeable.Timestampable;
 import fr.java.timeline.TimeLine;
 
-public interface Synchronizer<REF extends TimeLine<? extends Timestampable>> {
+public interface Synchronizer<REF extends TimeLine<?>> {
 
 	public default boolean  hasReference() { return getReference() != null; }
 

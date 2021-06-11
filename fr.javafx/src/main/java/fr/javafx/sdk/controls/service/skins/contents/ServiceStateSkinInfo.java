@@ -8,8 +8,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import fr.java.lang.enums.State;
 import fr.java.patterns.service.Service;
-import fr.java.patterns.stateable.StateEvent;
-import fr.java.patterns.stateable.StateListener;
+import fr.java.state.StateEvent;
+import fr.java.state.StateListener;
 import fr.javafx.sdk.controls.service.styles.StateStyles;
 
 public class ServiceStateSkinInfo<S extends Service> extends HBox implements StateListener {

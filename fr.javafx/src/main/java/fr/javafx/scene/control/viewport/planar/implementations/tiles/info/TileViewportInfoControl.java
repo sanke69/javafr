@@ -1,7 +1,7 @@
 package fr.javafx.scene.control.viewport.planar.implementations.tiles.info;
 
-import fr.java.patterns.tileable.TileProvider;
-import fr.java.patterns.tileable.TileViewport;
+import fr.java.patterns.tiled.TileProvider;
+import fr.java.patterns.tiled.TileViewport;
 import fr.javafx.behavior.AdvancedSkin;
 import fr.javafx.scene.control.viewport.planar.implementations.tiles.TileViewportControl;
 import fr.javafx.scene.control.viewport.planar.utils.info.PlaneViewportInfoControl;

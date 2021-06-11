@@ -9,12 +9,12 @@ import fr.java.math.geometry.BoundingBox;
 import fr.java.math.geometry.Projector;
 import fr.java.math.geometry.Viewport;
 import fr.java.math.topology.Coordinate;
-import fr.java.maths.BoundingBoxes;
-import fr.java.maths.Coordinates;
-import fr.java.patterns.tileable.TileCoordinate;
-import fr.java.patterns.tileable.TileProjector;
-import fr.java.patterns.tileable.TileSystem;
-import fr.java.patterns.tileable.TileViewport;
+import fr.java.maths.geometry.types.BoundingBoxes;
+import fr.java.maths.geometry.types.Coordinates;
+import fr.java.patterns.tiled.TileCoordinate;
+import fr.java.patterns.tiled.TileProjector;
+import fr.java.patterns.tiled.TileSystem;
+import fr.java.patterns.tiled.TileViewport;
 
 public class PlaneViewportProjectors {
 

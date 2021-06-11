@@ -19,6 +19,7 @@
 **/
 package fr.java.math.geometry.space;
 
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.geometry.Ray;
 
 public interface Ray3D extends Ray {

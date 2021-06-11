@@ -21,6 +21,8 @@ package fr.java.math.geometry.plane;
 
 import java.util.Set;
 
+import fr.java.math.algebra.vector.generic.Vector2D;
+
 public interface Polyline2D extends Shape2D {
 
 	Point2D     	getPoint(int _index);

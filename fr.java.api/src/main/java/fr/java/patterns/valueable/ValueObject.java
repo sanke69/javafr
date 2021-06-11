@@ -23,8 +23,8 @@ import java.util.function.Function;
 
 import fr.java.lang.exceptions.IllegalCastException;
 import fr.java.lang.tuples.Pair;
-import fr.java.patterns.compatible.CompatibilityResult;
-import fr.java.patterns.compatible.CompatibilityRules;
+import fr.java.patterns.connection.CompatibilityResult;
+import fr.java.patterns.connection.CompatibilityRules;
 
 public class ValueObject {
 

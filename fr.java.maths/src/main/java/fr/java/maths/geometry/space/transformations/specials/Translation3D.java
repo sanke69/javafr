@@ -1,7 +1,7 @@
 package fr.java.maths.geometry.space.transformations.specials;
 
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.geometry.space.Point3D;
-import fr.java.math.geometry.space.Vector3D;
 import fr.java.maths.geometry.space.transformations.Transformation3D;
 
 public class Translation3D extends Transformation3D {

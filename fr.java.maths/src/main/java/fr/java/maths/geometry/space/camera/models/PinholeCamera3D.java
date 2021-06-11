@@ -1,28 +1,28 @@
 package fr.java.maths.geometry.space.camera.models;
 
 import fr.java.math.algebra.NumberMatrix;
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.geometry.space.Frame3D;
 import fr.java.math.geometry.space.Point3D;
-import fr.java.math.geometry.space.Vector3D;
-import fr.java.maths.Points;
 import fr.java.maths.algebra.Vectors;
-import fr.java.maths.algebra.matrices.Matrix33d;
-import fr.java.maths.algebra.matrices.Matrix44d;
-import fr.java.maths.algebra.matrices.Matrixmnd;
-import fr.java.maths.geometry.Geometry;
+import fr.java.maths.algebra.matrices.DoubleMatrix33;
+import fr.java.maths.algebra.matrices.DoubleMatrix44;
+import fr.java.maths.algebra.matrices.DoubleMatrixMN;
+import fr.java.maths.geometry.Space;
+import fr.java.maths.geometry.space.SpaceTests;
 import fr.java.maths.geometry.space.camera.CameraModel;
 import fr.java.maths.geometry.space.shapes.quadrics.surfaces.Plane3D;
 import fr.java.maths.geometry.space.types.SimpleRay3D;
 import fr.java.maths.geometry.space.utils.Quaternion;
-import fr.java.maths.geometry.utils.SpaceTests;
+import fr.java.maths.geometry.types.Points;
 
 public class PinholeCamera3D extends PinholeCameraParameters implements CameraModel {
 	NumberMatrix  projector;
 
 	public PinholeCamera3D() {
 		super();
-		frame = Geometry.Space.worldFrame.clone();
+		frame = Space.newFrame();
 	}
 
 	public Point2D 		inImage(Point3D _pt) {
@@ -89,28 +89,28 @@ public class PinholeCamera3D extends PinholeCameraParameters implements CameraMo
 		return ray != null ? SpaceTests.getIntersection(ray, _plane) : null;
 	}
 
-	public Matrix44d 	getTransformMatrix() {
+	public DoubleMatrix44 	getTransformMatrix() {
 		Point3D  O = getFrame().getOrigin();
 		Vector3D X = getFrame().getXAxis();
 		Vector3D Y = getFrame().getYAxis();
 		Vector3D Z = getFrame().getZAxis();
 
-		return Matrix44d.from(X, Y, Z, O);
+		return DoubleMatrix44.from(X, Y, Z, O);
 	}
 	// https://www.3dgep.com/understanding-the-view-matrix/
-	public Matrix44d 	getViewMatrix() {
+	public DoubleMatrix44 	getViewMatrix() {
 		Point3D  O = getFrame().getOrigin();
 		Vector3D X = getFrame().getXAxis();
 		Vector3D Y = getFrame().getYAxis().times(-1);
 		Vector3D Z = getFrame().getZAxis();
 
-		return Matrix44d.from(X, Y, Z, O);
+		return DoubleMatrix44.from(X, Y, Z, O);
 		//return getTransformMatrix().inverse();
 	}
 
 	private void 		updateProjector_V1() {
-		Matrix33d intrinsic33 = Matrix33d.identity();
-		Matrixmnd focal34     = Matrixmnd.identity(3, 4);
+		DoubleMatrix33 intrinsic33 = DoubleMatrix33.identity();
+		DoubleMatrixMN focal34     = DoubleMatrixMN.identity(3, 4);
 
 		intrinsic33.m00 = ku();
 		intrinsic33.m11 = kv();
@@ -127,7 +127,7 @@ public class PinholeCamera3D extends PinholeCameraParameters implements CameraMo
 		projector = intrinsic.times(extrinsic);
 	}
 	private void 		updateProjector_V2() {
-		Matrixmnd intrinsic34 = Matrixmnd.identity(3, 4);
+		DoubleMatrixMN intrinsic34 = DoubleMatrixMN.identity(3, 4);
 
 		intrinsic34.set(0, 0, Fx());
 		intrinsic34.set(1, 1, Fy());
@@ -141,14 +141,14 @@ public class PinholeCamera3D extends PinholeCameraParameters implements CameraMo
 		projector = intrinsic.times(extrinsic);
 	}
 	private void 		updateProjector_V3() {
-		Matrix33d translation2D = Matrix33d.identity();
+		DoubleMatrix33 translation2D = DoubleMatrix33.identity();
 		translation2D.m02 = cu();
 		translation2D.m12 = cv();
 
-		Matrix33d shear2D = Matrix33d.identity();
+		DoubleMatrix33 shear2D = DoubleMatrix33.identity();
 		shear2D.m01 = suv() / fy();
 		
-		Matrix33d scaling2D = Matrix33d.identity();
+		DoubleMatrix33 scaling2D = DoubleMatrix33.identity();
 		scaling2D.m00 = fx();
 		scaling2D.m11 = fy();
 
@@ -157,12 +157,12 @@ public class PinholeCamera3D extends PinholeCameraParameters implements CameraMo
 		Vector3D Y = getFrame().getYAxis();
 		Vector3D Z = getFrame().getZAxis();
 
-		Matrixmnd T = Matrixmnd.identity(3, 4);
+		DoubleMatrixMN T = DoubleMatrixMN.identity(3, 4);
 		T.set(0, 3, -Vectors.dotProduct(X, Vectors.of(O)));
 		T.set(1, 3, -Vectors.dotProduct(Y, Vectors.of(O)));
 		T.set(2, 3, -Vectors.dotProduct(Z, Vectors.of(O)));
 
-		Matrixmnd R = Matrixmnd.identity(4, 4);
+		DoubleMatrixMN R = DoubleMatrixMN.identity(4, 4);
 		R.set(0, 0, X.getX()); R.set(0, 1, X.getY());  R.set(0, 2, X.getZ());
 		R.set(1, 0, Y.getX()); R.set(1, 1, Y.getY());  R.set(1, 2, Y.getZ());
 		R.set(2, 0, Z.getX()); R.set(2, 1, Z.getY());  R.set(2, 2, Z.getZ());
@@ -173,7 +173,7 @@ public class PinholeCamera3D extends PinholeCameraParameters implements CameraMo
 		projector = intrinsic.times(extrinsic);
 	}
 	private void 		updateProjector_V4() {
-		Matrix33d intrinsic33 = Matrix33d.identity();
+		DoubleMatrix33 intrinsic33 = DoubleMatrix33.identity();
 
 		intrinsic33.m01 = suv();
 		intrinsic33.m00 = Fx();
@@ -186,7 +186,7 @@ public class PinholeCamera3D extends PinholeCameraParameters implements CameraMo
 		Vector3D Y = getFrame().getYAxis();
 		Vector3D Z = getFrame().getZAxis();
 
-		Matrixmnd mv = new Matrixmnd(3, 4);
+		DoubleMatrixMN mv = new DoubleMatrixMN(3, 4);
 		mv.set(0, 0,  X.getX()); mv.set(0, 1,  X.getY());  mv.set(0, 2,  X.getZ()); mv.set(0, 3, -Vectors.dotProduct(X, Vectors.of(O)));
 		mv.set(1, 0,  Y.getX()); mv.set(1, 1,  Y.getY());  mv.set(1, 2,  Y.getZ()); mv.set(1, 3, -Vectors.dotProduct(Y, Vectors.of(O)));
 		mv.set(2, 0, -Z.getX()); mv.set(2, 1, -Z.getY());  mv.set(2, 2, -Z.getZ()); mv.set(2, 3, -Vectors.dotProduct(Z, Vectors.of(O)));

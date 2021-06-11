@@ -20,7 +20,7 @@
 package fr.java.beans.impl.numbers;
 
 import fr.java.beans.properties.BeanProperty;
-import fr.java.math.Interval;
+import fr.java.math.numbers.Interval;
 import fr.java.math.numbers.Ranged;
 
 public class RangedNumberBeanProperty<T extends Number> extends ReadOnlyRangedNumberBeanProperty<T> implements BeanProperty<T>, Ranged.Editable<T> {

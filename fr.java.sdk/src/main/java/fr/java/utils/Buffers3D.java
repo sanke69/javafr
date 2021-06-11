@@ -11,10 +11,10 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 import fr.java.lang.exceptions.NotYetImplementedException;
+import fr.java.math.algebra.vector.generic.Vector2D;
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.geometry.plane.Point2D;
-import fr.java.math.geometry.plane.Vector2D;
 import fr.java.math.geometry.space.Point3D;
-import fr.java.math.geometry.space.Vector3D;
 import fr.java.maths.algebra.vectors.DoubleVector2D;
 import fr.java.maths.algebra.vectors.DoubleVector3D;
 import fr.java.maths.algebra.vectors.DoubleVector4D;

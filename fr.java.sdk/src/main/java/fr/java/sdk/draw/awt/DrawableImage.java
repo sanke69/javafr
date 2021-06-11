@@ -4,8 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
+import fr.java.draw.Drawable;
 import fr.java.draw.Drawer;
-import fr.java.patterns.drawable.Drawable;
 
 public class DrawableImage extends BufferedImage implements DrawableAreaAwt {
 	Color 	BACKGROUND_COLOR 	= new Color(1, 1, 1, 1);

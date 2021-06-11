@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import fr.java.math.geometry.space.Point3D;
-import fr.java.maths.Points;
-import fr.java.maths.interpolation.CoordinateInterpolator;
+import fr.java.math.interpolation.CoordinateInterpolator;
+import fr.java.maths.geometry.types.Points;
 
 public class LinearInterpolator3D implements CoordinateInterpolator.ThreeDims {
 	private double[] x, y, z;

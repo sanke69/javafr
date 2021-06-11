@@ -1,6 +1,6 @@
 package fr.javafx.lang;
 
-import fr.java.patterns.displayable.Refreshable;
+import fr.java.patterns.capabilities.Refreshable;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.value.ChangeListener;

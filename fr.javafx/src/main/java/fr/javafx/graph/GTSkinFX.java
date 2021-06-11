@@ -12,8 +12,8 @@ import fr.java.graph.layouts.GTNodeLayout2D;
 import fr.java.graph.utils.GTSkinProvider;
 import fr.java.graph.viewer.GTLayout;
 import fr.java.graph.viewer.GTSkin;
-import fr.java.patterns.geometry.Boundable.Anchor;
-import fr.java.patterns.identifiable.Identifiable;
+import fr.java.math.geometry.BoundingBox.Anchor;
+import fr.java.patterns.capabilities.Identifiable;
 import javafx.beans.binding.DoubleBinding;
 import javafx.scene.layout.Region;
 

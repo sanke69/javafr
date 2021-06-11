@@ -6,11 +6,10 @@ import fr.java.math.geometry.BoundingBox;
 import fr.java.math.geometry.Viewport;
 import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.geometry.plane.Viewport2D;
-import fr.java.maths.BoundingBoxes;
-import fr.java.maths.Points;
 import fr.java.maths.geometry.plane.PlaneViewportAdapter;
 import fr.java.maths.geometry.plane.PlaneViewportProjectors;
-import fr.java.sdk.patterns.geometry.Boundables;
+import fr.java.maths.geometry.types.BoundingBoxes;
+import fr.java.maths.geometry.types.Points;
 import fr.javafx.behavior.AdvancedSkin;
 import fr.javafx.behavior.Visual;
 import fr.javafx.scene.control.viewport.planar.PlaneViewportControl;
@@ -44,7 +43,7 @@ public class GroupViewportControl extends PlaneViewportControl {
 		getViewport().setModelBounder   ( groupBounds);
 		getViewport().setModelProjector	( PlaneViewportProjectors.newLinear(getViewport(), Points::of, Point2D::getX, Point2D::getY) );
 
-		getViewport().setWindow			( Boundables.of(this) );
+		getViewport().setWindow			( BoundingBoxes.of(this) );
 
 		modelProperty().addListener((_obs, _old, _new) -> getViewport().setModel(_new));
 	}

@@ -22,7 +22,7 @@ package fr.java.beans.impl.numbers;
 import fr.java.beans.impl.NumberBeanProperty;
 import fr.java.beans.impl.ReadOnlyNumberBeanProperty;
 import fr.java.beans.impl.SimpleNumberBeanProperty;
-import fr.java.math.Interval;
+import fr.java.math.numbers.Interval;
 import fr.java.math.numbers.Ranged;
 
 public class ReadOnlyRangedNumberBeanProperty<T extends Number> extends ReadOnlyNumberBeanProperty<T> implements Ranged<T> {

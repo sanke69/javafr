@@ -11,7 +11,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-import fr.java.patterns.identifiable.Nameable;
+import fr.java.patterns.capabilities.Nameable;
 import fr.java.player.PlayList;
 import fr.javafx.beans.observable.MyFXCollections;
 import fr.javafx.beans.observable.ObservablePlayList;

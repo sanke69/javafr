@@ -22,7 +22,7 @@ package fr.java.beans.impl.numbers;
 import fr.java.beans.impl.DoubleBeanProperty;
 import fr.java.beans.impl.ReadOnlyDoubleBeanProperty;
 import fr.java.beans.impl.SimpleDoubleBeanProperty;
-import fr.java.math.Interval;
+import fr.java.math.numbers.Interval;
 import fr.java.math.numbers.Ranged;
 
 public class ReadOnlyRangedDoubleBeanProperty extends ReadOnlyDoubleBeanProperty implements Ranged<Double> {

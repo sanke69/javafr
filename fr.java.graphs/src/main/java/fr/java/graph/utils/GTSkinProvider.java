@@ -11,7 +11,7 @@ import fr.java.graph.GTNode;
 import fr.java.graph.viewer.GTLayout;
 import fr.java.graph.viewer.GTSkin;
 import fr.java.lang.exceptions.NotYetImplementedException;
-import fr.java.patterns.identifiable.Identifiable;
+import fr.java.patterns.capabilities.Identifiable;
 
 public class GTSkinProvider<GO, GTO extends Identifiable, GTL extends GTLayout> implements GTSkin.Generator<GO, GTO, GTL> {
 

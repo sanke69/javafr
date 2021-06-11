@@ -1,6 +1,6 @@
 package fr.java.maths.numbers.ranged;
 
-import fr.java.math.Interval;
+import fr.java.math.numbers.Interval;
 import fr.java.math.numbers.Ranged;
 
 public class RangedNumber<T extends Number> implements Ranged<T> {

@@ -3,8 +3,8 @@ package fr.java.maths.geometry.space.types;
 import java.text.NumberFormat;
 import java.util.Set;
 
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.geometry.space.Dimension3D;
-import fr.java.math.geometry.space.Vector3D;
 import fr.java.maths.algebra.Vectors;
 
 public class SimpleDimension3D implements Dimension3D.Editable {

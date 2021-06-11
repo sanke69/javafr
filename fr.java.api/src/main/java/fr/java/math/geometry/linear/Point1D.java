@@ -19,6 +19,7 @@
 **/
 package fr.java.math.geometry.linear;
 
+import fr.java.math.algebra.vector.generic.Vector1D;
 import fr.java.math.geometry.Dimension;
 import fr.java.math.geometry.Point;
 import fr.java.math.topology.Coordinate;

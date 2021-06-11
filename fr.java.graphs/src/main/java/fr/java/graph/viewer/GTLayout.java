@@ -4,18 +4,9 @@ import fr.java.graph.GTEdge;
 import fr.java.graph.GTGate;
 import fr.java.graph.GTNode;
 import fr.java.lang.properties.ID;
-import fr.java.patterns.displayable.Moveable;
-import fr.java.patterns.displayable.Resizeable;
-import fr.java.patterns.displayable.Selectable;
-import fr.java.patterns.identifiable.Identifiable;
-import fr.java.patterns.mvc.Viewable;
+import fr.java.patterns.capabilities.Identifiable;
 
-public interface GTLayout extends Identifiable 
-								  // , Viewable
-								  // , Selectable
-								  // , Moveable.TwoDims
-								  // , Resizeable.TwoDims
-								  {
+public interface GTLayout extends Identifiable {
 
 	public interface Node extends GTLayout {
 		public GTNode getModel();

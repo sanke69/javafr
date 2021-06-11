@@ -60,7 +60,6 @@ module javafr.sdk {
 
 	exports fr.media.players;
 
-	exports fr.java.sdk.patterns.geometry;
 	exports fr.java.sdk.patterns.mvc;
 	exports fr.java.sdk.patterns.serializable.bin;
 	exports fr.java.sdk.patterns.serializable.xml;

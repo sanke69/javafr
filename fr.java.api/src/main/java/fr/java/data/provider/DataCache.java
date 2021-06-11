@@ -23,7 +23,7 @@ import java.util.Comparator;
 
 import fr.java.data.DataException;
 import fr.java.lang.enums.AccessMode;
-import fr.java.patterns.priority.Priority;
+import fr.java.lang.properties.Priority;
 
 public interface DataCache<COORD, TYPE> extends Comparable<Object> {
 	public static final Comparator<? super DataCache<?, ?>> comparator = (_c1, _c2) -> - _c1.getCachePriority().compareTo( _c2.getCachePriority() );

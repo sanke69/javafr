@@ -8,7 +8,7 @@ import java.util.function.Function;
 import fr.java.data.DataNotFoundException;
 import fr.java.data.provider.caches.DataCacheInMemory;
 import fr.java.lang.enums.AccessMode;
-import fr.java.patterns.priority.DefaultPriority;
+import fr.java.lang.properties.Priority;
 
 public class DefaultDataCacheInMemory<COORD, TYPE> extends AbstractDataCache<COORD, TYPE> implements DataCacheInMemory<COORD, TYPE> {
 	private static final long			defaultCacheSize	 = 50 * 1024 * 1024;
@@ -24,7 +24,7 @@ public class DefaultDataCacheInMemory<COORD, TYPE> extends AbstractDataCache<COO
 		this(defaultCacheSize, _typeSizeInBytes);
 	}
 	public DefaultDataCacheInMemory(long _capacity, Function<TYPE, Long> _typeSizeInBytes) {
-		super(CacheType.MEMORY, AccessMode.ReadWrite, DefaultPriority.Highest);
+		super(CacheType.MEMORY, AccessMode.ReadWrite, Priority.Highest);
 		cacheCapacity   = _capacity;
 		typeSizeInBytes = _typeSizeInBytes;
 	}

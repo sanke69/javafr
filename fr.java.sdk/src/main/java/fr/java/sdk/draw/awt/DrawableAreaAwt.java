@@ -2,7 +2,7 @@ package fr.java.sdk.draw.awt;
 
 import java.awt.Graphics;
 
-import fr.java.patterns.drawable.DrawableArea;
+import fr.java.draw.DrawableArea;
 
 public interface DrawableAreaAwt extends DrawableArea {
 

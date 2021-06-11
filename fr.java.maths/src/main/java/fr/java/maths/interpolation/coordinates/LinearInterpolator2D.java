@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import fr.java.math.geometry.plane.Point2D;
-import fr.java.maths.Points;
-import fr.java.maths.interpolation.CoordinateInterpolator;
+import fr.java.math.interpolation.CoordinateInterpolator;
+import fr.java.maths.geometry.types.Points;
 
 public class LinearInterpolator2D implements CoordinateInterpolator.TwoDims {
 	private double[] x, y;

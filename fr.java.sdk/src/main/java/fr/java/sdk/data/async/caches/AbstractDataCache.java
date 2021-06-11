@@ -2,8 +2,7 @@ package fr.java.sdk.data.async.caches;
 
 import fr.java.data.provider.DataCache;
 import fr.java.lang.enums.AccessMode;
-import fr.java.patterns.priority.DefaultPriority;
-import fr.java.patterns.priority.Priority;
+import fr.java.lang.properties.Priority;
 
 public abstract class AbstractDataCache<COORD, TYPE> implements DataCache<COORD, TYPE> {
 	private final CacheType  type;
@@ -11,10 +10,10 @@ public abstract class AbstractDataCache<COORD, TYPE> implements DataCache<COORD,
 	private final Priority 	 priority;
 
 	public AbstractDataCache(CacheType _type) {
-		this(_type, AccessMode.ReadOnly, DefaultPriority.Normal);
+		this(_type, AccessMode.ReadOnly, Priority.Normal);
 	}
 	public AbstractDataCache(CacheType _type, AccessMode _accessMode) {
-		this(_type, _accessMode, DefaultPriority.Normal);
+		this(_type, _accessMode, Priority.Normal);
 	}
 	public AbstractDataCache(CacheType _type, AccessMode _accessMode, Priority _priority) {
 		super();

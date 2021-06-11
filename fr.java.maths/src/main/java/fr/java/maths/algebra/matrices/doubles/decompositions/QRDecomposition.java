@@ -2,7 +2,7 @@ package fr.java.maths.algebra.matrices.doubles.decompositions;
 
 import fr.java.math.algebra.NumberMatrix;
 import fr.java.maths.Numbers;
-import fr.java.maths.algebra.matrices.Matrixmnd;
+import fr.java.maths.algebra.matrices.DoubleMatrixMN;
 
 /** QR Decomposition.
 <P>
@@ -48,7 +48,7 @@ public class QRDecomposition implements java.io.Serializable {
    @param A    Rectangular matrix
    */
 
-   public QRDecomposition (Matrixmnd A) {
+   public QRDecomposition (DoubleMatrixMN A) {
       // Initialize.
       QR = A.getStorageCopy();
       m = A.rows();
@@ -109,8 +109,8 @@ public class QRDecomposition implements java.io.Serializable {
    @return     Lower trapezoidal matrix whose columns define the reflections
    */
 
-   public Matrixmnd getH () {
-      Matrixmnd X = new Matrixmnd(m,n);
+   public DoubleMatrixMN getH () {
+      DoubleMatrixMN X = new DoubleMatrixMN(m,n);
       double[][] H = X.getStorage();
       for (int i = 0; i < m; i++) {
          for (int j = 0; j < n; j++) {
@@ -128,8 +128,8 @@ public class QRDecomposition implements java.io.Serializable {
    @return     R
    */
 
-   public Matrixmnd getR () {
-      Matrixmnd X = new Matrixmnd(n,n);
+   public DoubleMatrixMN getR () {
+      DoubleMatrixMN X = new DoubleMatrixMN(n,n);
       double[][] R = X.getStorage();
       for (int i = 0; i < n; i++) {
          for (int j = 0; j < n; j++) {
@@ -149,8 +149,8 @@ public class QRDecomposition implements java.io.Serializable {
    @return     Q
    */
 
-   public Matrixmnd getQ () {
-      Matrixmnd X = new Matrixmnd(m,n);
+   public DoubleMatrixMN getQ () {
+      DoubleMatrixMN X = new DoubleMatrixMN(m,n);
       double[][] Q = X.getStorage();
       for (int k = n-1; k >= 0; k--) {
          for (int i = 0; i < m; i++) {
@@ -180,7 +180,7 @@ public class QRDecomposition implements java.io.Serializable {
    @exception  RuntimeException  Matrix is rank deficient.
    */
 
-   public Matrixmnd solve (NumberMatrix B) {
+   public DoubleMatrixMN solve (NumberMatrix B) {
       if (B.rows() != m) {
          throw new IllegalArgumentException("Matrix row dimensions must agree.");
       }
@@ -190,7 +190,7 @@ public class QRDecomposition implements java.io.Serializable {
       
       // Copy right hand side
       int nx = B.columns();
-      double[][] X = ((Matrixmnd) B).getStorageCopy();
+      double[][] X = ((DoubleMatrixMN) B).getStorageCopy();
 
       // Compute Y = transpose(Q)*B
       for (int k = 0; k < n; k++) {
@@ -216,7 +216,7 @@ public class QRDecomposition implements java.io.Serializable {
             }
          }
       }
-      return (Matrixmnd.wrap(X,n,nx).getMatrix(0,n-1,0,nx-1));
+      return (DoubleMatrixMN.wrap(X,n,nx).getMatrix(0,n-1,0,nx-1));
    }
   private static final long serialVersionUID = 1;
 }

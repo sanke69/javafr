@@ -20,7 +20,7 @@
 package fr.java.math.algebra;
 
 import fr.java.lang.exceptions.NotSupportedException;
-import fr.java.tensor.Tensor;
+import fr.java.math.tensor.Tensor;
 
 public interface NumberTensor extends Tensor {
 

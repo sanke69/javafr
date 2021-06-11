@@ -20,9 +20,25 @@
 package fr.java.patterns;
 
 import fr.java.beans.ListenableBean;
-import fr.java.patterns.mvc.Model;
+import fr.java.beans.impl.ObjectBeanProperty;
+import fr.java.beans.impl.ReadOnlyBooleanBeanProperty;
+import fr.java.beans.properties.BeanProperty;
+import fr.java.lang.properties.ID;
+import fr.java.mvc.Model;
+import fr.java.mvc.ViewRequest;
 
-@Deprecated
-public interface ModelBean extends Model, ListenableBean, IdentifiableBean, NameableBean, ViewableBean {
+public interface ModelBean extends Model, ListenableBean {
 
+	public ID   								getId();
+	public String 								getName();
+
+	public void 								setVisible(boolean _enabled);
+	public boolean 								isVisible();
+
+	public BeanProperty<ID> 					idProperty();
+	public BeanProperty<String> 				nameProperty();
+
+	public ReadOnlyBooleanBeanProperty 			visibleProperty();
+
+	public ObjectBeanProperty<ViewRequest> 		viewRequestProperty();
 }

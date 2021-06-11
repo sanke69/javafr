@@ -1,7 +1,7 @@
 package fr.java.maths.algebra.matrices.doubles.decompositions;
 
 import fr.java.math.algebra.NumberMatrix;
-import fr.java.maths.algebra.matrices.Matrixmnd;
+import fr.java.maths.algebra.matrices.DoubleMatrixMN;
 
 /** LU Decomposition.
    <P>
@@ -52,7 +52,7 @@ public class LUDecomposition implements java.io.Serializable {
 
    // Use a "left-looking", dot-product, Crout/Doolittle algorithm.
 
-      LU = ((Matrixmnd) A).getStorageCopy();
+      LU = ((DoubleMatrixMN) A).getStorageCopy();
       m = A.rows();
       n = A.columns();
       piv = new int[m];
@@ -195,7 +195,7 @@ public class LUDecomposition implements java.io.Serializable {
    */
 
    public NumberMatrix getL () {
-      Matrixmnd X = new Matrixmnd(m,n);
+      DoubleMatrixMN X = new DoubleMatrixMN(m,n);
       double[][] L = X.getStorage();
       for (int i = 0; i < m; i++) {
          for (int j = 0; j < n; j++) {
@@ -216,7 +216,7 @@ public class LUDecomposition implements java.io.Serializable {
    */
 
    public NumberMatrix getU () {
-      Matrixmnd X = new Matrixmnd(n,n);
+      DoubleMatrixMN X = new DoubleMatrixMN(n,n);
       double[][] U = X.getStorage();
       for (int i = 0; i < n; i++) {
          for (int j = 0; j < n; j++) {
@@ -288,7 +288,7 @@ public class LUDecomposition implements java.io.Serializable {
       // Copy right hand side with pivoting
       int nx = B.columns();
       NumberMatrix Xmat = B.getMatrix(piv,0,nx-1);
-      double[][] X = ((Matrixmnd) Xmat).getStorage();
+      double[][] X = ((DoubleMatrixMN) Xmat).getStorage();
 
       // Solve L*Y = B(piv,:)
       for (int k = 0; k < n; k++) {

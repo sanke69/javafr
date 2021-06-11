@@ -21,7 +21,7 @@ package fr.java.nio.buffer;
 
 import java.nio.Buffer;
 
-import fr.java.math.geometry.space.Vector3D;
+import fr.java.math.algebra.vector.generic.Vector3D;
 
 public interface Vector3DBufferX extends BufferX {
 

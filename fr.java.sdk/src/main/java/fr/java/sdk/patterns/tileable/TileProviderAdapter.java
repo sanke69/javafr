@@ -1,6 +1,6 @@
 package fr.java.sdk.patterns.tileable;
 
-import fr.java.patterns.tileable.TileProvider;
+import fr.java.patterns.tiled.TileProvider;
 
 public abstract class TileProviderAdapter<TILE> implements TileProvider<TILE> {
 

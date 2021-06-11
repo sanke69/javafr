@@ -29,9 +29,8 @@ import fr.java.math.geometry.BoundingBox;
 import fr.java.math.topology.Coordinate;
 import fr.java.media.image.Image;
 import fr.java.media.video.buffer.VideoFrame;
-import fr.java.patterns.geometry.Boundable;
 
-public interface XRaster extends Boundable.TwoDims {
+public interface XRaster extends BoundingBox.TwoDims {
 
 	public static class Collection {
 

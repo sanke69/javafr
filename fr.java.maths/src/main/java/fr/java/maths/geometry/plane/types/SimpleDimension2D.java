@@ -3,8 +3,8 @@ package fr.java.maths.geometry.plane.types;
 import java.text.NumberFormat;
 import java.util.Set;
 
+import fr.java.math.algebra.vector.generic.Vector2D;
 import fr.java.math.geometry.plane.Dimension2D;
-import fr.java.math.geometry.plane.Vector2D;
 import fr.java.maths.algebra.Vectors;
 
 public class SimpleDimension2D implements Dimension2D.Editable {

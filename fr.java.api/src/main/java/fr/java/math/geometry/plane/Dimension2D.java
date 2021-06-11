@@ -21,20 +21,16 @@ package fr.java.math.geometry.plane;
 
 import java.io.Serializable;
 
+import fr.java.math.algebra.vector.generic.Vector2D;
 import fr.java.math.geometry.Dimension;
 
 public interface Dimension2D extends Dimension.TwoDims, Serializable {
 
 	public static interface Editable extends Dimension2D, Dimension.TwoDims.Editable {
 
-	    public void 	set(double _w, double _h);
-
-	    public void 	setWidth(double _w);
-	    public void 	setHeight(double _h);
-
 	}
 
-	public double 		getWidth();
-	public double 		getHeight();
+    public double[] asArray();
+    public Vector2D asVector();
 
 }

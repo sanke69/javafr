@@ -36,11 +36,11 @@ import fr.java.math.geometry.space.BoundingBox3D;
 import fr.java.math.geometry.space.Dimension3D;
 import fr.java.math.geometry.space.Point3D;
 import fr.java.math.geometry.space.shapes.Ellipsoid3D;
-import fr.java.maths.Points;
 import fr.java.maths.geometry.space.shapes.quadrics.Quadric3DBase;
 import fr.java.maths.geometry.space.shapes.quadrics.QuadricShape3D;
 import fr.java.maths.geometry.space.types.SimpleDimension3D;
 import fr.java.maths.geometry.space.types.SimpleRay3D;
+import fr.java.maths.geometry.types.Points;
 
 // https://en.wikipedia.org/wiki/Geodesics_on_an_ellipsoid#Triaxial_coordinate_systems
 public class QuadricEllipsoid3D extends Quadric3DBase implements QuadricShape3D, Ellipsoid3D {
@@ -160,6 +160,36 @@ public class QuadricEllipsoid3D extends Quadric3DBase implements QuadricShape3D,
 	public boolean contains(BoundingBox3D _bbox) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	@Override
+	public double getZ() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public double getDepth() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public double getY() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public double getHeight() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public double getX() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public double getWidth() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

@@ -3,8 +3,8 @@ package fr.java.graph;
 import java.util.Collection;
 
 import fr.java.lang.tuples.Pair;
+import fr.java.patterns.capabilities.Identifiable;
 import fr.java.patterns.composite.Component;
-import fr.java.patterns.identifiable.Identifiable;
 import fr.java.patterns.valueable.Valueable;
 
 public interface GTGate extends Component.Single, Identifiable, Valueable {

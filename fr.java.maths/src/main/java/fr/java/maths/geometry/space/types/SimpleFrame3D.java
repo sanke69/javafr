@@ -3,14 +3,14 @@ package fr.java.maths.geometry.space.types;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
-import fr.java.math.algebra.matrix.specials.Matrix44D;
+import fr.java.math.algebra.matrix.generic.Matrix44D;
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.geometry.Frame;
 import fr.java.math.geometry.space.Frame3D;
 import fr.java.math.geometry.space.Point3D;
-import fr.java.math.geometry.space.Vector3D;
 import fr.java.maths.algebra.Vectors;
-import fr.java.maths.algebra.matrices.Matrix44d;
-import fr.java.maths.geometry.Geometry;
+import fr.java.maths.algebra.matrices.DoubleMatrix44;
+import fr.java.maths.geometry.Space;
 import fr.java.maths.geometry.space.utils.Quaternion;
 
 public class SimpleFrame3D implements Frame3D {
@@ -25,27 +25,27 @@ public class SimpleFrame3D implements Frame3D {
 	public final Point3D.Editable  o;
 	public final Vector3D.Editable i, j, k;
 	
-	public final Matrix44d m; // ModelMatrix
+	public final DoubleMatrix44 m; // ModelMatrix
 
 	public SimpleFrame3D() {
 		super();
-		o = Geometry.Space.WorldOrigin.cloneEditable();
-		i = Geometry.Space.WorldXAxis.cloneEditable();
-		j = Geometry.Space.WorldYAxis.cloneEditable();
-		k = Geometry.Space.WorldZAxis.cloneEditable();
+		o = Space.WorldOrigin.cloneEditable();
+		i = Space.WorldXAxis.cloneEditable();
+		j = Space.WorldYAxis.cloneEditable();
+		k = Space.WorldZAxis.cloneEditable();
 
-		m = new Matrix44d();
+		m = new DoubleMatrix44();
 
 		parentFrame = null; // ie. world!
 	}
 	public SimpleFrame3D(Point3D _o) {
 		super();
 		o = _o.cloneEditable();
-		i = Geometry.Space.WorldXAxis.cloneEditable();
-		j = Geometry.Space.WorldYAxis.cloneEditable();
-		k = Geometry.Space.WorldZAxis.cloneEditable();
+		i = Space.WorldXAxis.cloneEditable();
+		j = Space.WorldYAxis.cloneEditable();
+		k = Space.WorldZAxis.cloneEditable();
 
-		m = new Matrix44d();
+		m = new DoubleMatrix44();
 
 		parentFrame = null; // ie. world!
 	}
@@ -56,7 +56,7 @@ public class SimpleFrame3D implements Frame3D {
 		j = _j.normalized().cloneEditable();
 		k = _k.normalized().cloneEditable();
 
-		m = new Matrix44d();
+		m = new DoubleMatrix44();
 
 		parentFrame = null; // ie. world!
 	}

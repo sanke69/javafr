@@ -6,7 +6,7 @@ import javax.imageio.ImageIO;
 
 import fr.java.lang.enums.State;
 import fr.java.lang.enums.state.ServiceState;
-import fr.java.patterns.stateable.StateSwitcher;
+import fr.java.state.StateSwitcher;
 import fr.javafx.sdk.controls.service.skins.contents.ServiceStateSkinAction;
 import fr.javafx.utils.FxImageUtils;
 import javafx.scene.image.Image;

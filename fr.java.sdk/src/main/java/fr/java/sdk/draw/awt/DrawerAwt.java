@@ -16,7 +16,7 @@ import fr.java.draw.tools.Font;
 import fr.java.math.geometry.BoundingBox;
 import fr.java.math.geometry.Dimension.TwoDims;
 import fr.java.math.geometry.plane.Point2D;
-import fr.java.maths.Points;
+import fr.java.maths.geometry.types.Points;
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.ArcTo;
 import javafx.scene.shape.Circle;

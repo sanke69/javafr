@@ -27,11 +27,11 @@ import java.io.IOException;
 import java.util.Optional;
 
 import fr.java.lang.enums.state.ServiceState;
-import fr.java.patterns.timeable.TimeEvent;
-import fr.java.patterns.timeable.TimeListener;
 import fr.java.sdk.events.Events;
 import fr.java.sdk.patterns.timeable.Timestamps;
 import fr.java.sdk.player.PlayerAdapter;
+import fr.java.time.TimeEvent;
+import fr.java.time.TimeListener;
 
 public abstract class TimeDrivenPlayer<T> extends PlayerAdapter<T> implements TimeListener {
 	private long    last_update;

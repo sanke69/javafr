@@ -8,8 +8,7 @@ import java.util.Map;
 import fr.java.data.DataException;
 import fr.java.data.DataLoadException;
 import fr.java.data.DataNotFoundException;
-import fr.java.patterns.priority.DefaultPriority;
-import fr.java.patterns.priority.Priority;
+import fr.java.lang.properties.Priority;
 import fr.java.sdk.thread.QueryPoolProcessor;
 import fr.java.sdk.thread.QueryPoolProcessorLimited;
 
@@ -18,19 +17,19 @@ public abstract class AbstractDataCacheOnLineWithMaxRequests<COORD, TYPE> extend
 	QueryPoolProcessor  taskThread;
 
 	public AbstractDataCacheOnLineWithMaxRequests() {
-		this(null, 3, DefaultPriority.Lowest);
+		this(null, 3, Priority.Lowest);
 	}
 	public AbstractDataCacheOnLineWithMaxRequests(String _name) {
-		this(_name, 3, DefaultPriority.Lowest);
+		this(_name, 3, Priority.Lowest);
 	}
 	public AbstractDataCacheOnLineWithMaxRequests(int _maxRequestPerSeconds) {
-		this(null, _maxRequestPerSeconds, DefaultPriority.Lowest);
+		this(null, _maxRequestPerSeconds, Priority.Lowest);
 	}
 	public AbstractDataCacheOnLineWithMaxRequests(Priority _priority) {
 		this(null, 3, _priority);
 	}
 	public AbstractDataCacheOnLineWithMaxRequests(String _name, int _maxRequestPerSeconds) {
-		this(_name, _maxRequestPerSeconds, DefaultPriority.Lowest);
+		this(_name, _maxRequestPerSeconds, Priority.Lowest);
 	}
 	public AbstractDataCacheOnLineWithMaxRequests(String _name, int _maxRequestPerSeconds, Priority _priority) {
 		super(_priority);

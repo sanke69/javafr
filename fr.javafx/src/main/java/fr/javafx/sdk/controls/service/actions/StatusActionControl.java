@@ -2,9 +2,9 @@ package fr.javafx.sdk.controls.service.actions;
 
 import fr.java.lang.enums.State;
 import fr.java.lang.enums.state.ServiceState;
-import fr.java.patterns.stateable.StateEvent;
-import fr.java.patterns.stateable.StateListener;
-import fr.java.patterns.stateable.StateSwitcher;
+import fr.java.state.StateEvent;
+import fr.java.state.StateListener;
+import fr.java.state.StateSwitcher;
 import fr.javafx.sdk.controls.service.ServiceActionControl;
 import fr.javafx.sdk.controls.service.ServiceControl;
 import fr.javafx.sdk.controls.service.styles.StateStyles;

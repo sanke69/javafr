@@ -31,8 +31,8 @@ import fr.java.lang.enums.State;
 import fr.java.lang.enums.state.ServiceState;
 import fr.java.lang.properties.ID;
 import fr.java.patterns.service.Service;
-import fr.java.patterns.stateable.StateListener;
 import fr.java.sdk.events.Events;
+import fr.java.state.StateListener;
 
 public abstract class ScheduledServiceAdapter implements Service.Interruptable {
 

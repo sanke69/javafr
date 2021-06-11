@@ -7,11 +7,11 @@ import fr.drawer.fx.tiles.TileDrawerFx;
 import fr.java.draw.tools.Colors;
 import fr.java.math.geometry.Viewport;
 import fr.java.math.topology.Coordinate;
-import fr.java.math.window.Edges2D;
-import fr.java.patterns.tileable.TileProvider;
-import fr.java.patterns.tileable.TileViewport;
-import fr.java.sdk.patterns.geometry.Boundables;
+import fr.java.maths.geometry.types.BoundingBoxes;
+import fr.java.patterns.tiled.TileProvider;
+import fr.java.patterns.tiled.TileViewport;
 import fr.java.sdk.patterns.tileable.TileViewportAdapter;
+import fr.java.ui.Edges2D;
 import fr.javafx.scene.canvas.ResizableCanvas;
 import fr.javafx.scene.control.viewport.planar.PlaneViewportControl;
 import javafx.scene.Node;
@@ -40,7 +40,7 @@ public class TileViewportControl<MODEL, COORD extends Coordinate.TwoDims> extend
 		super(_fps, _viewport);
 
 		getViewport().setEdges	(new TileViewportEdges(_viewport));
-		getViewport().setWindow	(Boundables.of(this));
+		getViewport().setWindow	(BoundingBoxes.of(this));
 
 		setTileProvider			(_tileProvider);
 		updateViewScaleRange	(0.1, 5);

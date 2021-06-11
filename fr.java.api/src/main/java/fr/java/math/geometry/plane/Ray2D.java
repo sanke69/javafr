@@ -19,6 +19,7 @@
 **/
 package fr.java.math.geometry.plane;
 
+import fr.java.math.algebra.vector.generic.Vector2D;
 import fr.java.math.geometry.Ray;
 
 public interface Ray2D extends Ray {

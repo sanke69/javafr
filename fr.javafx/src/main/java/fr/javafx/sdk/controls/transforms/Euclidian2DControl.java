@@ -1,6 +1,6 @@
 package fr.javafx.sdk.controls.transforms;
 
-import fr.java.maths.geometry.plane.transformations.special.Euclidian2D;
+import fr.java.maths.geometry.plane.transformations.generic.Euclidian2D;
 import fr.javafx.scene.control.actionner.FxDPad;
 import fr.javafx.scene.control.indicator.FxPotentiometer;
 import javafx.beans.property.BooleanProperty;

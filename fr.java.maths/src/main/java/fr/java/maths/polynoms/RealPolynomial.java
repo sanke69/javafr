@@ -27,7 +27,25 @@ public class RealPolynomial implements Polynom.Real {
 	public static Polynom.Real fromCoefs(double... coeffs) {
 		return new RealPolynomial(coeffs);
 	}
-	
+
+	/**
+	 * Solve 2nd degree equation
+	 * 
+	 * @param _a
+	 * @param _b
+	 * @param _c
+	 * @return
+	 */
+	public static double[]     getRoots(double _a, double _b, double _c) {
+		double delta = _b*_b - 4 * _a * _c;
+
+		if(delta < 0)
+			return null;
+		if(delta == 0)
+			return new double[] { - _b / (2 * _a) };
+		else
+			return new double[] { - (_b - Math.sqrt(delta)) / (2 * _a), - (_b + Math.sqrt(delta)) / (2 * _a) };
+	}
 
 	int			degree;
 	double[]	coeffs;	// ordered by degree of X
@@ -156,7 +174,7 @@ public class RealPolynomial implements Polynom.Real {
 		return new RealPolynomial(coeffDer);
 	}
 */
-	protected double 			getCoeffDerivative(int _i, int _nth) {
+	protected double 		getCoeffDerivative(int _i, int _nth) {
 		double coeffDer = coeffs[_i];
 		for(int j = _i; j > _i - _nth; j--)
 			coeffDer *= j;
@@ -278,7 +296,7 @@ public class RealPolynomial implements Polynom.Real {
 		return c.compact();
 	}
 	
-	public Polynom.Real compose(Polynom.Real _g) {
+	public Polynom.Real 	compose(Polynom.Real _g) {
 		Polynom.Real poly = new RealPolynomial(0);
         for(int i = degree; i >= 0; i--) {
         	RealPolynomial term = new RealPolynomial(coeffs[i]);
@@ -311,7 +329,7 @@ public class RealPolynomial implements Polynom.Real {
 		return sb.toString();
 	}
 
-	private Polynom.Real compact() {
+	private Polynom.Real 	compact() {
 		int nonNullDegree = degree;
 		while(nonNullDegree > 0 && coeffs[nonNullDegree] == 0)
 			nonNullDegree--;

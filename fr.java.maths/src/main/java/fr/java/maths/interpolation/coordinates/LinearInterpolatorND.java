@@ -4,9 +4,9 @@ import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.StringJoiner;
 
+import fr.java.math.interpolation.CoordinateInterpolator;
 import fr.java.math.topology.Coordinate;
 import fr.java.math.topology.CoordinateSystem;
-import fr.java.maths.interpolation.CoordinateInterpolator;
 
 public class LinearInterpolatorND implements CoordinateInterpolator.MultiDims {
 	private int        nbDims, nbPoints;

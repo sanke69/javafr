@@ -2,11 +2,11 @@ package fr.java.sdk.draw.design;
 
 import java.util.function.BiFunction;
 
+import fr.java.draw.Drawable;
 import fr.java.draw.Drawer;
 import fr.java.draw.tools.Brush;
 import fr.java.draw.tools.Color;
 import fr.java.draw.tools.Colors;
-import fr.java.patterns.drawable.Drawable;
 
 public class BioHazardDesignAdapter implements Drawable {
 	public static final Brush BIOHAZARD_BACKGROUND_BRUSH = Brush.of(1.0, Colors.BLACK, Colors.BLACK);

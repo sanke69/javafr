@@ -2,12 +2,12 @@ package fr.java.maths.geometry.space.camera.behaviors;
 
 import java.util.Optional;
 
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.geometry.space.Frame3D;
 import fr.java.math.geometry.space.Point3D;
-import fr.java.math.geometry.space.Vector3D;
 import fr.java.maths.algebra.Vectors;
-import fr.java.maths.algebra.matrices.Matrix44d;
-import fr.java.maths.geometry.Geometry;
+import fr.java.maths.algebra.matrices.DoubleMatrix44;
+import fr.java.maths.geometry.Space;
 import fr.java.maths.geometry.space.camera.CameraBehavior;
 import fr.java.maths.geometry.space.utils.Quaternion;
 
@@ -17,7 +17,7 @@ public abstract class QuaternionCameraBehaviorBase implements CameraBehavior {
 
 	public QuaternionCameraBehaviorBase() {
 		super();
-		frame = Geometry.Space.worldFrame.clone();
+		frame = Space.newFrame();
 	}
 
 	public Frame3D				getFrame() {
@@ -100,22 +100,22 @@ public abstract class QuaternionCameraBehaviorBase implements CameraBehavior {
 		target = null;
 	}
 
-	public Matrix44d 			getTransformMatrix() {
+	public DoubleMatrix44 			getTransformMatrix() {
 		Point3D  O = getFrame().getOrigin();
 		Vector3D X = getFrame().getXAxis();
 		Vector3D Y = getFrame().getYAxis();
 		Vector3D Z = getFrame().getZAxis();
 
-		return Matrix44d.from(X, Y, Z, O);
+		return DoubleMatrix44.from(X, Y, Z, O);
 	}
 	// https://www.3dgep.com/understanding-the-view-matrix/
-	public Matrix44d 			getViewMatrix() {
+	public DoubleMatrix44 			getViewMatrix() {
 		Point3D  O = getFrame().getOrigin();
 		Vector3D X = getFrame().getXAxis();
 		Vector3D Y = getFrame().getYAxis().times(-1);
 		Vector3D Z = getFrame().getZAxis();
 
-		return Matrix44d.from(X, Y, Z, O);
+		return DoubleMatrix44.from(X, Y, Z, O);
 		//return getTransformMatrix().inverse();
 	}
 

@@ -9,7 +9,7 @@ import fr.java.graph.viewer.GTSkin;
 import fr.java.graph.viewer.GTView;
 import fr.java.graph.viewer.GTViewer.Graphics;
 import fr.java.lang.properties.ID;
-import fr.java.patterns.identifiable.Identifiable;
+import fr.java.patterns.capabilities.Identifiable;
 
 public class GTViewProxy<GO, GTO extends Identifiable, GTL extends GTLayout> implements InvocationHandler, GTView<GO, GTO, GTL> {
 	GTO						object;
@@ -72,90 +72,6 @@ public class GTViewProxy<GO, GTO extends Identifiable, GTL extends GTLayout> imp
 		graphics = skin.getGraphics(_viewer);
 				
 		return graphics;
-	}
-
-	@Override
-	public void setVisible(boolean _enable) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean isVisible() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void setSelectable(boolean _value) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean isSelectable() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean requestSelection(boolean b) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isSelected() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public double getY() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public double getX() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public boolean isMoveable() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isMoving() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public double getHeight() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public double getWidth() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public boolean isResizing() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isResizable() {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 }

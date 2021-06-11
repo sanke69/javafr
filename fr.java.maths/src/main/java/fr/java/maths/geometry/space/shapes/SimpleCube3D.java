@@ -41,8 +41,8 @@ import fr.java.math.geometry.space.BoundingBox3D;
 import fr.java.math.geometry.space.Dimension3D;
 import fr.java.math.geometry.space.Point3D;
 import fr.java.math.geometry.space.shapes.Cube3D;
-import fr.java.maths.Points;
 import fr.java.maths.geometry.space.types.SimpleDimension3D;
+import fr.java.maths.geometry.types.Points;
 import fr.java.nio.buffer.Point3DBufferX;
 
 // Oriented World Axis Cube

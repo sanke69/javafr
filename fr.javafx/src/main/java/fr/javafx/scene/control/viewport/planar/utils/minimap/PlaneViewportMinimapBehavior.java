@@ -1,7 +1,7 @@
 package fr.javafx.scene.control.viewport.planar.utils.minimap;
 
 import fr.java.math.geometry.plane.Point2D;
-import fr.java.maths.Points;
+import fr.java.maths.geometry.types.Points;
 import fr.javafx.behavior.Behavior;
 import fr.javafx.behavior.Visual;
 import javafx.event.EventHandler;

@@ -2,24 +2,24 @@ package fr.java.maths.geometry.plane.transformations;
 
 import fr.java.math.geometry.plane.Point2D;
 import fr.java.maths.algebra.Vectors;
-import fr.java.maths.algebra.matrices.Matrix33d;
+import fr.java.maths.algebra.matrices.DoubleMatrix33;
 import fr.java.nio.buffer.Point2DBufferX;
 
 // http://morpheo.inrialpes.fr/people/Boyer/Teaching/RICM/
 public class Transformation2D implements Cloneable {
 
-	protected Matrix33d m;
+	protected DoubleMatrix33 m;
 
 	public Transformation2D() {
 		super();
-		m = Matrix33d.identity();
+		m = DoubleMatrix33.identity();
 	}
-	public Transformation2D(Matrix33d _m) {
+	public Transformation2D(DoubleMatrix33 _m) {
 		super();
 		m = _m.clone();
 	}
 
-	public Matrix33d asUniformMatrix() {
+	public DoubleMatrix33 asUniformMatrix() {
 		return m;
 	}
 
@@ -37,10 +37,10 @@ public class Transformation2D implements Cloneable {
 		return _ptBuffer;
 	}
 
-	public Matrix33d times(Transformation2D _other) {
+	public DoubleMatrix33 times(Transformation2D _other) {
 		return asUniformMatrix().times(_other.asUniformMatrix());
 	}
-	public Matrix33d times(Matrix33d _m) {
+	public DoubleMatrix33 times(DoubleMatrix33 _m) {
 		return asUniformMatrix().times(_m);
 	}
 

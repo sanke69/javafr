@@ -19,10 +19,11 @@
 **/
 package fr.java.math.geometry.plane;
 
+import fr.java.math.algebra.vector.generic.Vector2D;
+
 public interface Line2D extends Shape2D {
 
-	Point2D getPoint();
-	Point2D getPoint(boolean _random);
+	Point2D getPoint(double _x);
 
 	Vector2D getDirection();
 	Vector2D getNormal();

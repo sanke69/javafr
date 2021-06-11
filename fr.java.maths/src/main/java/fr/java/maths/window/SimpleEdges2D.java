@@ -1,6 +1,6 @@
 package fr.java.maths.window;
 
-import fr.java.math.window.Edges2D;
+import fr.java.ui.Edges2D;
 
 public class SimpleEdges2D implements Edges2D.Editable {
 	double left, right, top, bottom;

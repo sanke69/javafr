@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import fr.java.beans.impl.BeanPropertyList;
+import fr.java.patterns.capabilities.Identifiable;
 import fr.java.patterns.composite.Component;
 import fr.java.patterns.composite.Composite;
-import fr.java.patterns.identifiable.Identifiable;
 import fr.java.patterns.valueable.Valueable;
 
 public interface GTNode extends Component.Single, Identifiable, Valueable.Editable {

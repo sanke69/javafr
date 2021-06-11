@@ -22,7 +22,7 @@ package fr.java.math.geometry;
 import java.util.function.Function;
 
 import fr.java.math.topology.Coordinate;
-import fr.java.math.window.Edges2D;
+import fr.java.ui.Edges2D;
 
 /**
  * Viewport

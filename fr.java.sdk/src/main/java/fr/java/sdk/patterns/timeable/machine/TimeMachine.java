@@ -7,13 +7,13 @@ import java.util.function.Consumer;
 import fr.java.events.EventPublisher;
 import fr.java.lang.enums.state.ServiceState;
 import fr.java.lang.properties.Timestamp;
-import fr.java.patterns.timeable.TimeEvent;
-import fr.java.patterns.timeable.TimeListener;
 import fr.java.sdk.events.Events;
 import fr.java.sdk.patterns.timeable.timelines.FixedStepTimeLine;
 import fr.java.sdk.patterns.timeable.timelines.FusionTimeLine;
 import fr.java.sdk.patterns.timeable.timelines.RealTimeLine;
 import fr.java.sdk.player.PlayerAdapter;
+import fr.java.time.TimeEvent;
+import fr.java.time.TimeListener;
 import fr.java.timeline.TimeLine;
 
 public class TimeMachine<V> extends PlayerAdapter<V> implements EventPublisher {

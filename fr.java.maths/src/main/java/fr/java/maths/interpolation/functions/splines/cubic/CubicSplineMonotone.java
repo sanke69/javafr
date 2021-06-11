@@ -1,6 +1,6 @@
 package fr.java.maths.interpolation.functions.splines.cubic;
 
-import fr.java.maths.interpolation.FunctionInterpolator;
+import fr.java.math.interpolation.FunctionInterpolator;
 
 public class CubicSplineMonotone implements FunctionInterpolator.OneVar {
 	private double[]	x;

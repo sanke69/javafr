@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import fr.java.patterns.displayable.Selectable;
+import fr.java.patterns.capabilities.Selectable;
 import fr.javafx.utils.FxNodeUtils;
 import fr.javafx.windows.behaviors.DefaultWindowControlBehavior;
 import fr.javafx.windows.behaviors.DefaultWindowStageBehavior;

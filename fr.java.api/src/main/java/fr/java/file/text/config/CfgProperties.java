@@ -22,9 +22,9 @@ package fr.java.file.text.config;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import fr.java.patterns.capabilities.Nameable;
 import fr.java.patterns.composite.Component;
 import fr.java.patterns.composite.Composite;
-import fr.java.patterns.identifiable.Nameable;
 
 public interface CfgProperties extends Composite {
 	static final String  NULL_SECTION    = "NO_SECTION";

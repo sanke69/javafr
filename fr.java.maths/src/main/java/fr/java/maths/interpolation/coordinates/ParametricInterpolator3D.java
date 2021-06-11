@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 import fr.java.math.geometry.space.Point3D;
-import fr.java.maths.Points;
-import fr.java.maths.interpolation.CoordinateInterpolator;
-import fr.java.maths.interpolation.FunctionInterpolator;
+import fr.java.math.interpolation.CoordinateInterpolator;
+import fr.java.math.interpolation.FunctionInterpolator;
+import fr.java.maths.geometry.types.Points;
 import fr.java.maths.interpolation.functions.splines.cubic.CubicSpline;
 import fr.java.maths.interpolation.functions.splines.cubic.CubicSplineMonotone;
 import fr.java.maths.interpolation.functions.splines.cubic.CubicSplineWithWeight;

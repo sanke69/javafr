@@ -19,7 +19,8 @@
 **/
 package fr.java.math.geometry.space;
 
-import fr.java.math.algebra.matrix.specials.Matrix44D;
+import fr.java.math.algebra.matrix.generic.Matrix44D;
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.geometry.Frame;
 
 public interface Frame3D extends Frame<Point3D, Vector3D> {

@@ -30,6 +30,7 @@ import fr.java.draw.tools.Color;
 import fr.java.draw.tools.Font;
 import fr.java.draw.tools.Paint;
 import fr.java.draw.tools.Pen;
+import fr.java.math.algebra.vector.generic.Vector2D;
 import fr.java.math.geometry.Dimension;
 import fr.java.math.geometry.plane.Ellipse2D;
 import fr.java.math.geometry.plane.Point2D;
@@ -39,7 +40,6 @@ import fr.java.math.geometry.plane.Rectangle2D;
 import fr.java.math.geometry.plane.Segment2D;
 import fr.java.math.geometry.plane.Shape2D;
 import fr.java.math.geometry.plane.Triangle2D;
-import fr.java.math.geometry.plane.Vector2D;
 
 public interface Drawer {
 	public static final ArcMode ARC_OPEN  = ArcMode.OPEN;

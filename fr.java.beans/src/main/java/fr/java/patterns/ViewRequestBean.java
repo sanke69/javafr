@@ -20,7 +20,7 @@
 package fr.java.patterns;
 
 import fr.java.beans.properties.listeners.BeanPropertyMapChangeListener;
-import fr.java.patterns.mvc.ViewRequest;
+import fr.java.mvc.ViewRequest;
 
 //@Deprecated
 // TODO:: 

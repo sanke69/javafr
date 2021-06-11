@@ -40,8 +40,8 @@ import fr.java.lang.exceptions.NotYetImplementedException;
 import fr.java.math.algebra.NumberVector;
 import fr.java.math.algebra.tensor.DoubleTensor;
 import fr.java.math.algebra.vector.DoubleVector;
-import fr.java.math.geometry.space.Vector3D;
-import fr.java.math.geometry.space.Vector4D;
+import fr.java.math.algebra.vector.generic.Vector3D;
+import fr.java.math.algebra.vector.generic.Vector4D;
 import fr.java.maths.Numbers;
 import fr.java.maths.algebra.Tensors;
 

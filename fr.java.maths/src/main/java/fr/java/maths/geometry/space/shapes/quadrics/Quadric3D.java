@@ -3,7 +3,7 @@ package fr.java.maths.geometry.space.shapes.quadrics;
 import java.io.Serializable;
 
 import fr.java.math.geometry.space.Point3D;
-import fr.java.maths.Points;
+import fr.java.maths.geometry.types.Points;
 
 // cf. http://www.bmsc.washington.edu/people/merritt/graphics/quadrics.html
 public interface Quadric3D extends Serializable {

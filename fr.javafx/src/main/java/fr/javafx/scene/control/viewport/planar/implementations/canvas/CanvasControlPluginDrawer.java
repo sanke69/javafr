@@ -5,10 +5,10 @@ import java.util.Set;
 
 import fr.drawer.fx.DrawerFx;
 import fr.drawer.fx.ViewportDrawerFx;
+import fr.java.draw.Drawable;
 import fr.java.draw.tools.Colors;
 import fr.java.math.geometry.plane.Shape2D;
 import fr.java.math.topology.Coordinate;
-import fr.java.patterns.drawable.Drawable;
 import fr.javafx.scene.control.viewport.planar.PlaneViewportControl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

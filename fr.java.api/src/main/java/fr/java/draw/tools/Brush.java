@@ -85,7 +85,7 @@ public interface Brush extends Pen, Paint {
 	@Override
 	default Color toColor() { return Pen.super.toColor(); }
 
-	public Paint getPaintIn();
+	public Paint  getPaintIn();
 	
 
 }

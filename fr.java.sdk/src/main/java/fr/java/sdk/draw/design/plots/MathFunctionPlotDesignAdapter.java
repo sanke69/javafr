@@ -8,9 +8,9 @@ import fr.java.draw.styles.LineStyle;
 import fr.java.draw.styles.PointSkin;
 import fr.java.draw.tools.Brush;
 import fr.java.draw.tools.Colors;
-import fr.java.math.Interval;
 import fr.java.math.functions.MathFunction;
-import fr.java.maths.BoundingBoxes;
+import fr.java.math.numbers.Interval;
+import fr.java.maths.geometry.types.BoundingBoxes;
 import fr.java.sdk.draw.design.GraphDesignAdapter;
 
 public class MathFunctionPlotDesignAdapter extends GraphDesignAdapter {

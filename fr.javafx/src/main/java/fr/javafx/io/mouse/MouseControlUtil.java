@@ -3,16 +3,16 @@ package fr.javafx.io.mouse;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.java.patterns.capabilities.Selectable;
+import fr.javafx.event.EventHandlerGroup;
+import fr.javafx.utils.FxNodeUtils;
+import fr.javafx.xtra.Clipboard;
 import javafx.event.EventHandler;
 import javafx.geometry.Point2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
-import fr.java.patterns.displayable.Selectable;
-import fr.javafx.event.EventHandlerGroup;
-import fr.javafx.utils.FxNodeUtils;
-import fr.javafx.xtra.Clipboard;
 
 public class MouseControlUtil {
 

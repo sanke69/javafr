@@ -32,13 +32,13 @@
 \** ************************************************************************ **/
 package fr.java.maths.geometry.space.utils;
 
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.geometry.space.Point3D;
-import fr.java.math.geometry.space.Vector3D;
-import fr.java.maths.Points;
 import fr.java.maths.algebra.Vectors;
-import fr.java.maths.algebra.matrices.Matrix44d;
+import fr.java.maths.algebra.matrices.DoubleMatrix44;
 import fr.java.maths.algebra.vectors.DoubleVector3D;
 import fr.java.maths.algebra.vectors.DoubleVector4D;
+import fr.java.maths.geometry.types.Points;
 
 
 // cf. Tait-Bryan for "Euler"
@@ -47,7 +47,7 @@ public class Quaternion {
 	public static Quaternion identity() {
 		return new Quaternion(0.0f, 0.0f, 0.0f, 1.0f);
 	}
-	public static Quaternion fromMatrix(final Matrix44d Matrix) {
+	public static Quaternion fromMatrix(final DoubleMatrix44 Matrix) {
 		Quaternion Q = new Quaternion();
 		double Trace = Matrix.get(0, 0) + Matrix.get(1, 1) + Matrix.get(2, 2) + 1;
 
@@ -160,7 +160,7 @@ public class Quaternion {
 			w /= norm;
 		}
 	}
-	public Quaternion(final Matrix44d _m) {
+	public Quaternion(final DoubleMatrix44 _m) {
 		super();
 
 		double trace = _m.m00 + _m.m11 + _m.m22 + 1.0f;
@@ -245,12 +245,12 @@ public class Quaternion {
 		return new Quaternion(x / norm, -y / norm, -z / norm, -w / norm);
 	}
 	// OK
-	public final Matrix44d toMatrix() {
+	public final DoubleMatrix44 toMatrix() {
 		double xx = x * x, xy = x * y, xz = x * z,
 				xw = x * w, yy = y * y, yz = y * z,
 				yw = y * w, zz = z * z, zw = z * w;
 
-		return new Matrix44d(1 - 2 * (yy + zz), 2 * (xy - zw), 2 * (xz + yw), 0,
+		return new DoubleMatrix44(1 - 2 * (yy + zz), 2 * (xy - zw), 2 * (xz + yw), 0,
 				2 * (xy + zw), 1 - 2 * (xx + zz), 2 * (yz - xw), 0,
 				2 * (xz - yw), 2 * (yz + xw), 1 - 2 * (xx + yy), 0,
 				0, 0, 0, 1);

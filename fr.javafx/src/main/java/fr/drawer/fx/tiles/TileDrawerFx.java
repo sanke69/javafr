@@ -6,11 +6,11 @@ import java.awt.image.BufferedImage;
 
 import fr.drawer.fx.DrawerFx;
 import fr.java.data.Data;
-import fr.java.draw.TileDrawer;
-import fr.java.maths.Coordinates;
-import fr.java.patterns.tileable.TileCoordinate;
-import fr.java.patterns.tileable.TileProvider;
-import fr.java.patterns.tileable.TileViewport;
+import fr.java.draw.special.TileDrawer;
+import fr.java.maths.geometry.types.Coordinates;
+import fr.java.patterns.tiled.TileCoordinate;
+import fr.java.patterns.tiled.TileProvider;
+import fr.java.patterns.tiled.TileViewport;
 import fr.javafx.utils.FxImageUtils;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;

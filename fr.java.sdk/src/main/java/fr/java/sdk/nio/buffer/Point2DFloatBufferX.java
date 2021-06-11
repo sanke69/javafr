@@ -5,7 +5,7 @@ import java.nio.FloatBuffer;
 import java.nio.ReadOnlyBufferException;
 
 import fr.java.math.geometry.plane.Point2D;
-import fr.java.maths.Points;
+import fr.java.maths.geometry.types.Points;
 import fr.java.nio.buffer.Point2DBufferX;
 
 public class Point2DFloatBufferX implements Point2DBufferX {

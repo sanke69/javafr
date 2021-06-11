@@ -4,8 +4,8 @@ import java.util.function.BiFunction;
 
 import fr.java.math.geometry.BoundingBox;
 import fr.java.math.topology.Coordinate;
-import fr.java.maths.Coordinates;
-import fr.java.patterns.tileable.TileSystem;
+import fr.java.maths.geometry.types.Coordinates;
+import fr.java.patterns.tiled.TileSystem;
 
 public abstract class LinearPlaneProjectorLevelable<COORD extends Coordinate.TwoDims> extends AbstractPlaneProjectorLevelable<COORD> {
 

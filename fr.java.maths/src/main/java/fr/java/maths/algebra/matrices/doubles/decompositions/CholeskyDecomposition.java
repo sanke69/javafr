@@ -1,7 +1,7 @@
 package fr.java.maths.algebra.matrices.doubles.decompositions;
 
 import fr.java.math.algebra.NumberMatrix;
-import fr.java.maths.algebra.matrices.Matrixmnd;
+import fr.java.maths.algebra.matrices.DoubleMatrixMN;
 
 /** Cholesky Decomposition.
    <P>
@@ -47,7 +47,7 @@ public class CholeskyDecomposition implements java.io.Serializable {
 
 
      // Initialize.
-      double[][] A = ((Matrixmnd) Arg).getStorage();
+      double[][] A = ((DoubleMatrixMN) Arg).getStorage();
       n = Arg.rows();
       L = new double[n][n];
       isspd = (Arg.columns() == n);
@@ -152,8 +152,8 @@ public class CholeskyDecomposition implements java.io.Serializable {
    @return     L
    */
 
-   public Matrixmnd getL () {
-      return Matrixmnd.wrap(L,n,n);
+   public DoubleMatrixMN getL () {
+      return DoubleMatrixMN.wrap(L,n,n);
    }
 
    /** Solve A*X = B
@@ -163,7 +163,7 @@ public class CholeskyDecomposition implements java.io.Serializable {
    @exception  RuntimeException  Matrix is not symmetric positive definite.
    */
 
-   public Matrixmnd solve (Matrixmnd B) {
+   public DoubleMatrixMN solve (DoubleMatrixMN B) {
       if (B.rows() != n) {
          throw new IllegalArgumentException("Matrix row dimensions must agree.");
       }
@@ -196,7 +196,7 @@ public class CholeskyDecomposition implements java.io.Serializable {
 	      }
       
       
-      return Matrixmnd.wrap(X,n,nx);
+      return DoubleMatrixMN.wrap(X,n,nx);
    }
   private static final long serialVersionUID = 1;
 

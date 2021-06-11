@@ -3,11 +3,11 @@ package fr.java.maths.geometry.space.shapes.quadrics.shapes;
 import fr.java.math.geometry.space.BoundingBox3D;
 import fr.java.math.geometry.space.Dimension3D;
 import fr.java.math.geometry.space.Point3D;
-import fr.java.maths.Points;
 import fr.java.maths.geometry.space.shapes.quadrics.Quadric3DBase;
 import fr.java.maths.geometry.space.shapes.quadrics.QuadricShape3D;
 import fr.java.maths.geometry.space.types.SimpleDimension3D;
 import fr.java.maths.geometry.space.types.SimpleRay3D;
+import fr.java.maths.geometry.types.Points;
 
 public class Cylinder3D extends Quadric3DBase implements QuadricShape3D {
 	private static final long serialVersionUID = -5050064419568631832L;

@@ -1,15 +1,15 @@
 package fr.java.sdk.draw.design;
 
+import fr.java.draw.Drawable;
 import fr.java.draw.Drawer;
 import fr.java.draw.tools.Brush;
 import fr.java.draw.tools.Colors;
 import fr.java.math.geometry.BoundingBox;
 import fr.java.math.geometry.plane.Point2D;
-import fr.java.math.window.Edges2D;
-import fr.java.maths.BoundingBoxes;
-import fr.java.maths.Points;
+import fr.java.maths.geometry.types.BoundingBoxes;
+import fr.java.maths.geometry.types.Points;
 import fr.java.maths.window.SimpleEdges2D;
-import fr.java.patterns.drawable.Drawable;
+import fr.java.ui.Edges2D;
 
 public class BoxDesignAdapter implements Drawable {
 

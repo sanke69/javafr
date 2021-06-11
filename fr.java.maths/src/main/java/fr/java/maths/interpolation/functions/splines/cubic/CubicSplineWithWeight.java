@@ -2,7 +2,7 @@ package fr.java.maths.interpolation.functions.splines.cubic;
 
 import java.util.Arrays;
 
-import fr.java.maths.interpolation.FunctionInterpolator;
+import fr.java.math.interpolation.FunctionInterpolator;
 import fr.java.maths.polynoms.RealPolynomial;
 
 public class CubicSplineWithWeight implements FunctionInterpolator.OneVar {

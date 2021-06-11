@@ -1,8 +1,8 @@
 package fr.javafx.scene.control.overlay;
 
 import fr.drawer.fx.Drawer4Fx;
-import fr.java.patterns.drawable.Drawable;
-import fr.java.patterns.drawable.DrawableArea;
+import fr.java.draw.Drawable;
+import fr.java.draw.DrawableArea;
 import fr.javafx.scene.canvas.DrawableCanvas;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;

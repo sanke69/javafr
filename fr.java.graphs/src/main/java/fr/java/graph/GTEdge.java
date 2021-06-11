@@ -2,8 +2,8 @@ package fr.java.graph;
 
 import fr.java.lang.properties.ID;
 import fr.java.lang.tuples.Pair;
+import fr.java.patterns.capabilities.Identifiable;
 import fr.java.patterns.composite.Component;
-import fr.java.patterns.identifiable.Identifiable;
 import fr.java.patterns.valueable.Valueable;
 
 public interface GTEdge extends Component.Single, Identifiable, Valueable {

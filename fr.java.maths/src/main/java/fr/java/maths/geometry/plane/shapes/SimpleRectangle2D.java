@@ -12,8 +12,8 @@ import fr.java.math.geometry.plane.Dimension2D;
 import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.geometry.plane.Rectangle2D;
 import fr.java.math.topology.Coordinate;
-import fr.java.maths.Points;
 import fr.java.maths.geometry.plane.types.SimpleDimension2D;
+import fr.java.maths.geometry.types.Points;
 import fr.java.nio.buffer.Point2DBufferX;
 
 public class SimpleRectangle2D implements Cloneable, Comparable<Object>, Serializable, Rectangle2D, BoundingBox.TwoDims.Editable {
@@ -121,6 +121,28 @@ public class SimpleRectangle2D implements Cloneable, Comparable<Object>, Seriali
 		}
         width  = maxX - minX;
         height = maxY - minY;
+	}
+	public SimpleRectangle2D(Set<Coordinate.TwoDims> _tops) {
+		double min_x =   Double.MAX_VALUE;
+		double min_y =   Double.MAX_VALUE;
+		double max_x = - Double.MAX_VALUE;
+		double max_y = - Double.MAX_VALUE;
+
+		for(Coordinate.TwoDims pt : _tops) {
+			if(pt.getFirst() < min_x)
+				min_x = pt.getFirst();
+			if(pt.getSecond() < min_y)
+				min_y = pt.getSecond();
+			if(pt.getFirst() > max_x)
+				max_x = pt.getFirst();
+			if(pt.getSecond() > max_y)
+				max_y = pt.getSecond();
+		}
+
+		minY   = min_y;
+		minX   = min_x;
+        width  = max_x - min_x;
+        height = max_y - min_y;
 	}
 	public SimpleRectangle2D(Point2DBufferX _points) {
 		if (_points == null || _points.remaining() < 2)

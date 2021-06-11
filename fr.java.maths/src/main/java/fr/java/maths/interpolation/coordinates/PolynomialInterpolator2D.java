@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import fr.java.math.geometry.plane.Point2D;
+import fr.java.math.interpolation.CoordinateInterpolator;
+import fr.java.math.interpolation.FunctionInterpolator;
 import fr.java.math.polynoms.Polynom;
-import fr.java.maths.Points;
-import fr.java.maths.interpolation.CoordinateInterpolator;
-import fr.java.maths.interpolation.FunctionInterpolator;
+import fr.java.maths.geometry.types.Points;
 
 public class PolynomialInterpolator2D implements CoordinateInterpolator.TwoDims {
 	int							nbPoints;

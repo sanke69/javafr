@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Stack;
 
 import fr.java.time.Time;
-import fr.java.time.api.TimeOperation;
-import fr.java.time.api.TimeOperator;
+import fr.java.time.TimeOperation;
+import fr.java.time.TimeOperator;
 
 public class TimeScheduler<OP extends TimeOperation> {
 	public static final Period 		DEFAULT_PERIOD     = Period.ofMonths(1);

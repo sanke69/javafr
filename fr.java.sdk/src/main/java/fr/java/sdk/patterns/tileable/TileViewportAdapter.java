@@ -10,16 +10,16 @@ import fr.java.math.geometry.Dimension;
 import fr.java.math.geometry.Projector;
 import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.topology.Coordinate;
-import fr.java.maths.BoundingBoxes;
-import fr.java.maths.Coordinates;
-import fr.java.maths.Points;
 import fr.java.maths.geometry.plane.PlaneViewportAdapter;
 import fr.java.maths.geometry.plane.PlaneViewportProjectors;
 import fr.java.maths.geometry.plane.shapes.SimpleRectangle2D;
-import fr.java.patterns.tileable.TileCoordinate;
-import fr.java.patterns.tileable.TileProjector;
-import fr.java.patterns.tileable.TileSystem;
-import fr.java.patterns.tileable.TileViewport;
+import fr.java.maths.geometry.types.BoundingBoxes;
+import fr.java.maths.geometry.types.Coordinates;
+import fr.java.maths.geometry.types.Points;
+import fr.java.patterns.tiled.TileCoordinate;
+import fr.java.patterns.tiled.TileProjector;
+import fr.java.patterns.tiled.TileSystem;
+import fr.java.patterns.tiled.TileViewport;
 
 public class TileViewportAdapter<MODEL, COORD extends Coordinate.TwoDims> extends PlaneViewportAdapter<MODEL, COORD> implements TileViewport.Editable<MODEL, COORD> {
 

@@ -2,8 +2,8 @@ package fr.java.maths.interpolation.coordinates;
 
 import java.util.stream.IntStream;
 
+import fr.java.math.interpolation.FunctionInterpolator;
 import fr.java.math.polynoms.Polynom;
-import fr.java.maths.interpolation.FunctionInterpolator;
 import fr.java.maths.polynoms.RealPolynomial;
 
 public class PolynomialInterpolators {

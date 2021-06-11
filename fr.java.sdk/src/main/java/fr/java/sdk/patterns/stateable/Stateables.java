@@ -5,7 +5,7 @@ import java.util.WeakHashMap;
 
 import fr.java.events.EventListenerList;
 import fr.java.lang.enums.State;
-import fr.java.patterns.stateable.Stateable;
+import fr.java.patterns.capabilities.Stateable;
 import fr.java.sdk.events.Events;
 
 class StateableOption {

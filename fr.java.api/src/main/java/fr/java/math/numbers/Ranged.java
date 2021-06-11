@@ -19,8 +19,6 @@
 **/
 package fr.java.math.numbers;
 
-import fr.java.math.Interval;
-
 public interface Ranged<T extends Number> extends Interval<T> {
 
 	public static interface Editable<T extends Number> extends Ranged<T>, Interval.Editable<T> {

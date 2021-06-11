@@ -1,21 +1,21 @@
 package fr.java.maths.geometry.space.camera.behaviors;
 
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.geometry.space.Point3D;
-import fr.java.math.geometry.space.Vector3D;
-import fr.java.maths.Points;
 import fr.java.maths.algebra.Vectors;
-import fr.java.maths.algebra.matrices.Matrix44d;
+import fr.java.maths.algebra.matrices.DoubleMatrix44;
+import fr.java.maths.geometry.types.Points;
 
 public class AbstractFPSCamera /*implements CameraBehavior*/ {
 	Point3D position;
 	double  pitch, yaw;
 
-	Matrix44d viewMatrix;
+	DoubleMatrix44 viewMatrix;
 
-	public Matrix44d getTransformationMatrix() {
+	public DoubleMatrix44 getTransformationMatrix() {
 		return getViewMatrix().inverse();
 	}
-	public Matrix44d getViewMatrix() {
+	public DoubleMatrix44 getViewMatrix() {
 		updateViewMatrix();
 	    return viewMatrix;
 	}
@@ -31,7 +31,7 @@ public class AbstractFPSCamera /*implements CameraBehavior*/ {
 	    Vector3D yaxis = Vectors.of( sinYaw * sinPitch, cosPitch, cosYaw * sinPitch );
 	    Vector3D zaxis = Vectors.of( sinYaw * cosPitch, -sinPitch, cosPitch * cosYaw );
 	 
-	    viewMatrix = Matrix44d.from(xaxis, yaxis, zaxis, eye);
+	    viewMatrix = DoubleMatrix44.from(xaxis, yaxis, zaxis, eye);
 	}
 
 }

@@ -3,9 +3,9 @@ package fr.javafx.scene.control.viewport.planar;
 import fr.java.math.geometry.Dimension;
 import fr.java.math.geometry.Viewport;
 import fr.java.math.topology.Coordinate;
-import fr.java.maths.Points;
 import fr.java.maths.geometry.plane.PlaneViewportAdapter;
-import fr.java.sdk.patterns.geometry.Boundables;
+import fr.java.maths.geometry.types.BoundingBoxes;
+import fr.java.maths.geometry.types.Points;
 import fr.javafx.scene.control.viewport.ViewportControl;
 import javafx.beans.property.adapter.ReadOnlyJavaBeanObjectProperty;
 import javafx.beans.value.ChangeListener;
@@ -43,7 +43,7 @@ public abstract class PlaneViewportControl<MODEL, COORD extends Coordinate.TwoDi
 	protected PlaneViewportControl(int _fps, Viewport.TwoDims.Editable<MODEL, COORD> _viewport) {
 		super(_fps, _viewport);
 
-		getViewport()    . setWindow( Boundables.of(this) );
+		getViewport()    . setWindow( BoundingBoxes.of(this) );
 		widthProperty()  . addListener(dimListener);
 		heightProperty() . addListener(dimListener);
 	}

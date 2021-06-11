@@ -23,9 +23,7 @@ import java.beans.PropertyChangeListener;
 import java.beans.VetoableChangeListener;
 import java.io.Serializable;
 
-import fr.java.lang.Listenable;
-
-public interface ListenableBean extends /*Bean,*/ Listenable, Serializable {
+public interface ListenableBean extends /*Bean,*/ Serializable {
 
 	public boolean 						hasPropertyChangeListeners(String _propertyName);
 	public boolean 						hasPropertyVetoableListeners(String _propertyName);

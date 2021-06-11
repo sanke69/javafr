@@ -1,7 +1,7 @@
 package fr.java.maths.interpolation.functions.splines.cubic;
 
+import fr.java.math.interpolation.FunctionInterpolator;
 import fr.java.maths.Numbers;
-import fr.java.maths.interpolation.FunctionInterpolator;
 
 public class CubicSpline implements FunctionInterpolator.OneVar {
 	public static double potentialRoundingError = 5e-15;

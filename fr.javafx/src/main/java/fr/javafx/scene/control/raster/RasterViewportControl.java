@@ -6,13 +6,12 @@ import fr.drawer.fx.raster.RasterDrawer;
 import fr.java.math.algebra.NumberTensor;
 import fr.java.math.geometry.Viewport;
 import fr.java.math.geometry.plane.Point2D;
-import fr.java.math.window.Edges2D;
-import fr.java.maths.BoundingBoxes;
-import fr.java.maths.Points;
 import fr.java.maths.geometry.plane.PlaneViewportAdapter;
 import fr.java.maths.geometry.plane.PlaneViewportProjectors;
+import fr.java.maths.geometry.types.BoundingBoxes;
+import fr.java.maths.geometry.types.Points;
 import fr.java.raster.XRaster;
-import fr.java.sdk.patterns.geometry.Boundables;
+import fr.java.ui.Edges2D;
 import fr.javafx.scene.canvas.ResizableCanvas;
 import fr.javafx.scene.control.viewport.planar.PlaneViewportControl;
 import fr.javafx.utils.FxImageUtils;
@@ -40,7 +39,7 @@ public class RasterViewportControl extends PlaneViewportControl<XRaster, Point2D
 		getViewport().setModelProjector	( PlaneViewportProjectors.newIdentity(getViewport(), Points::of, Point2D::getX, Point2D::getY) );
 
 		getViewport().setEdges			( new RasterViewportEdges( getViewport() ) );
-		getViewport().setWindow			( Boundables.of(this) );
+		getViewport().setWindow			( BoundingBoxes.of(this) );
 		viewportProperty().fireValueChangedEvent();
 
 		rasterProperty . addListener((_obs, _old, _new) -> {

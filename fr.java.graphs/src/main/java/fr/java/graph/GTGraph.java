@@ -14,9 +14,9 @@ import fr.java.lang.exceptions.AlreadyExistingNodeException;
 import fr.java.lang.exceptions.IllegalOperationException;
 import fr.java.lang.properties.ID;
 import fr.java.lang.tuples.Pair;
+import fr.java.patterns.capabilities.Identifiable;
 import fr.java.patterns.composite.Component;
 import fr.java.patterns.composite.Composite;
-import fr.java.patterns.identifiable.Identifiable;
 import fr.java.patterns.valueable.ValueObject;
 
 public interface GTGraph extends Identifiable, Composite.Single {

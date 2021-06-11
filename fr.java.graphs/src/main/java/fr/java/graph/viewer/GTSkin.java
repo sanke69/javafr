@@ -1,7 +1,7 @@
 package fr.java.graph.viewer;
 
 import fr.java.lang.properties.ID;
-import fr.java.patterns.identifiable.Identifiable;
+import fr.java.patterns.capabilities.Identifiable;
 
 public interface GTSkin<GO, GTO extends Identifiable, GTL extends GTLayout> extends Identifiable {
 

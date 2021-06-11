@@ -1,7 +1,6 @@
 package fr.javafx.windows.behaviors;
 
-import fr.java.patterns.displayable.Selectable;
-
+import fr.java.patterns.capabilities.Selectable;
 import fr.javafx.io.mouse.DragContext;
 import fr.javafx.lang.enums.ExtraSide;
 import fr.javafx.windows.WindowControl;

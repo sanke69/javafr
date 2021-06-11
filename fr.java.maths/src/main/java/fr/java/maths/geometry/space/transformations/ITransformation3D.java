@@ -2,16 +2,16 @@ package fr.java.maths.geometry.space.transformations;
 
 import java.util.Collection;
 
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.geometry.space.Point3D;
-import fr.java.math.geometry.space.Vector3D;
 import fr.java.maths.algebra.Vectors;
-import fr.java.maths.algebra.matrices.Matrix44d;
+import fr.java.maths.algebra.matrices.DoubleMatrix44;
 import fr.java.nio.buffer.Point3DBufferX;
 import fr.java.nio.buffer.Vector3DBufferX;
 
 public interface ITransformation3D {
 
-	public Matrix44d 					toMatrix();
+	public DoubleMatrix44 					toMatrix();
 
 	public default Point3D 				transformPoint(Point3D _pt) {
 		return (Point3D) toMatrix().times(Vectors.of(_pt).uniform()).downgrade();

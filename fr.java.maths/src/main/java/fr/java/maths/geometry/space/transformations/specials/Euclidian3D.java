@@ -1,12 +1,12 @@
 package fr.java.maths.geometry.space.transformations.specials;
 
-import fr.java.math.geometry.space.Vector3D;
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.maths.algebra.Vectors;
-import fr.java.maths.algebra.matrices.Matrix33d;
+import fr.java.maths.algebra.matrices.DoubleMatrix33;
 import fr.java.maths.geometry.space.transformations.Transformation3D;
 
 public class Euclidian3D extends Transformation3D {
-	Matrix33d rotation;
+	DoubleMatrix33 rotation;
 
 	public static final Euclidian3D aroundX(double _tx, double _ty, double _tz, double _angle) {
 		Euclidian3D e3d = new Euclidian3D();
@@ -56,9 +56,9 @@ public class Euclidian3D extends Transformation3D {
 
 	public Euclidian3D() {
 		super();
-		rotation = Matrix33d.identity();
+		rotation = DoubleMatrix33.identity();
 	}
-	public Euclidian3D(double _tx, double _ty, double _tz, Matrix33d _rotation) {
+	public Euclidian3D(double _tx, double _ty, double _tz, DoubleMatrix33 _rotation) {
 		super();
 		rotation = _rotation;
 
@@ -69,7 +69,7 @@ public class Euclidian3D extends Transformation3D {
 		m.setMatrix(0, 2, 0, 2, rotation);
 	}
 
-	public void 		set(double _tx, double _ty, double _tz, Matrix33d _rotation) {
+	public void 		set(double _tx, double _ty, double _tz, DoubleMatrix33 _rotation) {
 		rotation = _rotation;
 
 		m.m03 = _tx;
@@ -78,7 +78,7 @@ public class Euclidian3D extends Transformation3D {
 
 		m.setMatrix(0, 2, 0, 2, rotation);
 	}
-	public void 		set(Vector3D _translation, Matrix33d _rotation) {
+	public void 		set(Vector3D _translation, DoubleMatrix33 _rotation) {
 		rotation = _rotation;
 
 		m.m03 = _translation.getX();
@@ -123,7 +123,7 @@ public class Euclidian3D extends Transformation3D {
 		m.m23 = _translation.getZ();
 	}
 
-	public Matrix33d 	getRotation() {
+	public DoubleMatrix33 	getRotation() {
 		return rotation;
 	}
 	public void 		setRotation(double _ax, double _ay, double _az) {
@@ -132,7 +132,7 @@ public class Euclidian3D extends Transformation3D {
 //		Rotation3D Z   = Rotation3D.aroundX(_az);
 //		Matrix44d  rot = X.asUniformMatrix().times(Y.asUniformMatrix()).times(Z.asUniformMatrix());
 	}
-	public void 		setRotation(Matrix33d _rotation) {
+	public void 		setRotation(DoubleMatrix33 _rotation) {
 		rotation = _rotation;
 	}
 

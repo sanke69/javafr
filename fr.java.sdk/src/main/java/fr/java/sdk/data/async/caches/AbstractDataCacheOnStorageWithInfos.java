@@ -9,8 +9,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Objects;
 
 import fr.java.lang.enums.AccessMode;
-import fr.java.patterns.priority.DefaultPriority;
-import fr.java.patterns.priority.Priority;
+import fr.java.lang.properties.Priority;
 import fr.java.sdk.nio.file.FileObject;
 
 public abstract class AbstractDataCacheOnStorageWithInfos<COORD, TYPE> extends AbstractDataCacheOnStorage<COORD, TYPE> {
@@ -25,10 +24,10 @@ public abstract class AbstractDataCacheOnStorageWithInfos<COORD, TYPE> extends A
 		super(_accessMode, _priority);
 	}
 	protected AbstractDataCacheOnStorageWithInfos(Path _cacheFolder) {
-		super(_cacheFolder, AccessMode.ReadOnly, DefaultPriority.Normal);
+		super(_cacheFolder, AccessMode.ReadOnly, Priority.Normal);
 	}
 	protected AbstractDataCacheOnStorageWithInfos(Path _cacheFolder, AccessMode _accessMode) {
-		super(_cacheFolder, _accessMode, DefaultPriority.Normal);
+		super(_cacheFolder, _accessMode, Priority.Normal);
 	}
 	protected AbstractDataCacheOnStorageWithInfos(Path _cacheFolder, AccessMode _accessMode, Priority _priority) {
 		super(_cacheFolder, _accessMode, _priority);

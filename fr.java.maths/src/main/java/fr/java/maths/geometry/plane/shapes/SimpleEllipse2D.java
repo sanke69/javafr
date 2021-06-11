@@ -1,26 +1,32 @@
 package fr.java.maths.geometry.plane.shapes;
 
-import java.io.Serializable;
 import java.text.NumberFormat;
 
 import fr.java.lang.exceptions.NotYetImplementedException;
 import fr.java.math.geometry.BoundingBox;
+import fr.java.math.geometry.plane.Dimension2D;
+import fr.java.math.geometry.plane.Ellipse2D;
 import fr.java.math.geometry.plane.Point2D;
-import fr.java.math.geometry.plane.Shape2D;
 import fr.java.math.topology.Coordinate;
 import fr.java.maths.geometry.plane.types.SimpleBoundingBox2D;
+import fr.java.maths.geometry.types.Dimensions;
+import fr.java.maths.geometry.types.Points;
 
-public class SimpleEllipse2D extends SimpleBoundingBox2D implements BoundingBox.TwoDims.Editable, Cloneable, Comparable<Object>, Serializable, Shape2D {
+public class SimpleEllipse2D extends SimpleBoundingBox2D implements Ellipse2D {
 	private static final long serialVersionUID = -58203896228436150L;
 
-	Point2D center;
-	double  xRadius, yRadius;
-	
+	Point2D 	center;
+	Dimension2D dimension;
+
+	public SimpleEllipse2D(double _x, double _y, double _rx, double _ry) {
+		super();
+		center    = Points.of(_x, _y);
+		dimension = Dimensions.of(2*_rx, 2*_ry);
+	}
 	public SimpleEllipse2D(Point2D _c, double _rx, double _ry) {
 		super();
-		center = _c;
-		xRadius = _rx;
-		yRadius = _ry;
+		center    = _c;
+		dimension = Dimensions.of(2*_rx, 2*_ry);
 	}
 
 	@Override
@@ -38,15 +44,17 @@ public class SimpleEllipse2D extends SimpleBoundingBox2D implements BoundingBox.
 	}
 	@Override
 	public double getWidth() {
-		return 2 * xRadius;
+		return dimension.getWidth() / 2d;
 	}
 	@Override
 	public double getHeight() {
-		return 2 * yRadius;
+		return dimension.getHeight() / 2d;
 	}
 
 	@Override
 	public boolean contains(Coordinate.TwoDims _pt) {
+		double xRadius = dimension.getWidth() / 2d;
+		double yRadius = dimension.getHeight() / 2d;
 		double X = (_pt.getFirst()  - center.getX()) * (_pt.getFirst()  - center.getX()) / (xRadius * xRadius);
 		double Y = (_pt.getSecond() - center.getY()) * (_pt.getSecond() - center.getY()) / (yRadius * yRadius);
 
@@ -55,7 +63,7 @@ public class SimpleEllipse2D extends SimpleBoundingBox2D implements BoundingBox.
 
 	@Override
 	public double getArea() {
-		return Math.PI * xRadius * yRadius;
+		return Math.PI * dimension.getWidth() * dimension.getHeight() / 4d;
 	}
 	@Override
 	public double getIntersectionArea(BoundingBox.TwoDims _bbox) {

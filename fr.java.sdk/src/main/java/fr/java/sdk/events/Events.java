@@ -5,12 +5,12 @@ import java.util.Optional;
 import fr.java.events.EventListenerList;
 import fr.java.lang.enums.State;
 import fr.java.lang.properties.Timestamp;
-import fr.java.patterns.stateable.StateEvent;
-import fr.java.patterns.stateable.Stateable;
-import fr.java.patterns.timeable.TimeEvent;
+import fr.java.patterns.capabilities.Stateable;
 import fr.java.player.Player;
 import fr.java.player.PlayerEvent;
 import fr.java.sdk.patterns.timeable.Timestamps;
+import fr.java.state.StateEvent;
+import fr.java.time.TimeEvent;
 
 public class Events {
 

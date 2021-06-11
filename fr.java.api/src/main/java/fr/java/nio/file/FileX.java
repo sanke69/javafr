@@ -162,7 +162,6 @@ public interface FileX extends Treeable<Path, FileX> {
 	public static boolean 							isChild(final Path _child, final Path _parent) 											{
 /**/
 	    Path parent = _parent.normalize();
-	    System.out.println(parent.toString() + " = " + _child.startsWith(parent));
 	    return _child.startsWith(parent);
 /*/
 	    return _child.startsWith(_parent.normalize());

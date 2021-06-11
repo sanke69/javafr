@@ -1,7 +1,7 @@
 package fr.javafx.temp.windows.skins;
 
 import fr.java.math.geometry.plane.Point2D;
-import fr.java.maths.Points;
+import fr.java.maths.geometry.types.Points;
 import fr.javafx.temp.windows.MutableWindow;
 import fr.javafx.temp.windows.MutableWindowSkin;
 import fr.javafx.temp.windows.components.WindowHeader;

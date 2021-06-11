@@ -1,9 +1,9 @@
 package fr.java.maths.interpolation.coordinates;
 
 import fr.java.math.geometry.plane.Point2D;
+import fr.java.math.interpolation.CoordinateInterpolator;
 import fr.java.maths.Numbers;
-import fr.java.maths.Points;
-import fr.java.maths.interpolation.CoordinateInterpolator;
+import fr.java.maths.geometry.types.Points;
 
 public class BezierCurve implements CoordinateInterpolator.TwoDims {
 

@@ -23,21 +23,11 @@ import java.io.Serializable;
 
 import fr.java.math.geometry.Dimension;
 
-public interface Dimension3D extends Dimension, Serializable {
+public interface Dimension3D extends Dimension.ThreeDims, Serializable {
 
-	public static interface Editable extends Dimension3D {
-
-		public void set(double _w, double _h, double _d);
-
-		public void setWidth(double _w);
-		public void setHeight(double _h);
-		public void setDepth(double _d);
+	public static interface Editable extends Dimension3D, Dimension.ThreeDims.Editable {
 
 	}
-	
-	public double 			getWidth();
-	public double 			getHeight();
-	public double 			getDepth();
 
 	public default double 	getGreatest() { return getWidth() > getHeight() ? (getWidth() > getDepth() ? getWidth() : getDepth()) : (getHeight() > getDepth() ? getHeight() : getDepth()); }
 

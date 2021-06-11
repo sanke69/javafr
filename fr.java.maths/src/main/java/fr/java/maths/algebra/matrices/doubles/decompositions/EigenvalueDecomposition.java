@@ -2,7 +2,7 @@ package fr.java.maths.algebra.matrices.doubles.decompositions;
 
 import fr.java.math.algebra.NumberMatrix;
 import fr.java.maths.Numbers;
-import fr.java.maths.algebra.matrices.Matrixmnd;
+import fr.java.maths.algebra.matrices.DoubleMatrixMN;
 
 /** Eigenvalues and eigenvectors of a real matrix. 
 <P>
@@ -863,7 +863,7 @@ public class EigenvalueDecomposition implements java.io.Serializable {
    */
 
    public EigenvalueDecomposition (NumberMatrix Arg) {
-      double[][] A = ((Matrixmnd) Arg).getStorage();
+      double[][] A = ((DoubleMatrixMN) Arg).getStorage();
       n = Arg.columns();
       V = new double[n][n];
       d = new double[n];
@@ -915,8 +915,8 @@ public class EigenvalueDecomposition implements java.io.Serializable {
    @return     V
    */
 
-   public Matrixmnd getV () {
-      return Matrixmnd.wrap(V,n,n);
+   public DoubleMatrixMN getV () {
+      return DoubleMatrixMN.wrap(V,n,n);
    }
 
    /** Return the real parts of the eigenvalues
@@ -939,8 +939,8 @@ public class EigenvalueDecomposition implements java.io.Serializable {
    @return     D
    */
 
-   public Matrixmnd getD () {
-      Matrixmnd X = new Matrixmnd(n,n);
+   public DoubleMatrixMN getD () {
+      DoubleMatrixMN X = new DoubleMatrixMN(n,n);
       double[][] D = X.getStorage();
       for (int i = 0; i < n; i++) {
          for (int j = 0; j < n; j++) {

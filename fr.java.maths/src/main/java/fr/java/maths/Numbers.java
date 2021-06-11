@@ -1345,7 +1345,11 @@ public class Numbers {
 		return true;
 	}
 
-	
+
+	public static float gaussian(float x, float sigma) {
+		return (float) Math.exp(-(x * x) / (2f * sigma * sigma));
+	}
+
 	
 	
 	/** sqrt(a^2 + b^2) without under/overflow. **/

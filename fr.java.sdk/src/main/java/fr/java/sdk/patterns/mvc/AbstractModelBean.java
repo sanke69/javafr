@@ -6,17 +6,16 @@ import fr.java.beans.impl.ObjectBeanProperty;
 import fr.java.beans.impl.SimpleBooleanBeanProperty;
 import fr.java.beans.impl.SimpleObjectBeanProperty;
 import fr.java.lang.properties.ID;
+import fr.java.mvc.ViewRequest;
 import fr.java.patterns.ModelBean;
 import fr.java.patterns.ViewRequestBean;
 
-// TODO:: Remove
-@Deprecated
 public abstract class AbstractModelBean extends AbstractBean implements ModelBean {
 	private static final long serialVersionUID = -8254411782251442612L;
 
-	private ObjectBeanProperty<ID>				id;
-	private final BooleanBeanProperty			visible;
-	private ObjectBeanProperty<ViewRequestBean>	viewRequest;
+	private ObjectBeanProperty<ID>			id;
+	private final BooleanBeanProperty		visible;
+	private ObjectBeanProperty<ViewRequest>	viewRequest;
 
 	protected AbstractModelBean() {
 		super();
@@ -63,7 +62,7 @@ public abstract class AbstractModelBean extends AbstractBean implements ModelBea
 	}
 
 //	@Override
-	public final ObjectBeanProperty<ViewRequestBean> viewRequestProperty() {
+	public final ObjectBeanProperty<ViewRequest> 	viewRequestProperty() {
 		return _visualizationRequestProperty();
 	}
 
@@ -71,14 +70,14 @@ public abstract class AbstractModelBean extends AbstractBean implements ModelBea
 	public void 									setViewRequest(final ViewRequestBean _viewRequest) {
 		_visualizationRequestProperty().set(_viewRequest);
 	}
-	@Override
-	public final ViewRequestBean 					getViewRequest() {
+//	@Override
+	public final ViewRequest	 					getViewRequest() {
 		return viewRequestProperty().get();
 	}
 
-    private ObjectBeanProperty<ViewRequestBean> 	_visualizationRequestProperty() {
+    private ObjectBeanProperty<ViewRequest> 	_visualizationRequestProperty() {
         if (viewRequest == null)
-        	viewRequest = new SimpleObjectBeanProperty<ViewRequestBean>	(this, "view-request", 	new SimpleViewRequestBean());
+        	viewRequest = new SimpleObjectBeanProperty<ViewRequest>	(this, "view-request", 	new SimpleViewRequestBean());
 
         if (viewRequest.get() == null)
         	viewRequest.set(new SimpleViewRequestBean());

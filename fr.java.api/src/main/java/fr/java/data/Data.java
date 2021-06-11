@@ -21,8 +21,8 @@ package fr.java.data;
 
 import java.util.function.Consumer;
 
-import fr.java.patterns.loadable.Loadable;
-import fr.java.patterns.priority.Priority;
+import fr.java.lang.properties.Priority;
+import fr.java.patterns.capabilities.Loadable;
 
 public interface Data<COORD, TYPE> {
 

@@ -1,7 +1,7 @@
 package fr.java.maths.window;
 
 import fr.java.math.geometry.Viewport;
-import fr.java.math.window.Edges2D;
+import fr.java.ui.Edges2D;
 
 public class AutoCenterEdges2D implements Edges2D {
 	Viewport.TwoDims<?, ?> viewport;

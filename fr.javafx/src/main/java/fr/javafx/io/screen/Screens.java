@@ -10,8 +10,8 @@ import java.util.Set;
 
 import fr.java.math.geometry.BoundingBox;
 import fr.java.math.geometry.plane.Point2D;
-import fr.java.maths.Points;
 import fr.java.maths.geometry.plane.shapes.SimpleRectangle2D;
+import fr.java.maths.geometry.types.Points;
 import javafx.geometry.Rectangle2D;
 import javafx.stage.Screen;
 import javafx.stage.Stage;

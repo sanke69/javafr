@@ -20,7 +20,7 @@
 package fr.java.beans.impl.numbers;
 
 import fr.java.beans.properties.BeanProperty;
-import fr.java.math.Interval;
+import fr.java.math.numbers.Interval;
 import fr.java.math.numbers.Ranged;
 
 public class RangedDoubleBeanProperty extends ReadOnlyRangedDoubleBeanProperty implements BeanProperty<Double>, Ranged.Editable<Double> {

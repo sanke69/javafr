@@ -4,11 +4,11 @@ import fr.java.draw.Drawer;
 import fr.java.draw.styles.PointSkin;
 import fr.java.draw.tools.Brush;
 import fr.java.draw.tools.Colors;
-import fr.java.math.Interval;
 import fr.java.math.geometry.plane.Point2D;
+import fr.java.math.numbers.Interval;
 import fr.java.math.topology.Coordinate;
-import fr.java.maths.BoundingBoxes;
-import fr.java.maths.Points;
+import fr.java.maths.geometry.types.BoundingBoxes;
+import fr.java.maths.geometry.types.Points;
 
 public class RadarDesignAdapter extends GraphDesignAdapter {
 

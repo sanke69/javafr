@@ -2,8 +2,8 @@ package fr.java.maths.geometry.space.camera.behaviors;
 
 import java.util.Optional;
 
+import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.geometry.space.Point3D;
-import fr.java.math.geometry.space.Vector3D;
 import fr.java.maths.geometry.space.camera.CameraBehavior;
 
 public interface QuaternionCameraBehavior extends CameraBehavior {

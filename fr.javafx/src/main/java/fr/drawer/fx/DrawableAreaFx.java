@@ -1,7 +1,6 @@
 package fr.drawer.fx;
 
-import fr.java.patterns.drawable.DrawableArea;
-
+import fr.java.draw.DrawableArea;
 import javafx.scene.canvas.GraphicsContext;
 
 public interface DrawableAreaFx extends DrawableArea {
