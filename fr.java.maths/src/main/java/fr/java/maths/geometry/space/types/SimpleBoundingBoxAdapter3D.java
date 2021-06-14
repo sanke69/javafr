@@ -1,14 +1,14 @@
-package fr.java.maths.adapters;
+package fr.java.maths.geometry.space.types;
 
 import fr.java.math.geometry.BoundingBox;
 
-public class EditableBoundingBoxAdapter3D extends BoundingBoxAdapter3D implements BoundingBox.ThreeDims.Editable {
+public class SimpleBoundingBoxAdapter3D extends ReadOnlyBoundingBox3D implements BoundingBox.ThreeDims.Editable {
 	private static final long serialVersionUID = 1L;
 
-	public EditableBoundingBoxAdapter3D() {
+	public SimpleBoundingBoxAdapter3D() {
 		super();
 	}
-	public EditableBoundingBoxAdapter3D(final double _x, final double _y, final double _z, final double _width, final double _height, final double _depth) {
+	public SimpleBoundingBoxAdapter3D(final double _x, final double _y, final double _z, final double _width, final double _height, final double _depth) {
 		super(_x, _y, _z, _width, _height, _depth);
 	}
 

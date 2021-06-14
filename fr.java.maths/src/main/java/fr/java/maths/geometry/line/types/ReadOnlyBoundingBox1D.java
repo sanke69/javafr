@@ -1,4 +1,4 @@
-package fr.java.maths.adapters;
+package fr.java.maths.geometry.line.types;
 
 import java.text.NumberFormat;
 
@@ -7,17 +7,17 @@ import fr.java.lang.exceptions.NotYetImplementedException;
 import fr.java.math.geometry.BoundingBox;
 import fr.java.math.topology.Coordinate;
 
-public class BoundingBoxAdapter1D implements BoundingBox.OneDim {
+public class ReadOnlyBoundingBox1D implements BoundingBox.OneDim {
 	private static final long serialVersionUID = 1L;
 
 	double x, width;
 	
-	public BoundingBoxAdapter1D() {
+	public ReadOnlyBoundingBox1D() {
 		super();
 		x     = 0;
 		width = 0;
 	}
-	public BoundingBoxAdapter1D(final double _x, final double _width) {
+	public ReadOnlyBoundingBox1D(final double _x, final double _width) {
 		super();
 		x     = _x;
 		width = _width;

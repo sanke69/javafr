@@ -1,37 +1,18 @@
-package fr.utils.maths;
+package fr.java.maths;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import fr.java.math.algebra.vector.generic.Vector2D;
 import fr.java.math.geometry.plane.Point2D;
 import fr.java.maths.geometry.types.Points;
+import fr.java.maths.polynoms.RealPolynomial;
 
 public class jMath {
 
 	public static final double clamp(double _x, double _min, double _max) {
 		return _x < _min ? _min : _x > _max ? _max : _x;
-	}
-
-	public static List<Double> 	solve2ndDegree(double A, double B, double C) {
-		// A . X² + B . X + C = 0
-		double delta = B*B - 4d * A * C;
-
-		if(delta < 0)
-			return Collections.emptyList();
-
-		if(delta == 0)
-			return Arrays.asList(- B / (2 * A));
-
-		// if(delta > 0)
-		double kA = - (B + Math.sqrt(delta)) / (2 * A);
-		double kB = - (B - Math.sqrt(delta)) / (2 * A);
-
-		double k1 = kA <  kB ? kA : kB;
-		double k2 = k1 == kB ? kA : kB;
-
-		return Arrays.asList(k1, k2);
 	}
 
 	public static double 		triangleArea(Point2D _a, Point2D _b, Point2D _c) {
@@ -250,7 +231,7 @@ public class jMath {
 			   C  = Xb*Xb+Yb*Yb-d*d;
 		// tq: A² . k + B . k + C = 0
 
-		return jMath.solve2ndDegree(A, B, C);
+		return Arrays.stream(RealPolynomial.getRoots(A, B, C)).boxed().collect(Collectors.toList());
 	}
 
 

@@ -17,7 +17,7 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
 **/
-package fr.utils.adapters;
+package fr.java.maths.geometry;
 
 import java.nio.DoubleBuffer;
 import java.util.stream.DoubleStream;

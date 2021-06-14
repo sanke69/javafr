@@ -9,13 +9,13 @@ import fr.java.math.geometry.Projector;
 import fr.java.math.geometry.Viewport;
 import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.topology.Coordinate;
+import fr.java.maths.jMath;
 import fr.java.maths.geometry.types.BoundingBoxes;
 import fr.java.maths.geometry.types.Coordinates;
 import fr.java.maths.geometry.types.Dimensions;
 import fr.java.maths.geometry.types.Points;
 import fr.java.maths.window.SimpleEdges2D;
 import fr.java.ui.Edges2D;
-import fr.utils.maths.jMath;
 
 public class PlaneViewportAdapter<MODEL, COORD extends Coordinate> implements Viewport.TwoDims.Editable<MODEL, COORD> {
 

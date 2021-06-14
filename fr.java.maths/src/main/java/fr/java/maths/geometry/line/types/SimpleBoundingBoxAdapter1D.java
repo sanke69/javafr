@@ -1,14 +1,14 @@
-package fr.java.maths.adapters;
+package fr.java.maths.geometry.line.types;
 
 import fr.java.math.geometry.BoundingBox;
 
-public class EditableBoundingBoxAdapter1D extends BoundingBoxAdapter1D implements BoundingBox.OneDim.Editable {
+public class SimpleBoundingBoxAdapter1D extends ReadOnlyBoundingBox1D implements BoundingBox.OneDim.Editable {
 	private static final long serialVersionUID = 1L;
 
-	public EditableBoundingBoxAdapter1D() {
+	public SimpleBoundingBoxAdapter1D() {
 		super();
 	}
-	public EditableBoundingBoxAdapter1D(final double _x, final double _width) {
+	public SimpleBoundingBoxAdapter1D(final double _x, final double _width) {
 		super();
 	}
 

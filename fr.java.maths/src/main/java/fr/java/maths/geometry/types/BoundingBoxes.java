@@ -4,6 +4,8 @@ import java.awt.image.BufferedImage;
 import java.util.Collection;
 import java.util.Set;
 
+import javafx.scene.layout.Region;
+
 import fr.java.math.geometry.BoundingBox;
 import fr.java.math.geometry.Dimension;
 import fr.java.math.geometry.plane.Point2D;
@@ -11,15 +13,14 @@ import fr.java.math.geometry.space.BoundingBox3D;
 import fr.java.math.geometry.space.Dimension3D;
 import fr.java.math.geometry.space.Point3D;
 import fr.java.math.topology.Coordinate;
-import fr.java.maths.adapters.BoundingBoxAdapter1D;
-import fr.java.maths.adapters.BoundingBoxAdapter2D;
-import fr.java.maths.adapters.BoundingBoxAdapter3D;
-import fr.java.maths.adapters.EditableBoundingBoxAdapter1D;
-import fr.java.maths.adapters.EditableBoundingBoxAdapter2D;
-import fr.java.maths.adapters.EditableBoundingBoxAdapter3D;
+import fr.java.maths.geometry.line.types.ReadOnlyBoundingBox1D;
+import fr.java.maths.geometry.line.types.SimpleBoundingBoxAdapter1D;
 import fr.java.maths.geometry.plane.shapes.SimpleRectangle2D;
+import fr.java.maths.geometry.plane.types.ReadOnlyBoundingBox2D;
+import fr.java.maths.geometry.plane.types.SimpleBoundingBoxAdapter2D;
 import fr.java.maths.geometry.space.shapes.SimpleCube3D;
-import javafx.scene.layout.Region;
+import fr.java.maths.geometry.space.types.ReadOnlyBoundingBox3D;
+import fr.java.maths.geometry.space.types.SimpleBoundingBoxAdapter3D;
 
 public final class BoundingBoxes {
 
@@ -38,17 +39,17 @@ public final class BoundingBoxes {
 	}
 
 	public static final BoundingBox.OneDim 				of(final double _x, final double _width) {
-		return new BoundingBoxAdapter1D(_x, _width);
+		return new ReadOnlyBoundingBox1D(_x, _width);
 	}
 	public static final BoundingBox.OneDim.Editable 	ofEditable(final double _x, final double _width) {
-		return new EditableBoundingBoxAdapter1D(_x, _width);
+		return new SimpleBoundingBoxAdapter1D(_x, _width);
 	}
 
 	public static final BoundingBox.TwoDims 			of(final double _x, final double _y, final double _width, final double _height) {
-		return new BoundingBoxAdapter2D(_x, _y, _width, _height);
+		return new ReadOnlyBoundingBox2D(_x, _y, _width, _height);
 	}
 	public static final BoundingBox.TwoDims 			of(final BufferedImage _image) {
-		return new BoundingBoxAdapter2D() {
+		return new ReadOnlyBoundingBox2D() {
 			private static final long serialVersionUID = 1L;
 
 			@Override public double getX() 		{ return 0; }
@@ -60,7 +61,7 @@ public final class BoundingBoxes {
 		};
 	}
 	public static final BoundingBox.TwoDims				of(final Region _region) {
-		return new BoundingBoxAdapter2D() {
+		return new ReadOnlyBoundingBox2D() {
 			private static final long serialVersionUID = 1L;
 
 			@Override public double getX() 		{ return _region.getLayoutX(); }
@@ -72,14 +73,14 @@ public final class BoundingBoxes {
 		};
 	}
 	public static final BoundingBox.TwoDims.Editable 	ofEditable(final double _x, final double _y, final double _width, final double _height) {
-		return new EditableBoundingBoxAdapter2D(_x, _y, _width, _height);
+		return new SimpleBoundingBoxAdapter2D(_x, _y, _width, _height);
 	}
 
 	public static final BoundingBox.ThreeDims 			of(final double _x, final double _y, final double _z, final double _width, final double _height, final double _depth) {
-		return new BoundingBoxAdapter3D(_x, _y, _z, _width, _height, _depth);
+		return new ReadOnlyBoundingBox3D(_x, _y, _z, _width, _height, _depth);
 	}
 	public static final BoundingBox.ThreeDims.Editable 	ofEditable(final double _x, final double _y, final double _z, final double _width, final double _height, final double _depth) {
-		return new EditableBoundingBoxAdapter3D(_x, _y, _z, _width, _height, _depth);
+		return new SimpleBoundingBoxAdapter3D(_x, _y, _z, _width, _height, _depth);
 	}
 
 	// 2D Specialization

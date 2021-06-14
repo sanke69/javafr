@@ -1,4 +1,4 @@
-package fr.utils.maths;
+package fr.java.maths;
 
 public class Asserts {
 

@@ -35,10 +35,10 @@ import fr.java.math.geometry.plane.Point2D;
 import fr.java.math.topology.Coordinate;
 import fr.java.math.topology.CoordinateSystem;
 import fr.java.maths.algebra.Vectors;
+import fr.java.maths.geometry.AdapterVectorDouble;
+import fr.java.maths.geometry.AdapterVectorDouble.Editable;
 import fr.java.maths.geometry.line.types.SimpleVector1D;
 import fr.java.maths.geometry.space.types.SimpleVector3D;
-import fr.utils.adapters.AdapterVectorDouble;
-import fr.utils.adapters.AdapterVectorDouble.Editable;
 
 public class SimpleVector2D extends AdapterVectorDouble.Editable implements Point2D.Editable, Vector2D.Editable {
 	private static final long serialVersionUID = 1369L;

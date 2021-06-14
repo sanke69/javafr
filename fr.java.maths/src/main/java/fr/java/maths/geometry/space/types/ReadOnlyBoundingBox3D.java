@@ -1,4 +1,4 @@
-package fr.java.maths.adapters;
+package fr.java.maths.geometry.space.types;
 
 import java.text.NumberFormat;
 
@@ -7,21 +7,21 @@ import fr.java.lang.exceptions.NotYetImplementedException;
 import fr.java.math.geometry.BoundingBox;
 import fr.java.math.topology.Coordinate;
 
-public class BoundingBoxAdapter3D implements BoundingBox.ThreeDims {
+public class ReadOnlyBoundingBox3D implements BoundingBox.ThreeDims {
 	private static final long serialVersionUID = 1L;
 
 	double x, width;
 	double y, height;
 	double z, depth;
 
-	public BoundingBoxAdapter3D() {
+	public ReadOnlyBoundingBox3D() {
 		super();
 		x      = 0;
 		width  = 0;
 		y      = 0;
 		height = 0;
 	}
-	public BoundingBoxAdapter3D(final double _x, final double _y, final double _z, final double _width, final double _height, final double _depth) {
+	public ReadOnlyBoundingBox3D(final double _x, final double _y, final double _z, final double _width, final double _height, final double _depth) {
 		super();
 		x     = _x;
 		width = _width;

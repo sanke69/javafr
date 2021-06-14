@@ -27,8 +27,8 @@ import fr.java.math.algebra.vector.DoubleVector;
 import fr.java.math.algebra.vector.generic.Vector3D;
 import fr.java.math.algebra.vector.generic.Vector4D;
 import fr.java.math.geometry.Point;
-import fr.utils.adapters.AdapterVectorDouble;
-import fr.utils.adapters.AdapterVectorDouble.Editable;
+import fr.java.maths.geometry.AdapterVectorDouble;
+import fr.java.maths.geometry.AdapterVectorDouble.Editable;
 
 public class SimpleVector4D extends AdapterVectorDouble.Editable implements DoubleVector.Editable, Vector4D.Editable {
 	private static final long serialVersionUID = 1L;

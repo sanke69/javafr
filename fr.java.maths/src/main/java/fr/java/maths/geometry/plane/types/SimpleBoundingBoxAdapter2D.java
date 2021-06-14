@@ -1,14 +1,14 @@
-package fr.java.maths.adapters;
+package fr.java.maths.geometry.plane.types;
 
 import fr.java.math.geometry.BoundingBox;
 
-public class EditableBoundingBoxAdapter2D extends BoundingBoxAdapter2D implements BoundingBox.TwoDims.Editable {
+public class SimpleBoundingBoxAdapter2D extends ReadOnlyBoundingBox2D implements BoundingBox.TwoDims.Editable {
 	private static final long serialVersionUID = 1L;
 
-	public EditableBoundingBoxAdapter2D() {
+	public SimpleBoundingBoxAdapter2D() {
 		super();
 	}
-	public EditableBoundingBoxAdapter2D(final double _x, final double _width, final double _y, final double _height) {
+	public SimpleBoundingBoxAdapter2D(final double _x, final double _width, final double _y, final double _height) {
 		super(_x, _y, _width, _height);
 	}
 

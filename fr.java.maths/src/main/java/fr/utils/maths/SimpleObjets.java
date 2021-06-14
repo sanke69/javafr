@@ -1,4 +1,4 @@
-package fr.utils;
+package fr.utils.maths;
 
 import java.text.NumberFormat;
 

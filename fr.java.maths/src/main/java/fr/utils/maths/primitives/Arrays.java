@@ -4,6 +4,13 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Array;
+import java.nio.Buffer;
+import java.nio.ByteBuffer;
+import java.nio.DoubleBuffer;
+import java.nio.FloatBuffer;
+import java.nio.IntBuffer;
+import java.nio.LongBuffer;
+import java.nio.ShortBuffer;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Function;
@@ -398,6 +405,46 @@ public class Arrays {
 		return ret;
 	}
 
+
+	@Deprecated
+	public static byte[] 		asByteArray(Buffer _buffer) {
+		if(_buffer instanceof ByteBuffer) {
+			if(_buffer.isDirect())
+				return (byte[]) _buffer.array();
+			else {
+				ByteBuffer byteBuffer = ByteBuffer.allocate(_buffer.capacity());
+				byteBuffer.put((ByteBuffer) _buffer);
+				return byteBuffer.array();
+			}
+
+		} else if(_buffer instanceof ShortBuffer) {
+			ByteBuffer byteBuffer = ByteBuffer.allocate(_buffer.capacity() * 2);
+			byteBuffer.asShortBuffer().put((ShortBuffer) _buffer);
+			return byteBuffer.array();
+
+		} else if(_buffer instanceof IntBuffer) {
+			ByteBuffer byteBuffer = ByteBuffer.allocate(_buffer.capacity() * 4);
+			byteBuffer.asIntBuffer().put((IntBuffer) _buffer);
+			return byteBuffer.array();
+
+		} else if(_buffer instanceof LongBuffer) {
+			ByteBuffer byteBuffer = ByteBuffer.allocate(_buffer.capacity() * 8);
+			byteBuffer.asLongBuffer().put((LongBuffer) _buffer);
+			return byteBuffer.array();
+			
+		} else if(_buffer instanceof FloatBuffer) {
+			ByteBuffer byteBuffer = ByteBuffer.allocate(_buffer.capacity() * 4);
+			byteBuffer.asFloatBuffer().put((FloatBuffer) _buffer);
+			return byteBuffer.array();
+			
+		} else if(_buffer instanceof DoubleBuffer) {
+			ByteBuffer byteBuffer = ByteBuffer.allocate(_buffer.capacity() * 8);
+			byteBuffer.asDoubleBuffer().put((DoubleBuffer) _buffer);
+			return byteBuffer.array();
+		}
+		
+		throw new IllegalArgumentException();
+	}
 
 	/**
 	 * COPY

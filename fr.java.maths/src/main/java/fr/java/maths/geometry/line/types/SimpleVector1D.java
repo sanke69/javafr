@@ -28,9 +28,9 @@ import fr.java.math.geometry.Dimension;
 import fr.java.math.geometry.linear.Dimension1D;
 import fr.java.math.geometry.linear.Point1D;
 import fr.java.math.topology.Coordinate;
+import fr.java.maths.geometry.AdapterVectorDouble;
+import fr.java.maths.geometry.AdapterVectorDouble.Editable;
 import fr.java.maths.geometry.plane.types.SimpleVector2D;
-import fr.utils.adapters.AdapterVectorDouble;
-import fr.utils.adapters.AdapterVectorDouble.Editable;
 
 public class SimpleVector1D extends AdapterVectorDouble.Editable implements Vector1D.Editable {
 	private static final long serialVersionUID = 1369L;

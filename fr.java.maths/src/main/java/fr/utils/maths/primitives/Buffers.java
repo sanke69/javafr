@@ -490,97 +490,9 @@ public class Buffers {
 			doubleBuffer.put(_converter.apply( _buffer.get() ));
 		return doubleBuffer;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-    /**
-     * @return n, where buffer_element_size=2^n.
-     */
-	@Deprecated
-    public static int getElementSizeExponent(Buffer buf) {
-        if (buf instanceof ByteBuffer)
-            return 0;
-        else if (buf instanceof ShortBuffer || buf instanceof CharBuffer)
-            return 1;
-        else if (buf instanceof FloatBuffer || buf instanceof IntBuffer)
-            return 2;
-        else if (buf instanceof LongBuffer || buf instanceof DoubleBuffer)
-            return 3;
-        else
-            throw new IllegalStateException("Unsupported buffer type: " + buf);
-    }
-
-    /**
-     * A helper function which is used to get the byte offset in an arbitrary buffer
-     * based on its position
-     *
-     * @return the position of the buffer, in BYTES
-     */
-	@Deprecated
-    public static int getOffset(Buffer buffer) {
-        return buffer.position() << getElementSizeExponent(buffer);
-    }
-
-
-	
-
-
-	
 
 	@Deprecated
-	public static byte[] asByteArray(Buffer _buffer) {
-		if(_buffer instanceof ByteBuffer) {
-			if(_buffer.isDirect())
-				return (byte[]) _buffer.array();
-			else {
-				ByteBuffer byteBuffer = ByteBuffer.allocate(_buffer.capacity());
-				byteBuffer.put((ByteBuffer) _buffer);
-				return byteBuffer.array();
-			}
-
-		} else if(_buffer instanceof ShortBuffer) {
-			ByteBuffer byteBuffer = ByteBuffer.allocate(_buffer.capacity() * 2);
-			byteBuffer.asShortBuffer().put((ShortBuffer) _buffer);
-			return byteBuffer.array();
-
-		} else if(_buffer instanceof IntBuffer) {
-			ByteBuffer byteBuffer = ByteBuffer.allocate(_buffer.capacity() * 4);
-			byteBuffer.asIntBuffer().put((IntBuffer) _buffer);
-			return byteBuffer.array();
-
-		} else if(_buffer instanceof LongBuffer) {
-			ByteBuffer byteBuffer = ByteBuffer.allocate(_buffer.capacity() * 8);
-			byteBuffer.asLongBuffer().put((LongBuffer) _buffer);
-			return byteBuffer.array();
-			
-		} else if(_buffer instanceof FloatBuffer) {
-			ByteBuffer byteBuffer = ByteBuffer.allocate(_buffer.capacity() * 4);
-			byteBuffer.asFloatBuffer().put((FloatBuffer) _buffer);
-			return byteBuffer.array();
-			
-		} else if(_buffer instanceof DoubleBuffer) {
-			ByteBuffer byteBuffer = ByteBuffer.allocate(_buffer.capacity() * 8);
-			byteBuffer.asDoubleBuffer().put((DoubleBuffer) _buffer);
-			return byteBuffer.array();
-		}
-		
-		throw new IllegalArgumentException();
-	}
-
-	@Deprecated
-	public static ByteBuffer asByteBuffer(Buffer _buffer) {
+	public static ByteBuffer 	asByteBuffer(Buffer _buffer) {
 		if(_buffer instanceof ByteBuffer) {
 			return  (ByteBuffer) _buffer;
 
@@ -612,9 +524,8 @@ public class Buffers {
 		
 		throw new IllegalArgumentException();
 	}
-
 	@Deprecated
-	public static ShortBuffer asShortBuffer(Buffer _buffer) {
+	public static ShortBuffer 	asShortBuffer(Buffer _buffer) {
 		ByteBuffer  byteBuffer = asByteBuffer(_buffer);
 		ShortBuffer shortBuffer = ShortBuffer.allocate(byteBuffer.capacity() / 2);
 		shortBuffer.put(byteBuffer.asShortBuffer());
@@ -622,19 +533,19 @@ public class Buffers {
 		return shortBuffer;
 	}
 	@Deprecated
-	public static IntBuffer asIntBuffer(Buffer _buffer) {
+	public static IntBuffer 	asIntBuffer(Buffer _buffer) {
 		return asByteBuffer(_buffer).asIntBuffer();
 	}
 	@Deprecated
-	public static LongBuffer asLongBuffer(Buffer _buffer) {
+	public static LongBuffer 	asLongBuffer(Buffer _buffer) {
 		return asByteBuffer(_buffer).asLongBuffer();
 	}
 	@Deprecated
-	public static FloatBuffer asFloatBuffer(Buffer _buffer) {
+	public static FloatBuffer 	asFloatBuffer(Buffer _buffer) {
 		return asByteBuffer(_buffer).asFloatBuffer();
 	}
 	@Deprecated
-	public static DoubleBuffer asDoubleBuffer(Buffer _buffer) {
+	public static DoubleBuffer 	asDoubleBuffer(Buffer _buffer) {
 		ByteBuffer   byteBuffer = asByteBuffer(_buffer);
 		DoubleBuffer doubleBuffer = DoubleBuffer.allocate(byteBuffer.capacity() / 8);
 		doubleBuffer.put(byteBuffer.asDoubleBuffer());

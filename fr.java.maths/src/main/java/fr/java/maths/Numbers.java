@@ -1,7 +1,7 @@
 package fr.java.maths;
 
-import static fr.utils.maths.Asserts.assertFalse;
-import static fr.utils.maths.Asserts.assertTrue;
+import static fr.java.maths.Asserts.assertFalse;
+import static fr.java.maths.Asserts.assertTrue;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -10,7 +10,6 @@ import fr.java.beans.reflect.utils.Primitives;
 import fr.java.lang.enums.Primitive;
 import fr.java.math.numbers.Complex;
 import fr.java.maths.numbers.complex.ComplexNumber;
-import fr.utils.maths.Asserts;
 
 public class Numbers {
 	public static final double epsilon	=  2.220446049250313e-016;

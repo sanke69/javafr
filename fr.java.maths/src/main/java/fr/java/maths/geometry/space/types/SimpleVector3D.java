@@ -34,8 +34,8 @@ import fr.java.math.geometry.space.Dimension3D;
 import fr.java.math.geometry.space.Point3D;
 import fr.java.math.topology.Coordinate;
 import fr.java.math.topology.CoordinateSystem;
+import fr.java.maths.geometry.AdapterVectorDouble;
 import fr.java.maths.geometry.plane.types.SimpleVector2D;
-import fr.utils.adapters.AdapterVectorDouble;
 
 public class SimpleVector3D extends AdapterVectorDouble.Editable implements Point3D.Editable, Vector3D.Editable {
 	private static final long serialVersionUID = 1369L;

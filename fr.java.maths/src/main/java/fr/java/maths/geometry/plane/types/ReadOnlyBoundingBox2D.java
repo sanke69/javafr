@@ -1,4 +1,4 @@
-package fr.java.maths.adapters;
+package fr.java.maths.geometry.plane.types;
 
 import java.text.NumberFormat;
 
@@ -7,20 +7,20 @@ import fr.java.lang.exceptions.NotYetImplementedException;
 import fr.java.math.geometry.BoundingBox;
 import fr.java.math.topology.Coordinate;
 
-public class BoundingBoxAdapter2D implements BoundingBox.TwoDims {
+public class ReadOnlyBoundingBox2D implements BoundingBox.TwoDims {
 	private static final long serialVersionUID = 1L;
 
 	double x, width;
 	double y, height;
 
-	public BoundingBoxAdapter2D() {
+	public ReadOnlyBoundingBox2D() {
 		super();
 		x      = 0;
 		width  = 0;
 		y      = 0;
 		height = 0;
 	}
-	public BoundingBoxAdapter2D(final double _x, final double _y, final double _width, final double _height) {
+	public ReadOnlyBoundingBox2D(final double _x, final double _y, final double _width, final double _height) {
 		super();
 		x     = _x;
 		width = _width;
